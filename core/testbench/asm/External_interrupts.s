@@ -119,8 +119,8 @@ clear_gateway_\@:
 // Macro to set mtvec to point to Interrupt handler
 .macro set_pointer_adress handler_address
 set_timer_bound_\@:
- la t5, (\handler_address<<10)
-
+ la t5, (\handler_address)
+ slli t5,t5,10
  csrw  meivt, t5
 .endm
 
@@ -175,20 +175,22 @@ _finish:
 
 
 interrupt_handler:
-li t5,1
-csrw meicpct,t5
-li t6,1
-beq meihap,t6,TIMER_INTERRUPT_ROUTINE
+li t2,1
+csrw meicpct,t2
+csrr t5,meihap
+beq t5,t2,EXT_TIMER_ROUTINE
+
+
 mret
 
-TIMER_INTERRUPT_ROUTINE:
-
-
+EXT_TIMER_ROUTINE:
+    
     disable_ext_int   // Disabling interrupt  by Writing 0 to mie csr 
-     init_priorityorder 0  // Setting default priority order Zero lowest 15 highest by writing 0 to priord csr
+    init_priorityorder 0  // Setting default priority order Zero lowest 15 highest by writing 0 to priord csr
     init_gateway 1, 0, 0    // gateway is set through meigwclrS  S->  Id is the source number polarity == 0 is active high interrupt , Type == 0 is level trigereed interrupt
     set_pointer_adress interrupt_handler /// Settig mtvec to point to the handler adress
     set_priority 1,15  // Setting Priority  first arg is id and second is its corresponding priority
-    set_threshold 15 // setting thershold to zero
+    set_threshold 0 // setting thershold to zero
     init_nstthresholds 0 // setting nest thershold to zero
+
 mret
