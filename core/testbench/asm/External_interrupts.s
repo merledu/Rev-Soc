@@ -115,10 +115,13 @@ clear_gateway_\@:
 .endm
 
 
-.macro set_pointer_to_trapvec vector_address
-set_pointer_to_trapvec_\@:
-    la tp,(\vector_address<<10) 
-    csrw meivt,tp
+
+// Macro to set mtvec to point to Interrupt handler
+.macro set_pointer_adress handler_address
+set_timer_bound_\@:
+ la t5, (\handler_address<<10)
+
+ csrw  meivt, t5
 .endm
 
 
@@ -140,11 +143,19 @@ _start:
     disable_ext_int   // Disabling interrupt  by Writing 0 to mie csr 
     init_priorityorder 0  // Setting default priority order Zero lowest 15 highest by writing 0 to priord csr
     init_gateway 1, 0, 0    // gateway is set through meigwclrS  S->  Id is the source number polarity == 0 is active high interrupt , Type == 0 is level trigereed interrupt
-    set_pointer_to_trapvec Interrupt_handler /// Settig mtvec to point to the handler adress
+    set_pointer_adress interrupt_handler /// Settig mtvec to point to the handler adress
     set_priority 1,15  // Setting Priority  first arg is id and second is its corresponding priority
     set_threshold 0 // setting thershold to zero
     init_nstthresholds 0 // setting nest thershold to zero
+    enable_interrupt 1  // id 1 is given to enable interrupt for that
+    enable_ext_int
+
+
+   .rept 1000
     
+    addi t5,t5,1
+
+   .endr
 
 
 
@@ -159,13 +170,25 @@ _finish:
     nop
 .endr
 
-.end
-
-
-
-Interrupt_handler:
 
 
 
 
+interrupt_handler:
+li t5,1
+csrw meicpct,t5
+li t6,1
+beq meihap,t6,TIMER_INTERRUPT_ROUTINE
+mret
+
+TIMER_INTERRUPT_ROUTINE:
+
+
+    disable_ext_int   // Disabling interrupt  by Writing 0 to mie csr 
+     init_priorityorder 0  // Setting default priority order Zero lowest 15 highest by writing 0 to priord csr
+    init_gateway 1, 0, 0    // gateway is set through meigwclrS  S->  Id is the source number polarity == 0 is active high interrupt , Type == 0 is level trigereed interrupt
+    set_pointer_adress interrupt_handler /// Settig mtvec to point to the handler adress
+    set_priority 1,15  // Setting Priority  first arg is id and second is its corresponding priority
+    set_threshold 15 // setting thershold to zero
+    init_nstthresholds 0 // setting nest thershold to zero
 mret
