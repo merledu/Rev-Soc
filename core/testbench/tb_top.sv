@@ -434,7 +434,9 @@ module tb_top ( input bit core_clk );
 `endif
     end
 
-
+    logic interrupt_1;    
+  // Temporary
+   Interrupt_generator intrupt_gen (.*);
     assign rst_l = cycleCnt > 5;
     assign porst_l = cycleCnt > 2;
 
@@ -695,7 +697,7 @@ el2_swerv_wrapper rvtop (
     .dma_axi_rlast          (dma_axi_rlast),
 `endif
     .timer_int              ( 1'b0     ),
-    .extintsrc_req          ( '0  ),
+    .extintsrc_req          ( {253'd0,interrupt_1,interrupt_1}  ),
 
     .lsu_bus_clk_en         ( 1'b1  ),// Clock ratio b/w cpu core clk & AHB master interface
     .ifu_bus_clk_en         ( 1'b1  ),// Clock ratio b/w cpu core clk & AHB master interface

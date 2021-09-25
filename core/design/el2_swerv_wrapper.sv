@@ -348,6 +348,7 @@ import el2_pkg::*;
 
    logic [pt.DCCM_FDATA_WIDTH-1:0]  dccm_rd_data_lo;
    logic [pt.DCCM_FDATA_WIDTH-1:0]  dccm_rd_data_hi;
+ 
 
    // PIC ports
 
@@ -487,6 +488,8 @@ import el2_pkg::*;
    assign  dma_hreadyin                           = '0;
 
 `endif //  `ifdef RV_BUILD_AXI4
+
+//  logic                            interrupt_1;
 
 
 `ifdef RV_BUILD_AHB_LITE
@@ -683,6 +686,7 @@ import el2_pkg::*;
    logic                   dmi_reg_wr_en;
    logic [31:0]            dmi_reg_wdata;
    logic [31:0]            dmi_reg_rdata;
+
 
    // Instantiate the el2_swerv core
    el2_swerv #(.pt(pt)) swerv (

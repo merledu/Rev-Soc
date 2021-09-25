@@ -335,6 +335,7 @@ import el2_pkg::*;
    input  logic [63:0]          lsu_hrdata,
    input  logic                 lsu_hready,
    input  logic                 lsu_hresp,
+//   input  logic                 interrupt_1,
 
    //System Bus Debug Master
    output logic [31:0]          sb_haddr,
