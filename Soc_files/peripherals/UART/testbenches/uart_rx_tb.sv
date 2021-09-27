@@ -145,7 +145,10 @@ initial begin
 
         @(posedge clk_i);
         addr = 8'd8;
-
+	    repeat (87) begin
+            @(posedge clk_i);
+        end
+        
         @(posedge clk_i);
         addr = 8'd20;
         
