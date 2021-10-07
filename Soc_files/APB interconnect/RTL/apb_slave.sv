@@ -1,7 +1,8 @@
 module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
   wr_out1,addr_out1,data_out1,wr_out2,addr_out2,data_out2,
   wr_out3,addr_out3,data_out3,wr_out4,addr_out4,data_out4,
-  wr_out5,addr_out5,data_out5,wr_out6,addr_out6,data_out6);
+  wr_out5,addr_out5,data_out5,wr_out6,addr_out6,data_out6,
+  psel1,psel2,psel3,psel4,psel5,psel6);
   input clk;
   input rst;
   input wr_in; //write when 1 and read when 0
@@ -13,6 +14,8 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
   output reg wr_out1,wr_out2,wr_out3,wr_out4,wr_out5,wr_out6;
   output reg [11:0] addr_out1,addr_out2,addr_out3,addr_out4,addr_out5,addr_out6;
   output reg [31:0] data_out1,data_out2,data_out3,data_out4,data_out5,data_out6;
+  output reg psel1,psel2,psel3,psel4,psel5,psel6 ;
+
   
   reg [2:0] port,state;
   
@@ -80,6 +83,12 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                   data_out4 <= 32'b0;
                   data_out5 <= 32'b0;
                   data_out6 <= 32'b0;
+                  psel1 <= 1;
+                  psel2 <= 0;
+                  psel3 <= 0;
+                  psel4 <= 0; 
+                  psel5 <= 0; 
+                  psel6 <= 0;
                  end
                  
                 PORT2: begin
@@ -101,6 +110,12 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                     data_out4 <= 32'b0; 
                     data_out5 <= 32'b0;
                     data_out6 <= 32'b0; 
+                    psel1 <= 0;
+                    psel2 <= 1;
+                    psel3 <= 0;
+                    psel4 <= 0; 
+                    psel5 <= 0; 
+                    psel6 <= 0;
                   end   
                      
                 PORT3: begin
@@ -122,6 +137,12 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                     data_out4 <= 32'b0;
                     data_out5 <= 32'b0;
                     data_out6 <= 32'b0;
+                    psel1 <= 0;
+                    psel2 <= 0;
+                    psel3 <= 1;
+                    psel4 <= 0; 
+                    psel5 <= 0; 
+                    psel6 <= 0;
                   end
                   
                 PORT4: begin
@@ -143,6 +164,12 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                     data_out4 <= data_in;
                     data_out5 <= 32'b0;
                     data_out6 <= 32'b0;
+                    psel1 <= 0;
+                    psel2 <= 0;
+                    psel3 <= 0;
+                    psel4 <= 1; 
+                    psel5 <= 0; 
+                    psel6 <= 0;
                   end
 
                 PORT5: begin
@@ -164,6 +191,12 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                     data_out4 <= 32'b0;
                     data_out5 <= data_in;
                     data_out6 <= 32'b0;
+                    psel1 <= 0;
+                    psel2 <= 0;
+                    psel3 <= 0;
+                    psel4 <= 0; 
+                    psel5 <= 1; 
+                    psel6 <= 0;
                   end
                 PORT6: begin
                     wr_out1 <= 0;
@@ -184,6 +217,12 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                     data_out4 <= 32'b0;
                     data_out5 <= 32'b0;
                     data_out6 <= data_in;
+                    psel1 <= 0;
+                    psel2 <= 0;
+                    psel3 <= 0;
+                    psel4 <= 0; 
+                    psel5 <= 0; 
+                    psel6 <= 1;
                   end
                   
                 default:begin
@@ -205,6 +244,12 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                     data_out4 <= 32'b0;
                     data_out5 <= 32'b0;
                     data_out6 <= 32'b0;
+                    psel1 <= 0;
+                    psel2 <= 0;
+                    psel3 <= 0;
+                    psel4 <= 0; 
+                    psel5 <= 0; 
+                    psel6 <= 0;
                   end 
               endcase
                state <= WAIT;
