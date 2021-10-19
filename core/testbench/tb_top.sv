@@ -435,7 +435,7 @@ module tb_top ( input bit core_clk );
     end
 
     logic interrupt_1;    
-  // Temporary
+  // Temporary inerrupt generator
    Interrupt_generator intrupt_gen (.*);
     assign rst_l = cycleCnt > 5;
     assign porst_l = cycleCnt > 2;
