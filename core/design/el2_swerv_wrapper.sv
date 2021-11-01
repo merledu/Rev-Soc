@@ -45,146 +45,147 @@ import el2_pkg::*;
 
    // Bus signals
 `ifdef RV_BUILD_AXI4
-   //-------------------------- LSU AXI signals--------------------------
+     //-------------------------- LSU AXI signals--------------------------
    // AXI Write Channels
-   output logic                            lsu_axi_awvalid,
-   input  logic                            lsu_axi_awready,
-   output logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_awid,
-   output logic [31:0]                     lsu_axi_awaddr,
-   output logic [3:0]                      lsu_axi_awregion,
-   output logic [7:0]                      lsu_axi_awlen,
-   output logic [2:0]                      lsu_axi_awsize,
-   output logic [1:0]                      lsu_axi_awburst,
-   output logic                            lsu_axi_awlock,
-   output logic [3:0]                      lsu_axi_awcache,
-   output logic [2:0]                      lsu_axi_awprot,
-   output logic [3:0]                      lsu_axi_awqos,
+   output logic                            lsu_axi_awvalid_o,
+   input  logic                            lsu_axi_awready_o,
+   output logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_awid_o,
+   output logic [31:0]                     lsu_axi_awaddr_o,
+   output logic [3:0]                      lsu_axi_awregion_o,
+   output logic [7:0]                      lsu_axi_awlen_o,
+   output logic [2:0]                      lsu_axi_awsize_o,
+   output logic [1:0]                      lsu_axi_awburst_o,
+   output logic                            lsu_axi_awlock_o,
+   output logic [3:0]                      lsu_axi_awcache_o,
+   output logic [2:0]                      lsu_axi_awprot_o,
+   output logic [3:0]                      lsu_axi_awqos_o,
 
-   output logic                            lsu_axi_wvalid,
-   input  logic                            lsu_axi_wready,
-   output logic [63:0]                     lsu_axi_wdata,
-   output logic [7:0]                      lsu_axi_wstrb,
-   output logic                            lsu_axi_wlast,
+   output logic                            lsu_axi_wvalid_o,
+   input  logic                            lsu_axi_wready_o,
+   output logic [63:0]                     lsu_axi_wdata_o,
+   output logic [7:0]                      lsu_axi_wstrb_o,
+   output logic                            lsu_axi_wlast_o,
 
-   input  logic                            lsu_axi_bvalid,
-   output logic                            lsu_axi_bready,
-   input  logic [1:0]                      lsu_axi_bresp,
-   input  logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_bid,
+   input  logic                            lsu_axi_bvalid_o,
+   output logic                            lsu_axi_bready_o,
+   input  logic [1:0]                      lsu_axi_bresp_o,
+   input  logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_bid_o,
 
    // AXI Read Channels
-   output logic                            lsu_axi_arvalid,
-   input  logic                            lsu_axi_arready,
-   output logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_arid,
-   output logic [31:0]                     lsu_axi_araddr,
-   output logic [3:0]                      lsu_axi_arregion,
-   output logic [7:0]                      lsu_axi_arlen,
-   output logic [2:0]                      lsu_axi_arsize,
-   output logic [1:0]                      lsu_axi_arburst,
-   output logic                            lsu_axi_arlock,
-   output logic [3:0]                      lsu_axi_arcache,
-   output logic [2:0]                      lsu_axi_arprot,
-   output logic [3:0]                      lsu_axi_arqos,
+   output logic                            lsu_axi_arvalid_o,
+   input  logic                            lsu_axi_arready_o,
+   output logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_arid_o,
+   output logic [31:0]                     lsu_axi_araddr_o,
+   output logic [3:0]                      lsu_axi_arregion_o,
+   output logic [7:0]                      lsu_axi_arlen_o,
+   output logic [2:0]                      lsu_axi_arsize_o,
+   output logic [1:0]                      lsu_axi_arburst_o,
+   output logic                            lsu_axi_arlock_o,
+   output logic [3:0]                      lsu_axi_arcache_o,
+   output logic [2:0]                      lsu_axi_arprot_o,
+   output logic [3:0]                      lsu_axi_arqos_o,
 
-   input  logic                            lsu_axi_rvalid,
-   output logic                            lsu_axi_rready,
-   input  logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_rid,
-   input  logic [63:0]                     lsu_axi_rdata,
-   input  logic [1:0]                      lsu_axi_rresp,
-   input  logic                            lsu_axi_rlast,
+   input  logic                            lsu_axi_rvalid_o,
+   output logic                            lsu_axi_rready_o,
+   input  logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_rid_o,
+   input  logic [63:0]                     lsu_axi_rdata_o,
+   input  logic [1:0]                      lsu_axi_rresp_o,
+   input  logic                            lsu_axi_rlast_o,
 
    //-------------------------- IFU AXI signals--------------------------
    // AXI Write Channels
-   output logic                            ifu_axi_awvalid,
-   input  logic                            ifu_axi_awready,
-   output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_awid,
-   output logic [31:0]                     ifu_axi_awaddr,
-   output logic [3:0]                      ifu_axi_awregion,
-   output logic [7:0]                      ifu_axi_awlen,
-   output logic [2:0]                      ifu_axi_awsize,
-   output logic [1:0]                      ifu_axi_awburst,
-   output logic                            ifu_axi_awlock,
-   output logic [3:0]                      ifu_axi_awcache,
-   output logic [2:0]                      ifu_axi_awprot,
-   output logic [3:0]                      ifu_axi_awqos,
+   output logic                            ifu_axi_awvalid_o,
+   input  logic                            ifu_axi_awready_o,
+   output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_awid_o,
+   output logic [31:0]                     ifu_axi_awaddr_o,
+   output logic [3:0]                      ifu_axi_awregion_o,
+   output logic [7:0]                      ifu_axi_awlen_o,
+   output logic [2:0]                      ifu_axi_awsize_o,
+   output logic [1:0]                      ifu_axi_awburst_o,
+   output logic                            ifu_axi_awlock_o,
+   output logic [3:0]                      ifu_axi_awcache_o,
+   output logic [2:0]                      ifu_axi_awprot_o,
+   output logic [3:0]                      ifu_axi_awqos_o,
 
-   output logic                            ifu_axi_wvalid,
-   input  logic                            ifu_axi_wready,
-   output logic [63:0]                     ifu_axi_wdata,
-   output logic [7:0]                      ifu_axi_wstrb,
-   output logic                            ifu_axi_wlast,
+   output logic                            ifu_axi_wvalid_o,
+   input  logic                            ifu_axi_wready_o,
+   output logic [63:0]                     ifu_axi_wdata_o,
+   output logic [7:0]                      ifu_axi_wstrb_o,
+   output logic                            ifu_axi_wlast_o,
 
-   input  logic                            ifu_axi_bvalid,
-   output logic                            ifu_axi_bready,
-   input  logic [1:0]                      ifu_axi_bresp,
-   input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_bid,
+   input  logic                            ifu_axi_bvalid_o,
+   output logic                            ifu_axi_bready_o,
+   input  logic [1:0]                      ifu_axi_bresp_o,
+   input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_bid_o,
 
    // AXI Read Channels
-   output logic                            ifu_axi_arvalid,
-   input  logic                            ifu_axi_arready,
-   output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_arid,
-   output logic [31:0]                     ifu_axi_araddr,
-   output logic [3:0]                      ifu_axi_arregion,
-   output logic [7:0]                      ifu_axi_arlen,
-   output logic [2:0]                      ifu_axi_arsize,
-   output logic [1:0]                      ifu_axi_arburst,
-   output logic                            ifu_axi_arlock,
-   output logic [3:0]                      ifu_axi_arcache,
-   output logic [2:0]                      ifu_axi_arprot,
-   output logic [3:0]                      ifu_axi_arqos,
+   output logic                            ifu_axi_arvalid_o,
+   input  logic                            ifu_axi_arready_o,
+   output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_arid_o,
+   output logic [31:0]                     ifu_axi_araddr_o,
+   output logic [3:0]                      ifu_axi_arregion_o,
+   output logic [7:0]                      ifu_axi_arlen_o,
+   output logic [2:0]                      ifu_axi_arsize_o,
+   output logic [1:0]                      ifu_axi_arburst_o,
+   output logic                            ifu_axi_arlock_o,
+   output logic [3:0]                      ifu_axi_arcache_o,
+   output logic [2:0]                      ifu_axi_arprot_o,
+   output logic [3:0]                      ifu_axi_arqos_o,
 
-   input  logic                            ifu_axi_rvalid,
-   output logic                            ifu_axi_rready,
-   input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_rid,
-   input  logic [63:0]                     ifu_axi_rdata,
-   input  logic [1:0]                      ifu_axi_rresp,
-   input  logic                            ifu_axi_rlast,
+   input  logic                            ifu_axi_rvalid_o,
+   output logic                            ifu_axi_rready_o,
+   input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_rid_o,
+   input  logic [63:0]                     ifu_axi_rdata_o,
+   input  logic [1:0]                      ifu_axi_rresp_o,
+   input  logic                            ifu_axi_rlast_o,
 
    //-------------------------- SB AXI signals--------------------------
    // AXI Write Channels
-   output logic                            sb_axi_awvalid,
-   input  logic                            sb_axi_awready,
-   output logic [pt.SB_BUS_TAG-1:0]        sb_axi_awid,
-   output logic [31:0]                     sb_axi_awaddr,
-   output logic [3:0]                      sb_axi_awregion,
-   output logic [7:0]                      sb_axi_awlen,
-   output logic [2:0]                      sb_axi_awsize,
-   output logic [1:0]                      sb_axi_awburst,
-   output logic                            sb_axi_awlock,
-   output logic [3:0]                      sb_axi_awcache,
-   output logic [2:0]                      sb_axi_awprot,
-   output logic [3:0]                      sb_axi_awqos,
+   output logic                            sb_axi_awvalid_o,
+   input  logic                            sb_axi_awready_o,
+   output logic [pt.SB_BUS_TAG-1:0]        sb_axi_awid_o,
+   output logic [31:0]                     sb_axi_awaddr_o,
+   output logic [3:0]                      sb_axi_awregion_o,
+   output logic [7:0]                      sb_axi_awlen_o,
+   output logic [2:0]                      sb_axi_awsize_o,
+   output logic [1:0]                      sb_axi_awburst_o,
+   output logic                            sb_axi_awlock_o,
+   output logic [3:0]                      sb_axi_awcache_o,
+   output logic [2:0]                      sb_axi_awprot_o,
+   output logic [3:0]                      sb_axi_awqos_o,
 
-   output logic                            sb_axi_wvalid,
-   input  logic                            sb_axi_wready,
-   output logic [63:0]                     sb_axi_wdata,
-   output logic [7:0]                      sb_axi_wstrb,
-   output logic                            sb_axi_wlast,
+   output logic                            sb_axi_wvalid_o,
+   input  logic                            sb_axi_wready_o,
+   output logic [63:0]                     sb_axi_wdata_o,
+   output logic [7:0]                      sb_axi_wstrb_o,
+   output logic                            sb_axi_wlast_o,
 
-   input  logic                            sb_axi_bvalid,
-   output logic                            sb_axi_bready,
-   input  logic [1:0]                      sb_axi_bresp,
-   input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_bid,
+   input  logic                            sb_axi_bvalid_o,
+   output logic                            sb_axi_bready_o,
+   input  logic [1:0]                      sb_axi_bresp_o,
+   input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_bid_o,
 
    // AXI Read Channels
-   output logic                            sb_axi_arvalid,
-   input  logic                            sb_axi_arready,
-   output logic [pt.SB_BUS_TAG-1:0]        sb_axi_arid,
-   output logic [31:0]                     sb_axi_araddr,
-   output logic [3:0]                      sb_axi_arregion,
-   output logic [7:0]                      sb_axi_arlen,
-   output logic [2:0]                      sb_axi_arsize,
-   output logic [1:0]                      sb_axi_arburst,
-   output logic                            sb_axi_arlock,
-   output logic [3:0]                      sb_axi_arcache,
-   output logic [2:0]                      sb_axi_arprot,
-   output logic [3:0]                      sb_axi_arqos,
+   output logic                            sb_axi_arvalid_o,
+   input  logic                            sb_axi_arready_o,
+   output logic [pt.SB_BUS_TAG-1:0]        sb_axi_arid_o,
+   output logic [31:0]                     sb_axi_araddr_o,
+   output logic [3:0]                      sb_axi_arregion_o,
+   output logic [7:0]                      sb_axi_arlen_o,
+   output logic [2:0]                      sb_axi_arsize_o,
+   output logic [1:0]                      sb_axi_arburst_o,
+   output logic                            sb_axi_arlock_o,
+   output logic [3:0]                      sb_axi_arcache_o,
+   output logic [2:0]                      sb_axi_arprot_o,
+   output logic [3:0]                      sb_axi_arqos_o,
 
-   input  logic                            sb_axi_rvalid,
-   output logic                            sb_axi_rready,
-   input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_rid,
-   input  logic [63:0]                     sb_axi_rdata,
-   input  logic [1:0]                      sb_axi_rresp,
-   input  logic                            sb_axi_rlast,
+   input  logic                            sb_axi_rvalid_o,
+   // Debug Syster Bus AHB
+   output logic                            sb_axi_rready_o,
+   input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_rid_o,
+   input  logic [63:0]                     sb_axi_rdata_o,
+   input  logic [1:0]                      sb_axi_rresp_o,
+   input  logic                            sb_axi_rlast_o,
 
    //-------------------------- DMA AXI signals--------------------------
    // AXI Write Channels
@@ -681,6 +682,190 @@ import el2_pkg::*;
 
 `endif //  `ifdef RV_BUILD_AHB_LITE
 
+/////////////////////////////////////////////////////////////////////////////
+//    Signals Added to use as a input for Axi Interconnect
+//////////////////////////////////////////////////////////////////////////////
+   logic                            lsu_axi_awvalid;
+   logic                            lsu_axi_awready;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_awid;
+   logic [31:0]                     lsu_axi_awaddr;
+   logic [3:0]                      lsu_axi_awregion;
+   logic [7:0]                      lsu_axi_awlen;
+   logic [2:0]                      lsu_axi_awsize;
+   logic [1:0]                      lsu_axi_awburst;
+   logic                            lsu_axi_awlock;
+   logic [3:0]                      lsu_axi_awcache;
+   logic [2:0]                      lsu_axi_awprot;
+   logic [3:0]                      lsu_axi_awqos;
+
+   logic                            lsu_axi_wvalid;
+   logic                            lsu_axi_wready;
+   logic [63:0]                     lsu_axi_wdata;
+   logic [7:0]                      lsu_axi_wstrb;
+   logic                            lsu_axi_wlast;
+
+   logic                            lsu_axi_bvalid;
+   logic                            lsu_axi_bready;
+   logic [1:0]                      lsu_axi_bresp;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_bid;
+
+   // AXI Read Channels
+   logic                            lsu_axi_arvalid;
+   logic                            lsu_axi_arready;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_arid;
+   logic [31:0]                     lsu_axi_araddr;
+   logic [3:0]                      lsu_axi_arregion;
+   logic [7:0]                      lsu_axi_arlen;
+   logic [2:0]                      lsu_axi_arsize;
+   logic [1:0]                      lsu_axi_arburst;
+   logic                            lsu_axi_arlock;
+   logic [3:0]                      lsu_axi_arcache;
+   logic [2:0]                      lsu_axi_arprot;
+   logic [3:0]                      lsu_axi_arqos;
+
+   logic                            lsu_axi_rvalid;
+   logic                            lsu_axi_rready;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_rid;
+   logic [63:0]                     lsu_axi_rdata;
+   logic [1:0]                      lsu_axi_rresp;
+   logic                            lsu_axi_rlast;
+
+   //-------------------------- IFU AXI signals--------------------------
+   // AXI Write Channels
+   logic                            ifu_axi_awvalid;
+   logic                            ifu_axi_awready;
+   logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_awid;
+   logic [31:0]                     ifu_axi_awaddr;
+   logic [3:0]                      ifu_axi_awregion;
+   logic [7:0]                      ifu_axi_awlen;
+   logic [2:0]                      ifu_axi_awsize;
+   logic [1:0]                      ifu_axi_awburst;
+   logic                            ifu_axi_awlock;
+   logic [3:0]                      ifu_axi_awcache;
+   logic [2:0]                      ifu_axi_awprot;
+   logic [3:0]                      ifu_axi_awqos;
+
+   logic                            ifu_axi_wvalid;
+   logic                            ifu_axi_wready;
+   logic [63:0]                     ifu_axi_wdata;
+   logic [7:0]                      ifu_axi_wstrb;
+   logic                            ifu_axi_wlast;
+
+   logic                            ifu_axi_bvalid;
+   logic                            ifu_axi_bready;
+   logic [1:0]                      ifu_axi_bresp;
+   logic [pt.IFU_BUS_TAG-1:0]      ifu_axi_bid;
+
+   // AXI Read Channels
+   logic                            ifu_axi_arvalid;
+   logic                            ifu_axi_arready;
+   logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_arid;
+   logic [31:0]                     ifu_axi_araddr;
+   logic [3:0]                      ifu_axi_arregion;
+   logic [7:0]                      ifu_axi_arlen;
+   logic [2:0]                      ifu_axi_arsize;
+   logic [1:0]                      ifu_axi_arburst;
+   logic                            ifu_axi_arlock;
+   logic [3:0]                      ifu_axi_arcache;
+   logic [2:0]                      ifu_axi_arprot;
+   logic [3:0]                      ifu_axi_arqos;
+
+   logic                            ifu_axi_rvalid;
+   logic                            ifu_axi_rready;
+   logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_rid;
+   logic [63:0]                     ifu_axi_rdata;
+   logic [1:0]                      ifu_axi_rresp;
+   logic                            ifu_axi_rlast;
+
+   //-------------------------- SB AXI signals--------------------------
+   // AXI Write Channels
+   logic                            sb_axi_awvalid;
+   logic                            sb_axi_awready;
+   logic [pt.SB_BUS_TAG-1:0]        sb_axi_awid;
+   logic [31:0]                     sb_axi_awaddr;
+   logic [3:0]                      sb_axi_awregion;
+   logic [7:0]                      sb_axi_awlen;
+   logic [2:0]                      sb_axi_awsize;
+   logic [1:0]                      sb_axi_awburst;
+   logic                            sb_axi_awlock;
+   logic [3:0]                      sb_axi_awcache;
+   logic [2:0]                      sb_axi_awprot;
+   logic [3:0]                      sb_axi_awqos;
+
+   logic                            sb_axi_wvalid;
+   logic                            sb_axi_wready;
+   logic [63:0]                     sb_axi_wdata;
+   logic [7:0]                      sb_axi_wstrb;
+   logic                            sb_axi_wlast;
+
+   logic                            sb_axi_bvalid;
+   logic                            sb_axi_bready;
+   logic [1:0]                      sb_axi_bresp;
+   logic [pt.SB_BUS_TAG-1:0]        sb_axi_bid;
+
+   // AXI Read Channels
+   logic                            sb_axi_arvalid;
+   logic                            sb_axi_arready;
+   logic [pt.SB_BUS_TAG-1:0]        sb_axi_arid;
+   logic [31:0]                     sb_axi_araddr;
+   logic [3:0]                      sb_axi_arregion;
+   logic [7:0]                      sb_axi_arlen;
+   logic [2:0]                      sb_axi_arsize;
+   logic [1:0]                      sb_axi_arburst;
+   logic                            sb_axi_arlock;
+   logic [3:0]                      sb_axi_arcache;
+   logic [2:0]                      sb_axi_arprot;
+   logic [3:0]                      sb_axi_arqos;
+
+   logic                            sb_axi_rvalid;
+   logic                            sb_axi_rready;
+   logic [pt.SB_BUS_TAG-1:0]        sb_axi_rid;
+   logic [63:0]                     sb_axi_rdata;
+   logic [1:0]                      sb_axi_rresp;
+   logic                            sb_axi_rlast;
+
+    
+   logic                            lsu_axi_arready_B_o;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_rid_B_o;
+   logic [63:0]                     lsu_axi_rdata_B_o;
+   logic [1:0]                      lsu_axi_rresp_B_o;
+   logic                            lsu_axi_rlast_B_o;
+   logic                            lsu_axi_rvalid_B_o;
+   logic [1:0]                      lsu_axi_bresp_B_o;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_bid_B_o;
+   logic                            lsu_axi_awready_B_o;
+   logic                            lsu_axi_wready_B_o;
+   logic                            lsu_axi_bvalid_B_o;
+
+   logic                            lsu_axi_rready_B_o;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_arid_B_o;
+   logic [31:0]                     lsu_axi_araddr_B_o;
+   logic [3:0]                      lsu_axi_arregion_B_o;
+   logic [7:0]                      lsu_axi_arlen_B_o;
+   logic [2:0]                      lsu_axi_arsize_B_o;
+   logic [1:0]                      lsu_axi_arburst_B_o;
+   logic                            lsu_axi_arlock_B_o;
+   logic [3:0]                      lsu_axi_arcache_B_o;
+   logic [2:0]                      lsu_axi_arprot_B_o;
+   logic [3:0]                      lsu_axi_arqos_B_o;
+   logic                            lsu_axi_arvalid_B_o;
+   logic                            lsu_axi_awvalid_B_o;
+   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_awid_B_o;
+   logic [31:0]                     lsu_axi_awaddr_B_o;
+   logic [3:0]                      lsu_axi_awregion_B_o;
+   logic [7:0]                      lsu_axi_awlen_B_o;
+   logic [2:0]                      lsu_axi_awsize_B_o;
+   logic [1:0]                      lsu_axi_awburst_B_o;
+   logic                            lsu_axi_awlock_B_o;
+   logic [3:0]                      lsu_axi_awcache_B_o;
+   logic [2:0]                      lsu_axi_awprot_B_o;
+   logic [3:0]                      lsu_axi_awqos_B_o;
+   logic                            lsu_axi_wvalid_B_o;
+   logic [63:0]                     lsu_axi_wdata_B_o;
+   logic [7:0]                      lsu_axi_wstrb_B_o;
+   logic                            lsu_axi_wlast_B_o;
+   logic                            lsu_axi_bready_B_o;
+
    logic                   dmi_reg_en;
    logic [6:0]             dmi_reg_addr;
    logic                   dmi_reg_wr_en;
@@ -688,12 +873,297 @@ import el2_pkg::*;
    logic [31:0]            dmi_reg_rdata;
 
 
+    logic                           PENABLE    ;
+    logic                           PWRITE     ;
+    logic [APB_ADDR_WIDTH-1:0]      PADDR      ;
+    logic                           PSEL       ;
+    logic [31:0]                    PWDATA     ;
+    logic [31:0]                    PRDATA     ;
+    logic                           PREADY     ;
+    logic                           PSLVERR    ;
+    localparam int unsigned AXI4_ADDRESS_WIDTH = 32;
+    localparam int unsigned AXI4_RDATA_WIDTH   = 64;
+    localparam int unsigned AXI4_WDATA_WIDTH   = 64;
+    localparam int unsigned AXI4_ID_WIDTH      = 16;
+    localparam int unsigned AXI4_USER_WIDTH    = 10;
+    localparam int unsigned AXI_NUMBYTES       = AXI4_WDATA_WIDTH/8;
+
+    localparam int unsigned BUFF_DEPTH_SLAVE   = 4;
+    localparam int unsigned APB_NUM_SLAVES     = 8;
+    localparam int unsigned APB_ADDR_WIDTH     = 12;
+    // ---------------------------------------------------------
+   
+
+    //-----------------------------------------------------------
+    // APB INTERCONNECT SIGNALS
+      logic [31:0] data_in;
+      logic wr_out1,wr_out2,wr_out3,wr_out4,wr_out5,wr_out6;
+      logic [11:0] addr_out1,addr_out2,addr_out3,addr_out4,addr_out5,addr_out6;
+      logic [31:0] data_out1,data_out2,data_out3,data_out4,data_out5,data_out6;
+      logic psel1,psel2,psel3,psel4,psel5,psel6;
+
+
+
    // Instantiate the el2_swerv core
    el2_swerv #(.pt(pt)) swerv (
                                 .clk(clk),
                                 .*
                                 );
+   // AXI interconnect Instatiation 
+   axi_interconnect #(.pt(pt)) axi (.*);
 
+   
+   // AXI to APB Bridge Instatiation 
+   axi2apb_64_32 #(
+    .AXI4_ADDRESS_WIDTH(AXI4_ADDRESS_WIDTH),
+    .AXI4_RDATA_WIDTH(AXI4_RDATA_WIDTH), 
+    .AXI4_WDATA_WIDTH(AXI4_WDATA_WIDTH), 
+    .AXI4_ID_WIDTH(AXI4_ID_WIDTH), 
+    .AXI4_USER_WIDTH(AXI4_USER_WIDTH),
+    .AXI_NUMBYTES(AXI_NUMBYTES),
+    .BUFF_DEPTH_SLAVE(BUFF_DEPTH_SLAVE),
+    .APB_NUM_SLAVES(APB_NUM_SLAVES), 
+    .APB_ADDR_WIDTH(APB_ADDR_WIDTH)
+    )
+   bridge (  
+     .ACLK(clk),
+     .ARESETn(core_rst_l),
+     .ARUSER_i(),
+     .BUSER_o(),
+     .WUSER_i(),
+     .RUSER_o(),
+     .AWUSER_i(),
+     .test_en_i(),
+     .AWVALID_i(lsu_axi_awvalid_B_o),
+     .AWREADY_o(lsu_axi_awready_B_o),
+     .AWID_i(lsu_axi_awid_B_o),
+     .AWADDR_i(lsu_axi_awaddr_B_o),
+     .AWREGION_i(lsu_axi_awregion_B_o),
+     .AWLEN_i(lsu_axi_awlen_B_o),
+     .AWSIZE_i(lsu_axi_awsize_B_o),
+     .AWBURST_i(lsu_axi_awburst_B_o),
+     .AWLOCK_i(lsu_axi_awlock_B_o),
+     .AWCACHE_i(lsu_axi_awcache_B_o),
+     .AWPROT_i(lsu_axi_awprot_B_o),
+     .AWQOS_i(lsu_axi_awqos_B_o),
+     .WVALID_i(lsu_axi_wvalid_B_o),
+     .WREADY_o(lsu_axi_wready_B_o),
+     .WDATA_i(lsu_axi_wdata_B_o),
+     .WSTRB_i(lsu_axi_wstrb_B_o),
+     .WLAST_i(lsu_axi_wlast_B_o),
+     .BVALID_o(lsu_axi_bvalid_B_o),
+     .BREADY_i(lsu_axi_bready_B_o),
+     .BRESP_o(lsu_axi_bresp_B_o),
+     .BID_o(lsu_axi_bid_B_o),
+     .ARVALID_i(lsu_axi_arvalid_B_o),
+     .ARREADY_o(lsu_axi_arready_B_o),
+     .ARID_i(lsu_axi_arid_B_o),
+     .ARADDR_i(lsu_axi_araddr_B_o),
+     .ARREGION_i(lsu_axi_arregion_B_o),
+     .ARLEN_i(lsu_axi_arlen_B_o),
+     .ARSIZE_i(lsu_axi_arsize_B_o),
+     .ARBURST_i(lsu_axi_arburst_B_o),
+     .ARLOCK_i(lsu_axi_arlock_B_o),
+     .ARCACHE_i(lsu_axi_arcache_B_o),
+     .ARPROT_i(lsu_axi_arprot_B_o),
+     .ARQOS_i(lsu_axi_arqos_B_o),
+     .RVALID_o(lsu_axi_rvalid_B_o),
+     .RREADY_i(lsu_axi_rready_B_o),
+     .RID_o(lsu_axi_rid_B_o),
+     .RDATA_o(lsu_axi_rdata_B_o),
+     .RRESP_o(lsu_axi_rresp_B_o),
+     .RLAST_o(lsu_axi_rlast_B_o),
+     .PENABLE(PENABLE),
+     .PWRITE(PWRITE),
+     .PADDR(PADDR),
+     .PSEL(PSEL),
+     .PWDATA(PWDATA),
+     .PRDATA(PRDATA),
+     .PREADY(PREADY),
+     .PSLVERR(PSLVERR)
+      );
+
+      logic [31:0] rd_data1,rd_data2,rd_data3,rd_data4,rd_data5,rd_data6;
+      logic PSLVERR_1,PSLVERR_2,PSLVERR_3,PSLVERR_4,PSLVERR_5,PSLVERR_6;
+      logic PREADY_1,PREADY_2,PREADY_3,PREADY_4,PREADY_5,PREADY_6;
+      logic PENABLE_1,PENABLE_2,PENABLE_3,PENABLE_4,PENABLE_5,PENABLE_6;
+
+// PERIPHERAL MEMORY MAPPING   
+// #define TIMER_BASE 0x20000100
+// #define PWM_BASE   0x20000200
+// #define UART_BASE  0x20000300
+// #define GPIO_BASE  0x20000400
+// #define SPI_BASE   0x20000500
+// #define I2C_BASE   0x20000600
+
+
+    // APB interconnect Instatiation 
+      apb_interconnect apb_interconnect (
+       .*,
+       .clk(clk),
+       .rst(core_rst_l),
+       .addr_in(PADDR),
+       .wr_in(PWRITE),
+       .sel(PSEL),
+       .data_in(PWDATA),
+       .ready_out(PREADY),
+       .en_in(PENABLE),
+       .readdata(PRDATA),
+       .PSLVERR(PSLVERR),
+       .rd_data1(rd_data1),
+       .rd_data2(rd_data2),
+       .rd_data3(rd_data3),
+       .rd_data4(rd_data4),
+       .rd_data5(rd_data5),
+       .rd_data6(rd_data6)    
+       );
+
+
+      // SPI SIGNALS
+      localparam BUFFER_DEPTH   = 10;
+  //    localparam APB_ADDR_WIDTH = 12;  //APB slaves are 4KB by default
+      logic                      HCLK;
+      logic                      HRESETn;
+     // logic [APB_ADDR_WIDTH-1:0] PADDR;
+      // logic               [31:0] PWDATA;
+      // logic                      PWRITE;
+      // logic                      PSEL;
+      // logic                      PENABLE;
+      // logic               [31:0] PRDATA;
+      // logic                      PREADY;
+      // logic                      PSLVERR;
+
+      logic                [1:0] events_o;
+
+      logic                      spi_clk;
+      logic                      spi_csn0;
+      logic                      spi_csn1;
+      logic                      spi_csn2;
+      logic                      spi_csn3;
+      logic                [1:0] spi_mode;
+      logic                      spi_sdo0;
+      logic                      spi_sdo1;
+      logic                      spi_sdo2;
+      logic                      spi_sdo3;
+      logic                      spi_sdi0;
+      logic                      spi_sdi1;
+      logic                      spi_sdi2;
+      logic                      spi_sdi3;
+      
+     // SPI peripheral Instatiation
+
+      apb_spi_master #(
+      .BUFFER_DEPTH(BUFFER_DEPTH),
+      .APB_ADDR_WIDTH(APB_ADDR_WIDTH) )  //APB slaves are 4KB by default) 
+      SPI_peripheral(
+         .*,
+         .HRESETn(core_rst_l),
+         .HCLK(clk),
+         .PSEL(psel5),
+         .PADDR(addr_out5),
+         .PWDATA(data_out5),
+         .PRDATA(rd_data5),
+         .PWRITE(wr_out5),
+         .PENABLE(PENABLE_5),
+         .PREADY(PREADY_5),
+         .PSLVERR(PSLVERR_5)
+
+      );
+
+
+   // GPIO SIGNALS
+
+   localparam GPIO_PINS  = 32, // Must be a multiple of 8
+    PADDR_SIZE = 4,
+    STAGES     = 2 ;  // Steges to add more stability to inputs;
+   logic                   pclk;
+   logic [GPIO_PINS-1:0]   gpio_i;
+   logic                   prstn;
+   logic                   psel;
+   logic                   penable;
+   logic [PADDR_SIZE-1:0]  paddr;
+   logic                   pwrite;
+   logic [GPIO_PINS-1:0]   pwrdata;
+   logic [GPIO_PINS/8-1:0] pstrb;
+   logic                   pready;
+   logic [GPIO_PINS-1:0]   prddata;
+   logic                   pslverr;
+   logic                   GPIO_irq_o;
+   logic [GPIO_PINS-1:0]   gpio_o
+                           ,gpio_oe;
+   logic                [1:0] TIMER_irq_o ;// overflow and cmp interrupt
+
+
+   rev_gpio #(
+    // parameters
+    .GPIO_PINS(GPIO_PINS), // Must be a multiple of 8
+    .PADDR_SIZE(PADDR_SIZE),
+    .STAGES(STAGES) )  // Steges to add more stability to inputs
+      GPIO_peripheral(
+         .*,
+         .irq_o(GPIO_irq_o),
+         .prstn(core_rst_l),
+         .pclk(clk),
+         .psel(psel4),
+         .paddr(addr_out4),
+         .pwrdata(data_out4),
+         .prddata(rd_data4),
+         .pwrite(wr_out4),
+         .penable(PENABLE_4),
+         .pready(PREADY_4),
+         .pslverr(PSLVERR_4)
+
+      );
+
+
+      timer #(
+    // parameters
+    .APB_ADDR_WIDTH(APB_ADDR_WIDTH))
+      TIMER_peripheral(
+         .*,
+         .irq_o(TIMER_irq_o),
+         .HRESETn(core_rst_l),
+         .HCLK(clk),
+         .PSEL(psel1),
+         .PADDR(addr_out1),
+         .PWDATA(data_out1),
+         .PRDATA(rd_data1),
+         .PWRITE(wr_out1),
+         .PENABLE(PENABLE_1),
+         .PREADY(PREADY_1),
+         .PSLVERR(PSLVERR_1)
+
+      );
+
+      
+// PWM SIGANLS																																																		
+         logic         o_pwm;
+         logic         o_pwm_2;
+         logic     	oe_pwm1;
+         logic     	oe_pwm2;
+
+      pwm PWM_peripheral(
+         .*,
+         .rst_ni(core_rst_l),
+         .clk_i(clk),
+         .psel(psel2),
+         .addr_i(addr_out2),
+         .wdata_i(data_out2),
+         .rdata_o(rd_data2),
+         .write(wr_out2),
+        .penable(PENABLE_2),
+        .pready(PREADY_2),
+        .pslverr(PSLVERR_2)
+
+      );
+
+
+
+
+   
+
+
+    
    // Instantiate the mem
    el2_mem  #(.pt(pt)) mem (
                              .clk(active_l2clk),

@@ -1,23 +1,19 @@
 /* APB Master is then further connected with APB slave, now this slave will take data from APB Master
 and will send it to the peripherals  */
-module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
-  wr_out1,addr_out1,data_out1,wr_out2,addr_out2,data_out2,
-  wr_out3,addr_out3,data_out3,wr_out4,addr_out4,data_out4,
-  wr_out5,addr_out5,data_out5,wr_out6,addr_out6,data_out6,
-  psel1,psel2,psel3,psel4,psel5,psel6);
-  input clk;
-  input rst;
-  input wr_in; //write when 1 and read when 0
-  input en;    // comes from APB master
-  input [2:0] sel_port;
-  input [11:0] addr_in;
-  input [31:0] data_in;
-  output reg ready;
-  output reg wr_out1,wr_out2,wr_out3,wr_out4,wr_out5,wr_out6;
-  output reg [11:0] addr_out1,addr_out2,addr_out3,addr_out4,addr_out5,addr_out6;
-  output reg [31:0] data_out1,data_out2,data_out3,data_out4,data_out5,data_out6;
-  output reg psel1,psel2,psel3,psel4,psel5,psel6 ;  // this signal will be high to select peripheral
-  
+module apb_slave (
+  input logic  clk,
+  input logic  rst,
+  input logic  wr_in, //write when 1 and read when 0
+  input logic  en,    // comes from APB master
+  input logic  [2:0] sel_port,
+  input logic  [11:0] addr_in,
+  input logic  [31:0] data_in,
+  output logic ready,
+  output logic wr_out1,wr_out2,wr_out3,wr_out4,wr_out5,wr_out6,
+  output logic [11:0] addr_out1,addr_out2,addr_out3,addr_out4,addr_out5,addr_out6,
+  output logic [31:0] data_out1,data_out2,data_out3,data_out4,data_out5,data_out6,
+  output logic psel1,psel2,psel3,psel4,psel5,psel6   // this signal will be high to select peripheral
+  );
   reg [2:0] port,state;
   
   localparam [2:0] INIT = 3'b000,
@@ -44,9 +40,9 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
         end
     else
       begin
-        case (state)
+        case (state) 
           IDLE : begin      
-            ready    <= 0;  //Busy state
+            ready    <= 1;  //free state
             port <= INIT;
             if (en == 1) // this signal will come from master when port is selected and sends to setup state
               begin
@@ -267,14 +263,19 @@ module apb_slave (clk,rst,wr_in,en,sel_port,addr_in,data_in,ready,
                    state <= WAIT;
                  end
                end
+
+
+                default: begin
+
+                  state <= IDLE;
+
+                end
+
+
+
              endcase
            end
          end
 
 endmodule   
-            
-            
-
-
-
-
+           

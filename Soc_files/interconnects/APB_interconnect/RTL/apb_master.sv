@@ -1,23 +1,22 @@
 /* APB master will be directly connected from the AXI2APB bridge, 
 the main purpose of this module is to select the peripheral on which we have
 to read or write */
-module apb_master (clk,rst,addr_in,wr_in,ready,sel,
-        data_in,sel_port,en,wr_out,addr_out,data_out);
-  input clk;
-  input rst;
-  input [11:0] addr_in;   //12 bit address coming from AXI2APB of any particular peripheral
-  input wr_in;            //write when 1 and read when 0
-  input ready;            // when ready = 1 it shows it is not busy, ready = 0 is a busy state
-  input sel;              // positive edgw if this signal will allow to access
-  input [31:0] data_in;   
-  output reg [2:0] sel_port; // the addresses of peripherals are fixed that are defined below
+module apb_master (
+  input  logic clk,
+  input  logic rst,
+  input  logic [11:0] addr_in,   //12 bit address coming from AXI2APB of any particular peripheral
+  input  logic wr_in,            //write when 1 and read when 0
+  input  logic ready,            // when ready = 1 it shows it is not busy, ready = 0 is a busy state
+  input  logic sel,              // positive edgw if this signal will allow to access
+  input  logic [31:0] data_in,   
+  output logic [2:0] sel_port, // the addresses of peripherals are fixed that are defined below
                              //select port will take last 3 bits from the address to select peripheral
-  output reg en;            // when port is selected it enables the peripheral
-  output reg wr_out;
-  output reg [11:0] addr_out;
-  output reg [31:0] data_out;
-  
-  reg [1:0] state;
+  output logic en,           // when port is selected it enables the peripheral
+  output logic wr_out,
+  output logic [11:0] addr_out,
+  output logic [31:0] data_out
+);
+  logic [1:0] state;
  
   localparam [1:0]  IDLE    = 2'b00,   // no operation will be performed
                     SETUP   = 2'b01,   //selects port and enables
@@ -100,7 +99,7 @@ module apb_master (clk,rst,addr_in,wr_in,ready,sel,
                     state <= IDLE;
                   end
                 end
-                
+
               default: begin
                 state <= IDLE;
               end
@@ -119,4 +118,4 @@ UART  --->   0x300 = 0011 00000000
 TIMER --->   0x400 = 0100 00000000
 I2C   --->   0x500 = 0101 00000000
 SPI   --->   0x600 = 0110 00000000
-PWM   --->   0x700 = 0111 00000000 */ 
+PWM   --->   0x700 = 0111 00000000 */
