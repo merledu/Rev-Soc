@@ -11,6 +11,8 @@ $RV_ROOT/design/ifu/el2_ifu_ic_mem.sv
 $RV_ROOT/design/ifu/el2_ifu_mem_ctl.sv
 $RV_ROOT/design/ifu/el2_ifu_iccm_mem.sv
 $RV_ROOT/design/ifu/el2_ifu.sv
+$RV_ROOT/design/lib/axi_interconnect.sv
+$RV_ROOT/design/lib/axi2apb64_32.sv
 $RV_ROOT/design/dec/el2_dec_decode_ctl.sv
 $RV_ROOT/design/dec/el2_dec_gpr_ctl.sv
 $RV_ROOT/design/dec/el2_dec_ib_ctl.sv

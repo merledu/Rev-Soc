@@ -378,13 +378,13 @@ always_comb begin
     
          
            ifu_axi_arready = ifu_axi_arready_o;    
-           ifu_axi_rid   = ifu_axi_rid_o;    
+           ifu_axi_rid     = ifu_axi_rid_o;    
            ifu_axi_rdata   = ifu_axi_rdata_o;   
            ifu_axi_rresp   = ifu_axi_rresp_o;   
            ifu_axi_rlast   = ifu_axi_rlast_o;   
            ifu_axi_rvalid  = ifu_axi_rvalid_o;   
            ifu_axi_bresp   = ifu_axi_bresp_o;   
-           ifu_axi_bid   = ifu_axi_bid_o;    
+           ifu_axi_bid     = ifu_axi_bid_o;    
            ifu_axi_awready = ifu_axi_awready_o;   
            ifu_axi_wready  = ifu_axi_wready_o;   
            ifu_axi_bvalid  = ifu_axi_bvalid_o;   
@@ -558,8 +558,8 @@ always_comb begin
            
         
 
-
  end
+
 end
 
     
