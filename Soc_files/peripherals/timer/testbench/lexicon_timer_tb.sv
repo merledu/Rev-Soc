@@ -60,16 +60,16 @@ module lexicon_timer_tb #(
      localparam CTRL  = 12'h4;
      localparam CMP   = 12'h8;
     // prescaler values
-     localparam PRESCALER_0_DISABLED   = 32'h0; 
-     localparam PRESCALER_1_DISABLED = 32'h8; 
+     localparam PRESCALER_0_DISABLED = 32'h0 ; 
+     localparam PRESCALER_1_DISABLED = 32'h8 ; 
      localparam PRESCALER_2_DISABLED = 32'h10; 
      localparam PRESCALER_3_DISABLED = 32'h18; 
      localparam PRESCALER_4_DISABLED = 32'h20; 
      localparam PRESCALER_5_DISABLED = 32'h28; 
      localparam PRESCALER_6_DISABLED = 32'h30; 
      localparam PRESCALER_7_DISABLED = 32'h38; 
-     localparam PRESCALER_0_ENABLED  = 32'h1; 
-     localparam PRESCALER_1_ENABLED  = 32'h9; 
+     localparam PRESCALER_0_ENABLED  = 32'h1 ; 
+     localparam PRESCALER_1_ENABLED  = 32'h9 ; 
      localparam PRESCALER_2_ENABLED  = 32'h11; 
      localparam PRESCALER_3_ENABLED  = 32'h19; 
      localparam PRESCALER_4_ENABLED  = 32'h21; 
