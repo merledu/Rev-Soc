@@ -1,7 +1,7 @@
 module axi_interconnect
-import eb1_pkg::*;
+import el2_pkg::*;
 #(
-`include "eb1_param.vh"
+`include "el2_param.vh"
  )
   (
 
@@ -360,8 +360,6 @@ import eb1_pkg::*;
    output logic                            lsu_axi_wlast_B_o,
    output logic                            lsu_axi_bready_B_o
    
-   
-
 
 );
  
