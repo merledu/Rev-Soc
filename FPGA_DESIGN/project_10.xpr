@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2018.2 (64-bit)              -->
+<!--                                                         -->
+<!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
+
+<Project Version="7" Minor="38" Path="/opt/Xilinx/Vivado/2018.2/bin/project_10/project_10.xpr">
+  <DefaultLaunch Dir="$PRUNDIR"/>
+  <Configuration>
+    <Option Name="Id" Val="48624dff609e4ca3928aa379019196b8"/>
+    <Option Name="Part" Val="xc7a35ticsg324-1L"/>
+    <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
+    <Option Name="CompiledLibDirXSim" Val=""/>
+    <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="$PCACHEDIR/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="$PCACHEDIR/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirXcelium" Val="$PCACHEDIR/compile_simlib/xcelium"/>
+    <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
+    <Option Name="BoardPart" Val="digilentinc.com:arty-a7-35:part0:1.0"/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
+    <Option Name="ActiveSimSet" Val="sim_1"/>
+    <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
+    <Option Name="IPCachePermission" Val="read"/>
+    <Option Name="IPCachePermission" Val="write"/>
+    <Option Name="EnableCoreContainer" Val="FALSE"/>
+    <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
+    <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
+    <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
+    <Option Name="EnableBDX" Val="FALSE"/>
+    <Option Name="DSAVendor" Val="xilinx"/>
+    <Option Name="DSABoardId" Val="arty-a7-35"/>
+    <Option Name="DSANumComputeUnits" Val="60"/>
+    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTModelSimLaunchSim" Val="0"/>
+    <Option Name="WTQuestaLaunchSim" Val="0"/>
+    <Option Name="WTIesLaunchSim" Val="0"/>
+    <Option Name="WTVcsLaunchSim" Val="0"/>
+    <Option Name="WTRivieraLaunchSim" Val="0"/>
+    <Option Name="WTActivehdlLaunchSim" Val="0"/>
+    <Option Name="WTXSimExportSim" Val="2"/>
+    <Option Name="WTModelSimExportSim" Val="2"/>
+    <Option Name="WTQuestaExportSim" Val="2"/>
+    <Option Name="WTIesExportSim" Val="2"/>
+    <Option Name="WTVcsExportSim" Val="2"/>
+    <Option Name="WTRivieraExportSim" Val="2"/>
+    <Option Name="WTActivehdlExportSim" Val="2"/>
+    <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
+    <Option Name="XSimRadix" Val="hex"/>
+    <Option Name="XSimTimeUnit" Val="ns"/>
+    <Option Name="XSimArrayDisplayLimit" Val="1024"/>
+    <Option Name="XSimTraceLimit" Val="65536"/>
+    <Option Name="SimTypes" Val="rtl"/>
+    <Option Name="SimTypes" Val="bfm"/>
+    <Option Name="SimTypes" Val="tlm"/>
+    <Option Name="SimTypes" Val="tlm_dpi"/>
+    <Option Name="MEMEnableMemoryMapGeneration" Val="TRUE"/>
+  </Configuration>
+  <FileSets Version="1" Minor="31">
+    <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/include/el2_def.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/Rev-Soc/core/design/include/el2_def.sv"/>
+          <Attr Name="ImportTime" Val="1631729621"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/default/el2_param.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/snapshots/default/el2_param.vh"/>
+          <Attr Name="ImportTime" Val="1637572623"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/testbench/tb_top.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/testbench/tb_top.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/default/parameters.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/snapshots/default/parameters.sv"/>
+          <Attr Name="ImportTime" Val="1637514662"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/testbench/tests/dhry/dhry.h">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/testbench/tests/dhry/dhry.h"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/testbench/remote_bitbang.h">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/testbench/remote_bitbang.h"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/default/pd_defines.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/snapshots/default/pd_defines.vh"/>
+          <Attr Name="ImportTime" Val="1637495429"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/default/el2_pdef.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/snapshots/default/el2_pdef.vh"/>
+          <Attr Name="ImportTime" Val="1637495429"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/default/defines.h">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/snapshots/default/defines.h"/>
+          <Attr Name="ImportTime" Val="1637495429"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/default/pic_map_auto.h">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/snapshots/default/pic_map_auto.h"/>
+          <Attr Name="ImportTime" Val="1637495429"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dmi/dmi_wrapper.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dmi/dmi_wrapper.v"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/Interrupt_generator.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/Interrupt_generator.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/ahb_to_axi4.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/ahb_to_axi4.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/apb_interconnect.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/apb_interconnect.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/apb_spi_master.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/apb_spi_master.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi2apb_64_32.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi2apb_64_32.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi4_to_ahb.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi4_to_ahb.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_ar_buffer.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_ar_buffer.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_aw_buffer.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_aw_buffer.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_b_buffer.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_b_buffer.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_interconnect.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_interconnect.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/default/common_defines.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/snapshots/default/common_defines.vh"/>
+          <Attr Name="ImportTime" Val="1637495429"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/testbench/axi_lsu_dma_bridge.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/testbench/axi_lsu_dma_bridge.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_r_buffer.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_r_buffer.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_single_slice.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_single_slice.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_w_buffer.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_w_buffer.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/beh_lib.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/beh_lib.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dmi/dmi_jtag_to_core_sync.v">
+        <FileInfo SFType="SVerilog">
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dmi/dmi_jtag_to_core_sync.v"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dbg/el2_dbg.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dbg/el2_dbg.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dec/el2_dec.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dec/el2_dec.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dec/el2_dec_decode_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dec/el2_dec_decode_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dec/el2_dec_gpr_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dec/el2_dec_gpr_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dec/el2_dec_ib_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dec/el2_dec_ib_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dec/el2_dec_tlu_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dec/el2_dec_tlu_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dec/el2_dec_trigger.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dec/el2_dec_trigger.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/el2_dma_ctrl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/el2_dma_ctrl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/exu/el2_exu.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/exu/el2_exu.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/exu/el2_exu_alu_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/exu/el2_exu_alu_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/exu/el2_exu_div_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/exu/el2_exu_div_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/exu/el2_exu_mul_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/exu/el2_exu_mul_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_aln_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_aln_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_bp_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_bp_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_compress_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_compress_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_ic_mem.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_ic_mem.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_iccm_mem.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_iccm_mem.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_ifc_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_ifc_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_mem_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_mem_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/el2_lib.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/el2_lib.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_addrcheck.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_addrcheck.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_bus_buffer.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_bus_buffer.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_bus_intf.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_bus_intf.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_clkdomain.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_clkdomain.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_dccm_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_dccm_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_dccm_mem.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_dccm_mem.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_ecc.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_ecc.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_lsc_ctl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_lsc_ctl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_stbuf.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_stbuf.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lsu/el2_lsu_trigger.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lsu/el2_lsu_trigger.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/el2_mem.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/el2_mem.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/el2_pic_ctrl.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/el2_pic_ctrl.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/el2_swerv.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/el2_swerv.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/el2_swerv_wrapper.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/el2_swerv_wrapper.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/fifo_v3.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/fifo_v3.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/mem_lib.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/mem_lib.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/pwm.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/pwm.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/rev_gpio.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/rev_gpio.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/dmi/rvjtag_tap.v">
+        <FileInfo SFType="SVerilog">
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/dmi/rvjtag_tap.v"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/spi_master_apb_if.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/spi_master_apb_if.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/spi_master_clkgen.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/spi_master_clkgen.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/spi_master_controller.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/spi_master_controller.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/spi_master_fifo.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/spi_master_fifo.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/spi_master_rx.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/spi_master_rx.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/spi_master_tx.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/spi_master_tx.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/timer.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/timer.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/testbench/dasm.svi">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/testbench/dasm.svi"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/testbench/SimJTAG.v">
+        <FileInfo SFType="SVerilog">
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/testbench/SimJTAG.v"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/uart_core.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/uart_core.v"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/uart_rx.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/uart_rx.v"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/uart_tx.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/uart_tx.v"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/apb_master.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/apb_master.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/apb_slave.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/apb_slave.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_slice.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_slice.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/lib/axi_slice_wrap.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/lib/axi_slice_wrap.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/design/ifu/el2_ifu_tb_memread.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/design/ifu/el2_ifu_tb_memread.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/testbench/ahb_sif.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/10_try/Rev-Soc/core/testbench/ahb_sif.sv"/>
+          <Attr Name="ImportTime" Val="1637584660"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/core/program.hex">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../home/rehan/MERL/FPGA_EMU/Rev-Soc/core/program.hex"/>
+          <Attr Name="ImportTime" Val="1637505097"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="tb_top"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+      <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/new/Arty-A7_35.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../ReV-SoC/ReV-SoC.srcs/constrs_1/new/Arty-A7_35.xdc"/>
+          <Attr Name="ImportTime" Val="1636471854"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="ConstrsType" Val="XDC"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="tb_top"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="clk_wiz_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wiz_0">
+      <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="clk_wiz_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+  </FileSets>
+  <Simulators>
+    <Simulator Name="XSim">
+      <Option Name="Description" Val="Vivado Simulator"/>
+      <Option Name="CompiledLib" Val="0"/>
+    </Simulator>
+    <Simulator Name="ModelSim">
+      <Option Name="Description" Val="ModelSim Simulator"/>
+    </Simulator>
+    <Simulator Name="Questa">
+      <Option Name="Description" Val="Questa Advanced Simulator"/>
+    </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="Xcelium">
+      <Option Name="Description" Val="Xcelium Parallel Simulator"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
+    <Simulator Name="Riviera">
+      <Option Name="Description" Val="Riviera-PRO Simulator"/>
+    </Simulator>
+  </Simulators>
+  <Runs Version="1" Minor="10">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="clk_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="clk_wiz_0" Part="xc7a35ticsg324-1L" ConstrsSet="clk_wiz_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/clk_wiz_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="clk_wiz_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="clk_wiz_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="clk_wiz_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+  </Runs>
+  <Board>
+    <Jumpers/>
+  </Board>
+</Project>
