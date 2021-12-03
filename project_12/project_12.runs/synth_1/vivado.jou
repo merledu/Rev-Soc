@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Dec  3 17:14:08 2021
+# Process ID: 101077
+# Current directory: /home/rehan/project_12/project_12.runs/synth_1
+# Command line: vivado -log ReV_SoC_top_FPGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ReV_SoC_top_FPGA.tcl
+# Log file: /home/rehan/project_12/project_12.runs/synth_1/ReV_SoC_top_FPGA.vds
+# Journal file: /home/rehan/project_12/project_12.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source ReV_SoC_top_FPGA.tcl -notrace

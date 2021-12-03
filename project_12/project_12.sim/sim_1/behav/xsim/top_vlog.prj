@@ -1,0 +1,76 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../project_12.srcs/sources_1/imports/imports/default" --include "../../../../project_12.srcs/sources_1/imports/default" \
+"../../../../project_12.srcs/sources_1/imports/imports/dmi/dmi_wrapper.v" \
+
+sv xil_defaultlib  --include "../../../../project_12.srcs/sources_1/imports/imports/default" --include "../../../../project_12.srcs/sources_1/imports/default" \
+"../../../../project_12.srcs/sources_1/imports/imports/include/el2_def.sv" \
+"../../../../project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv" \
+"../../../../project_12.srcs/sources_1/imports/testbench/ahb_sif.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/apb_spi_master.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi2apb_64_32.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi_ar_buffer.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi_aw_buffer.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi_b_buffer.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv" \
+"../../../../project_12.srcs/sources_1/imports/testbench/axi_lsu_dma_bridge.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi_r_buffer.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi_single_slice.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/axi_w_buffer.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dmi/dmi_jtag_to_core_sync.v" \
+"../../../../project_12.srcs/sources_1/imports/imports/dbg/el2_dbg.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dec/el2_dec.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dec/el2_dec_decode_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dec/el2_dec_gpr_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dec/el2_dec_ib_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dec/el2_dec_tlu_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dec/el2_dec_trigger.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/design/el2_dma_ctrl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/exu/el2_exu.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/exu/el2_exu_alu_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/exu/el2_exu_div_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/exu/el2_exu_mul_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_aln_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_bp_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_compress_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_ic_mem.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_iccm_mem.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_ifc_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_mem_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/el2_lib.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_addrcheck.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_bus_buffer.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_bus_intf.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_clkdomain.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_dccm_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_dccm_mem.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_ecc.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_lsc_ctl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_stbuf.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_trigger.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/design/el2_mem.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/fifo_v3.sv" \
+"../../../../project_12.srcs/sources_1/imports/lib/mem_lib.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/pwm.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/dmi/rvjtag_tap.v" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/spi_master_apb_if.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/spi_master_clkgen.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/spi_master_controller.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/spi_master_fifo.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/spi_master_rx.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/spi_master_tx.sv" \
+"../../../../project_12.srcs/sim_1/new/testbench.sv" \
+"../../../../project_12.srcs/sources_1/imports/imports/lib/timer.sv" \
+"../../../../project_12.srcs/sim_1/new/top.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

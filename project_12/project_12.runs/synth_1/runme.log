@@ -1,0 +1,1868 @@
+
+*** Running vivado
+    with args -log ReV_SoC_top_FPGA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ReV_SoC_top_FPGA.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source ReV_SoC_top_FPGA.tcl -notrace
+Command: synth_design -top ReV_SoC_top_FPGA -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 101085 
+WARNING: [Synth 8-2507] parameter declaration becomes local in axi_lsu_dma_bridge with formal parameter declaration list [/home/rehan/project_12/project_12.srcs/sources_1/imports/testbench/axi_lsu_dma_bridge.sv:82]
+WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:199]
+WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:233]
+WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:284]
+WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:330]
+WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:373]
+WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:409]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1348.504 ; gain = 101.250 ; free physical = 2305 ; free virtual = 8883
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ReV_SoC_top_FPGA' [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:22]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/rehan/project_12/project_12.runs/synth_1/.Xil/Vivado-101077-kali/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/rehan/project_12/project_12.runs/synth_1/.Xil/Vivado-101077-kali/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'el2_swerv_wrapper' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:23]
+	Parameter A bound to: 0 - type: integer 
+	Parameter APB_ADDR_WIDTH bound to: 32'b00000000000000000000000000001100 
+	Parameter AXI4_ADDRESS_WIDTH bound to: 32'b00000000000000000000000000100000 
+	Parameter AXI4_RDATA_WIDTH bound to: 32'b00000000000000000000000001000000 
+	Parameter AXI4_WDATA_WIDTH bound to: 32'b00000000000000000000000001000000 
+	Parameter AXI4_ID_WIDTH bound to: 32'b00000000000000000000000000010000 
+	Parameter AXI4_USER_WIDTH bound to: 32'b00000000000000000000000000001010 
+	Parameter AXI_NUMBYTES bound to: 32'b00000000000000000000000000001000 
+	Parameter BUFF_DEPTH_SLAVE bound to: 32'b00000000000000000000000000000100 
+	Parameter APB_NUM_SLAVES bound to: 32'b00000000000000000000000000001000 
+	Parameter BUFFER_DEPTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'el2_swerv' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:23]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvoclkhdr' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:751]
+INFO: [Synth 8-6155] done synthesizing module 'rvoclkhdr' (2#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:751]
+INFO: [Synth 8-6157] synthesizing module 'el2_dbg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dbg/el2_dbg.sv:24]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvsyncss' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:416]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff' (3#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvsyncss' (4#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:416]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs' (5#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized0' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 5 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized0' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 5 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized0' (5#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized0' (5#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized1' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized1' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized1' (5#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized1' (5#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized2' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized2' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized2' (5#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized2' (5#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized3' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 4 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized3' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 4 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized3' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized3' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized4' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 2 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized4' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 2 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized4' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized4' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized0' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized5' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized5' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized5' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized5' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized0' (6#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6155] done synthesizing module 'el2_dbg' (7#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dbg/el2_dbg.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'el2_ifu' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu.sv:22]
+	Parameter A bound to: 0 - type: integer 
+	Parameter TAGWIDTH bound to: 2 - type: integer 
+	Parameter IDWIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'el2_ifu_bp_ctl' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_bp_ctl.sv:27]
+	Parameter A bound to: 0 - type: integer 
+	Parameter BTB_DWIDTH bound to: 22 - type: integer 
+	Parameter BTB_DWIDTH_TOP bound to: 21 - type: integer 
+	Parameter BTB_FA_INDEX bound to: 8 - type: integer 
+	Parameter FA_CMP_LOWER bound to: 6 - type: integer 
+	Parameter FA_TAG_END_UPPER bound to: 22 - type: integer 
+	Parameter FA_TAG_START_LOWER bound to: 21 - type: integer 
+	Parameter FA_TAG_END_LOWER bound to: 17 - type: integer 
+	Parameter TAG_START bound to: 21 - type: integer 
+	Parameter PC4 bound to: 4 - type: integer 
+	Parameter BOFF bound to: 3 - type: integer 
+	Parameter CALL bound to: 2 - type: integer 
+	Parameter RET bound to: 1 - type: integer 
+	Parameter BV bound to: 0 - type: integer 
+	Parameter LRU_SIZE bound to: 13'b0000100000000 
+	Parameter NUM_BHT_LOOP bound to: 16 - type: integer 
+	Parameter NUM_BHT_LOOP_INNER_HI bound to: 5 - type: integer 
+	Parameter NUM_BHT_LOOP_OUTER_LO bound to: 6 - type: integer 
+	Parameter BHT_NO_ADDR_MATCH bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized1' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 13'b0000100000000 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized6' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 13'b0000100000000 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized6' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 13'b0000100000000 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized6' (7#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized6' (7#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized1' (7#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'el2_btb_tag_hash' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/el2_lib.sv:1]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'el2_btb_tag_hash' (8#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/el2_lib.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized2' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 22 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized7' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 22 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized7' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 22 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized7' (8#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized7' (8#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized2' (8#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs_fpga' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:113]
+	Parameter WIDTH bound to: 2 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs_fpga' (9#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:113]
+INFO: [Synth 8-6157] synthesizing module 'el2_btb_addr_hash' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/el2_lib.sv:30]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'el2_btb_addr_hash' (10#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/el2_lib.sv:30]
+INFO: [Synth 8-6157] synthesizing module 'rvdffie' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized8' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized8' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized8' (10#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized8' (10#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffie' (11#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+INFO: [Synth 8-6157] synthesizing module 'rvdfflie' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:239]
+	Parameter WIDTH bound to: 30 - type: integer 
+	Parameter LEFT bound to: 19 - type: integer 
+	Parameter EXTRA bound to: 11 - type: integer 
+	Parameter LMSB bound to: 29 - type: integer 
+	Parameter LLSB bound to: 11 - type: integer 
+	Parameter XMSB bound to: 10 - type: integer 
+	Parameter XLSB bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized9' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 30 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized9' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 30 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized9' (11#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized9' (11#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdfflie' (12#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:239]
+INFO: [Synth 8-6157] synthesizing module 'rvbradder' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:478]
+INFO: [Synth 8-6155] done synthesizing module 'rvbradder' (13#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:478]
+INFO: [Synth 8-6157] synthesizing module 'el2_btb_ghr_hash' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/el2_lib.sv:52]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'el2_btb_ghr_hash' (14#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/el2_lib.sv:52]
+WARNING: [Synth 8-3848] Net ifu_bp_fa_index_f[1] in module/entity el2_ifu_bp_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_bp_ctl.sv:76]
+WARNING: [Synth 8-3848] Net ifu_bp_fa_index_f[0] in module/entity el2_ifu_bp_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_bp_ctl.sv:76]
+WARNING: [Synth 8-3848] Net bht_bank_clk[0] in module/entity el2_ifu_bp_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_bp_ctl.sv:833]
+WARNING: [Synth 8-3848] Net bht_bank_clk[1] in module/entity el2_ifu_bp_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_bp_ctl.sv:833]
+INFO: [Synth 8-6155] done synthesizing module 'el2_ifu_bp_ctl' (15#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_bp_ctl.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'el2_ifu_ifc_ctl' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_ifc_ctl.sv:23]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvrangecheck' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:562]
+	Parameter CCM_SADR bound to: 36'b000011101110000000000000000000000000 
+	Parameter CCM_SIZE bound to: 14'b00000001000000 
+	Parameter REGION_BITS bound to: 4 - type: integer 
+	Parameter MASK_BITS bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvrangecheck' (16#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:562]
+INFO: [Synth 8-6157] synthesizing module 'rvdffie__parameterized0' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized10' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized10' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized10' (16#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized10' (16#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffie__parameterized0' (16#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+INFO: [Synth 8-6157] synthesizing module 'rvdffpcie' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:206]
+	Parameter WIDTH bound to: 31 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized11' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 31 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized11' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 31 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized11' (16#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized11' (16#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffpcie' (17#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:206]
+INFO: [Synth 8-6155] done synthesizing module 'el2_ifu_ifc_ctl' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_ifc_ctl.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'el2_ifu_aln_ctl' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_aln_ctl.sv:21]
+	Parameter A bound to: 0 - type: integer 
+	Parameter BRDATA_SIZE bound to: 16 - type: integer 
+	Parameter BRDATA_WIDTH bound to: 8 - type: integer 
+	Parameter MHI bound to: 52 - type: integer 
+	Parameter MSIZE bound to: 53 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized3' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized12' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized12' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized12' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized12' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized3' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized4' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 53 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized13' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 53 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized13' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 53 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized13' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized13' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized4' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized14' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized14' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6157] synthesizing module 'rvdffie__parameterized1' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized14' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized14' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffie__parameterized1' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized5' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 31 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized5' (18#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'el2_ifu_compress_ctl' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_compress_ctl.sv:20]
+	Parameter A bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'el2_ifu_compress_ctl' (19#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_compress_ctl.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'el2_ifu_aln_ctl' (20#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_aln_ctl.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'el2_ifu_mem_ctl' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_mem_ctl.sv:24]
+	Parameter A bound to: 0 - type: integer 
+	Parameter NUM_OF_BEATS bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvecc_encode_64' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:667]
+INFO: [Synth 8-6155] done synthesizing module 'rvecc_encode_64' (21#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:667]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized6' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 71 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized15' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 71 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized15' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 71 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized15' (21#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized15' (21#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized6' (21#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'rvecc_decode' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:623]
+INFO: [Synth 8-6155] done synthesizing module 'rvecc_decode' (22#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:623]
+INFO: [Synth 8-6157] synthesizing module 'rvecc_encode' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:606]
+INFO: [Synth 8-6155] done synthesizing module 'rvecc_encode' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:606]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized7' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 64 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized16' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 64 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized16' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 64 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized16' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized16' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized7' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-6157] synthesizing module 'rvdffie__parameterized2' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized17' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized17' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized17' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized17' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffie__parameterized2' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+INFO: [Synth 8-6157] synthesizing module 'rvdffie__parameterized3' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+	Parameter WIDTH bound to: 15 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized18' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 15 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized18' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 15 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized18' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized18' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffie__parameterized3' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs_fpga__parameterized0' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:113]
+	Parameter WIDTH bound to: 7'b0000001 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized19' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 7'b0000001 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized19' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 7'b0000001 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized19' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized19' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs_fpga__parameterized0' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:113]
+INFO: [Synth 8-6157] synthesizing module 'rvdffs_fpga__parameterized1' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:113]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs_fpga__parameterized1' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:113]
+INFO: [Synth 8-6157] synthesizing module 'rvdffie__parameterized4' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+	Parameter WIDTH bound to: 9 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized20' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 9 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized20' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 9 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized20' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized20' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffie__parameterized4' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+INFO: [Synth 8-6157] synthesizing module 'rvdffie__parameterized5' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized21' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized21' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized21' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized21' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffie__parameterized5' (23#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:337]
+INFO: [Synth 8-226] default block is never used [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_mem_ctl.sv:486]
+INFO: [Synth 8-6157] synthesizing module 'rvdff_fpga' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff_fpga' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+INFO: [Synth 8-6157] synthesizing module 'rvdff_fpga__parameterized0' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+	Parameter WIDTH bound to: 7'b0000001 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff_fpga__parameterized0' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+INFO: [Synth 8-6157] synthesizing module 'rvdff_fpga__parameterized1' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+	Parameter WIDTH bound to: 7'b0000010 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized22' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 7'b0000010 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized22' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 7'b0000010 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized22' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized22' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdff_fpga__parameterized1' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+INFO: [Synth 8-6157] synthesizing module 'rvdfflie__parameterized0' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:239]
+	Parameter WIDTH bound to: 26 - type: integer 
+	Parameter LEFT bound to: 18 - type: integer 
+	Parameter EXTRA bound to: 8 - type: integer 
+	Parameter LMSB bound to: 25 - type: integer 
+	Parameter LLSB bound to: 8 - type: integer 
+	Parameter XMSB bound to: 7 - type: integer 
+	Parameter XLSB bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized23' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 26 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized23' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 26 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized23' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized23' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdfflie__parameterized0' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:239]
+INFO: [Synth 8-6157] synthesizing module 'rvdffe__parameterized8' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdffs__parameterized24' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rvdff__parameterized24' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized24' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized24' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffe__parameterized8' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:166]
+INFO: [Synth 8-226] default block is never used [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu_mem_ctl.sv:993]
+INFO: [Synth 8-6157] synthesizing module 'rvdff_fpga__parameterized2' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter WIDTH bound to: 2 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff_fpga__parameterized2' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+	Parameter WIDTH bound to: 8'b00000011 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8'b00000011 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8'b00000011 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized25' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs__parameterized25' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:49]
+INFO: [Synth 8-6155] done synthesizing module 'rvdff_fpga__parameterized3' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:89]
+	Parameter WIDTH bound to: 8'b00000011 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdffs_fpga__parameterized2' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:113]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rvdff__parameterized26' (24#1) [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/beh_lib.sv:19]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter WIDTH bound to: 9 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+WARNING: [Synth 8-3848] Net bpred.ifc_fetch_req_f in module/entity el2_ifu does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu.sv:268]
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter NBLOAD_SIZE bound to: 9'b000000100 
+	Parameter NBLOAD_SIZE_MSB bound to: 3 - type: integer 
+	Parameter NBLOAD_TAG_MSB bound to: 1 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 37 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 37 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 37 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 17 - type: integer 
+	Parameter LEFT bound to: 9 - type: integer 
+	Parameter EXTRA bound to: 8 - type: integer 
+	Parameter LMSB bound to: 16 - type: integer 
+	Parameter LLSB bound to: 8 - type: integer 
+	Parameter XMSB bound to: 7 - type: integer 
+	Parameter XLSB bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 17 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 17 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 24 - type: integer 
+	Parameter LEFT bound to: 15 - type: integer 
+	Parameter EXTRA bound to: 9 - type: integer 
+	Parameter LMSB bound to: 23 - type: integer 
+	Parameter LLSB bound to: 9 - type: integer 
+	Parameter XMSB bound to: 8 - type: integer 
+	Parameter XLSB bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 24 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 24 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 12 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 12 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 12 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 5 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+WARNING: [Synth 8-5858] RAM cam_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5858] RAM cam_in_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-3936] Found unconnected internal register 'cam_array[0].cam_reg[0][tag]' and it is trimmed from '3' to '2' bits. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dec/el2_dec_decode_ctl.sv:646]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cam_array[1].cam_reg[1][tag]' and it is trimmed from '3' to '2' bits. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dec/el2_dec_decode_ctl.sv:646]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cam_array[2].cam_reg[2][tag]' and it is trimmed from '3' to '2' bits. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dec/el2_dec_decode_ctl.sv:646]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cam_array[3].cam_reg[3][tag]' and it is trimmed from '3' to '2' bits. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dec/el2_dec_decode_ctl.sv:646]
+	Parameter A bound to: 0 - type: integer 
+	Parameter MSTATUS_MIE bound to: 0 - type: integer 
+	Parameter MIP_MCEIP bound to: 5 - type: integer 
+	Parameter MIP_MITIP0 bound to: 4 - type: integer 
+	Parameter MIP_MITIP1 bound to: 3 - type: integer 
+	Parameter MIP_MEIP bound to: 2 - type: integer 
+	Parameter MIP_MTIP bound to: 1 - type: integer 
+	Parameter MIP_MSIP bound to: 0 - type: integer 
+	Parameter MIE_MCEIE bound to: 5 - type: integer 
+	Parameter MIE_MITIE0 bound to: 4 - type: integer 
+	Parameter MIE_MITIE1 bound to: 3 - type: integer 
+	Parameter MIE_MEIE bound to: 2 - type: integer 
+	Parameter MIE_MTIE bound to: 1 - type: integer 
+	Parameter MIE_MSIE bound to: 0 - type: integer 
+	Parameter DCSR_EBREAKM bound to: 15 - type: integer 
+	Parameter DCSR_STEPIE bound to: 11 - type: integer 
+	Parameter DCSR_STOPC bound to: 10 - type: integer 
+	Parameter DCSR_STEP bound to: 2 - type: integer 
+	Parameter MTDATA1_DMODE bound to: 9 - type: integer 
+	Parameter MTDATA1_SEL bound to: 7 - type: integer 
+	Parameter MTDATA1_ACTION bound to: 6 - type: integer 
+	Parameter MTDATA1_CHAIN bound to: 5 - type: integer 
+	Parameter MTDATA1_MATCH bound to: 4 - type: integer 
+	Parameter MTDATA1_M_ENABLED bound to: 3 - type: integer 
+	Parameter MTDATA1_EXE bound to: 2 - type: integer 
+	Parameter MTDATA1_ST bound to: 1 - type: integer 
+	Parameter MTDATA1_LD bound to: 0 - type: integer 
+	Parameter MCPC bound to: 12'b011111000010 
+	Parameter MISA bound to: 12'b001100000001 
+	Parameter MVENDORID bound to: 12'b111100010001 
+	Parameter MARCHID bound to: 12'b111100010010 
+	Parameter MIMPID bound to: 12'b111100010011 
+	Parameter MHARTID bound to: 12'b111100010100 
+	Parameter MSTATUS bound to: 12'b001100000000 
+	Parameter MTVEC bound to: 12'b001100000101 
+	Parameter MIP bound to: 12'b001101000100 
+	Parameter MIE bound to: 12'b001100000100 
+	Parameter MCYCLEL bound to: 12'b101100000000 
+	Parameter MCYCLEH bound to: 12'b101110000000 
+	Parameter MINSTRETL bound to: 12'b101100000010 
+	Parameter MINSTRETH bound to: 12'b101110000010 
+	Parameter MSCRATCH bound to: 12'b001101000000 
+	Parameter MEPC bound to: 12'b001101000001 
+	Parameter MCAUSE bound to: 12'b001101000010 
+	Parameter MSCAUSE bound to: 12'b011111111111 
+	Parameter MTVAL bound to: 12'b001101000011 
+	Parameter MCGC bound to: 12'b011111111000 
+	Parameter MFDC bound to: 12'b011111111001 
+	Parameter MRAC bound to: 12'b011111000000 
+	Parameter MDEAU bound to: 12'b101111000000 
+	Parameter MDSEAC bound to: 12'b111111000000 
+	Parameter MPMC bound to: 12'b011111000110 
+	Parameter MICECT bound to: 12'b011111110000 
+	Parameter MICCMECT bound to: 12'b011111110001 
+	Parameter MDCCMECT bound to: 12'b011111110010 
+	Parameter MFDHT bound to: 12'b011111001110 
+	Parameter MFDHS bound to: 12'b011111001111 
+	Parameter MEIVT bound to: 12'b101111001000 
+	Parameter MEIHAP bound to: 12'b111111001000 
+	Parameter MEICURPL bound to: 12'b101111001100 
+	Parameter MEICIDPL bound to: 12'b101111001011 
+	Parameter MEICPCT bound to: 12'b101111001010 
+	Parameter MEIPT bound to: 12'b101111001001 
+	Parameter DCSR bound to: 12'b011110110000 
+	Parameter DPC bound to: 12'b011110110001 
+	Parameter DICAWICS bound to: 12'b011111001000 
+	Parameter DICAD0 bound to: 12'b011111001001 
+	Parameter DICAD0H bound to: 12'b011111001100 
+	Parameter DICAGO bound to: 12'b011111001011 
+	Parameter MTSEL bound to: 12'b011110100000 
+	Parameter MTDATA1 bound to: 12'b011110100001 
+	Parameter MTDATA2 bound to: 12'b011110100010 
+	Parameter MHPME_NOEVENT bound to: 10'b0000000000 
+	Parameter MHPME_CLK_ACTIVE bound to: 10'b0000000001 
+	Parameter MHPME_ICACHE_HIT bound to: 10'b0000000010 
+	Parameter MHPME_ICACHE_MISS bound to: 10'b0000000011 
+	Parameter MHPME_INST_COMMIT bound to: 10'b0000000100 
+	Parameter MHPME_INST_COMMIT_16B bound to: 10'b0000000101 
+	Parameter MHPME_INST_COMMIT_32B bound to: 10'b0000000110 
+	Parameter MHPME_INST_ALIGNED bound to: 10'b0000000111 
+	Parameter MHPME_INST_DECODED bound to: 10'b0000001000 
+	Parameter MHPME_INST_MUL bound to: 10'b0000001001 
+	Parameter MHPME_INST_DIV bound to: 10'b0000001010 
+	Parameter MHPME_INST_LOAD bound to: 10'b0000001011 
+	Parameter MHPME_INST_STORE bound to: 10'b0000001100 
+	Parameter MHPME_INST_MALOAD bound to: 10'b0000001101 
+	Parameter MHPME_INST_MASTORE bound to: 10'b0000001110 
+	Parameter MHPME_INST_ALU bound to: 10'b0000001111 
+	Parameter MHPME_INST_CSRREAD bound to: 10'b0000010000 
+	Parameter MHPME_INST_CSRRW bound to: 10'b0000010001 
+	Parameter MHPME_INST_CSRWRITE bound to: 10'b0000010010 
+	Parameter MHPME_INST_EBREAK bound to: 10'b0000010011 
+	Parameter MHPME_INST_ECALL bound to: 10'b0000010100 
+	Parameter MHPME_INST_FENCE bound to: 10'b0000010101 
+	Parameter MHPME_INST_FENCEI bound to: 10'b0000010110 
+	Parameter MHPME_INST_MRET bound to: 10'b0000010111 
+	Parameter MHPME_INST_BRANCH bound to: 10'b0000011000 
+	Parameter MHPME_BRANCH_MP bound to: 10'b0000011001 
+	Parameter MHPME_BRANCH_TAKEN bound to: 10'b0000011010 
+	Parameter MHPME_BRANCH_NOTP bound to: 10'b0000011011 
+	Parameter MHPME_FETCH_STALL bound to: 10'b0000011100 
+	Parameter MHPME_DECODE_STALL bound to: 10'b0000011110 
+	Parameter MHPME_POSTSYNC_STALL bound to: 10'b0000011111 
+	Parameter MHPME_PRESYNC_STALL bound to: 10'b0000100000 
+	Parameter MHPME_LSU_SB_WB_STALL bound to: 10'b0000100010 
+	Parameter MHPME_DMA_DCCM_STALL bound to: 10'b0000100011 
+	Parameter MHPME_DMA_ICCM_STALL bound to: 10'b0000100100 
+	Parameter MHPME_EXC_TAKEN bound to: 10'b0000100101 
+	Parameter MHPME_TIMER_INT_TAKEN bound to: 10'b0000100110 
+	Parameter MHPME_EXT_INT_TAKEN bound to: 10'b0000100111 
+	Parameter MHPME_FLUSH_LOWER bound to: 10'b0000101000 
+	Parameter MHPME_BR_ERROR bound to: 10'b0000101001 
+	Parameter MHPME_IBUS_TRANS bound to: 10'b0000101010 
+	Parameter MHPME_DBUS_TRANS bound to: 10'b0000101011 
+	Parameter MHPME_DBUS_MA_TRANS bound to: 10'b0000101100 
+	Parameter MHPME_IBUS_ERROR bound to: 10'b0000101101 
+	Parameter MHPME_DBUS_ERROR bound to: 10'b0000101110 
+	Parameter MHPME_IBUS_STALL bound to: 10'b0000101111 
+	Parameter MHPME_DBUS_STALL bound to: 10'b0000110000 
+	Parameter MHPME_INT_DISABLED bound to: 10'b0000110001 
+	Parameter MHPME_INT_STALLED bound to: 10'b0000110010 
+	Parameter MHPME_INST_BITMANIP bound to: 10'b0000110110 
+	Parameter MHPME_DBUS_LOAD bound to: 10'b0000110111 
+	Parameter MHPME_DBUS_STORE bound to: 10'b0000111000 
+	Parameter MHPME_SLEEP_CYC bound to: 10'b1000000000 
+	Parameter MHPME_DMA_READ_ALL bound to: 10'b1000000001 
+	Parameter MHPME_DMA_WRITE_ALL bound to: 10'b1000000010 
+	Parameter MHPME_DMA_READ_DCCM bound to: 10'b1000000011 
+	Parameter MHPME_DMA_WRITE_DCCM bound to: 10'b1000000100 
+	Parameter MHPMC3 bound to: 12'b101100000011 
+	Parameter MHPMC3H bound to: 12'b101110000011 
+	Parameter MHPMC4 bound to: 12'b101100000100 
+	Parameter MHPMC4H bound to: 12'b101110000100 
+	Parameter MHPMC5 bound to: 12'b101100000101 
+	Parameter MHPMC5H bound to: 12'b101110000101 
+	Parameter MHPMC6 bound to: 12'b101100000110 
+	Parameter MHPMC6H bound to: 12'b101110000110 
+	Parameter MHPME3 bound to: 12'b001100100011 
+	Parameter MHPME4 bound to: 12'b001100100100 
+	Parameter MHPME5 bound to: 12'b001100100101 
+	Parameter MHPME6 bound to: 12'b001100100110 
+	Parameter MCOUNTINHIBIT bound to: 12'b001100100000 
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+	Parameter WIDTH bound to: 27 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 27 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 27 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter MITCTL_ENABLE bound to: 0 - type: integer 
+	Parameter MITCTL_ENABLE_HALTED bound to: 1 - type: integer 
+	Parameter MITCTL_ENABLE_PAUSED bound to: 2 - type: integer 
+	Parameter MITCNT0 bound to: 12'b011111010010 
+	Parameter MITCNT1 bound to: 12'b011111010101 
+	Parameter MITB0 bound to: 12'b011111010011 
+	Parameter MITB1 bound to: 12'b011111010110 
+	Parameter MITCTL0 bound to: 12'b011111010100 
+	Parameter MITCTL1 bound to: 12'b011111010111 
+	Parameter WIDTH bound to: 24 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 7 - type: integer 
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 18 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 18 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 18 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 12 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 6 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 6 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 22 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 22 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 22 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 14 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 14 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 14 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 17 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 6 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter PREDPIPESIZE bound to: 21 - type: integer 
+	Parameter WIDTH bound to: 56 - type: integer 
+	Parameter RIGHT bound to: 31 - type: integer 
+	Parameter LEFT bound to: 25 - type: integer 
+	Parameter LMSB bound to: 55 - type: integer 
+	Parameter LLSB bound to: 31 - type: integer 
+	Parameter RMSB bound to: 30 - type: integer 
+	Parameter RLSB bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 56 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 56 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 21 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 21 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 21 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 12 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 12 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 12 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 57 - type: integer 
+	Parameter RIGHT bound to: 31 - type: integer 
+	Parameter LEFT bound to: 26 - type: integer 
+	Parameter LMSB bound to: 56 - type: integer 
+	Parameter LLSB bound to: 31 - type: integer 
+	Parameter RMSB bound to: 30 - type: integer 
+	Parameter RLSB bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 57 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 57 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 34 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 34 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 34 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 33 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 33 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 33 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 19 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 19 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 19 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+WARNING: [Synth 8-3848] Net exu_mp_pkt[br_error] in module/entity el2_exu does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/exu/el2_exu.sv:93]
+WARNING: [Synth 8-3848] Net exu_mp_pkt[br_start_error] in module/entity el2_exu does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/exu/el2_exu.sv:93]
+WARNING: [Synth 8-3848] Net exu_mp_pkt[prett] in module/entity el2_exu does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/exu/el2_exu.sv:93]
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 38 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 38 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 38 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter CCM_SADR bound to: 36'b000011110000000001000000000000000000 
+	Parameter CCM_SIZE bound to: 14'b00000001000000 
+	Parameter REGION_BITS bound to: 4 - type: integer 
+	Parameter MASK_BITS bound to: 16 - type: integer 
+	Parameter CCM_SADR bound to: 36'b000011110000000011000000000000000000 
+	Parameter CCM_SIZE bound to: 13'b0000000100000 
+	Parameter REGION_BITS bound to: 4 - type: integer 
+	Parameter MASK_BITS bound to: 15 - type: integer 
+	Parameter WIDTH bound to: 13 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 29 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 29 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 29 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter DCCM_WIDTH_BITS bound to: 2 - type: integer 
+	Parameter WIDTH bound to: 10'b0000100000 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 10'b0000100000 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 10'b0000100000 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9'b000010000 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9'b000010000 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9'b000010000 
+	Parameter SHORT bound to: 0 - type: integer 
+WARNING: [Synth 8-3848] Net dccm_rdata_hi_r in module/entity el2_lsu_dccm_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_dccm_ctl.sv:78]
+WARNING: [Synth 8-3848] Net dccm_rdata_lo_r in module/entity el2_lsu_dccm_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_dccm_ctl.sv:79]
+WARNING: [Synth 8-3848] Net dccm_data_ecc_hi_r in module/entity el2_lsu_dccm_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_dccm_ctl.sv:80]
+WARNING: [Synth 8-3848] Net dccm_data_ecc_lo_r in module/entity el2_lsu_dccm_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_dccm_ctl.sv:81]
+WARNING: [Synth 8-3848] Net lsu_ld_data_r in module/entity el2_lsu_dccm_ctl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_dccm_ctl.sv:82]
+	Parameter A bound to: 0 - type: integer 
+	Parameter DEPTH bound to: 8'b00000100 
+	Parameter DATA_WIDTH bound to: 10'b0000100000 
+	Parameter BYTE_WIDTH bound to: 7'b0000100 
+	Parameter DEPTH_LOG2 bound to: 2 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 7'b0000100 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 7'b0000100 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter DEPTH bound to: 9'b000000100 
+	Parameter DEPTH_LOG2 bound to: 7'b0000010 
+	Parameter TIMER bound to: 8 - type: integer 
+	Parameter TIMER_MAX bound to: 7 - type: integer 
+	Parameter TIMER_LOG2 bound to: 3 - type: integer 
+	Parameter WIDTH bound to: 9'b000000100 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+WARNING: [Synth 8-3936] Found unconnected internal register 'lsu_imprecise_error_store_tag_reg' and it is trimmed from '3' to '2' bits. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lsu/el2_lsu_bus_buffer.sv:881]
+	Parameter A bound to: 0 - type: integer 
+	Parameter NUM_LEVELS bound to: 5 - type: integer 
+	Parameter INTPRIORITY_BASE_ADDR bound to: 36'b000011110000000011000000000000000000 
+	Parameter INTPEND_BASE_ADDR bound to: 36'b000011110000000011000001000000000000 
+	Parameter INTENABLE_BASE_ADDR bound to: 36'b000011110000000011000010000000000000 
+	Parameter EXT_INTR_PIC_CONFIG bound to: 36'b000011110000000011000011000000000000 
+	Parameter EXT_INTR_GW_CONFIG bound to: 36'b000011110000000011000100000000000000 
+	Parameter EXT_INTR_GW_CLEAR bound to: 36'b000011110000000011000101000000000000 
+	Parameter INTPEND_SIZE bound to: 64 - type: integer 
+	Parameter INT_GRPS bound to: 2 - type: integer 
+	Parameter INTPRIORITY_BITS bound to: 4 - type: integer 
+	Parameter ID_BITS bound to: 8 - type: integer 
+	Parameter GW_CONFIG bound to: 1024'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INT_ENABLE_GRPS bound to: 7 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter ID_BITS bound to: 8 - type: integer 
+	Parameter INTPRIORITY_BITS bound to: 4 - type: integer 
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[0].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[1].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[2].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[3].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[4].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[5].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[6].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+WARNING: [Synth 8-3848] Net IO_CLK_GRP[7].grp_clk in module/entity el2_pic_ctrl does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:227]
+	Parameter A bound to: 0 - type: integer 
+	Parameter DEPTH bound to: 7'b0000101 
+	Parameter DEPTH_PTR bound to: 3 - type: integer 
+	Parameter NACK_COUNT bound to: 7 - type: integer 
+	Parameter WIDTH bound to: 2 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8'b00000001 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8'b00000001 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9'b000000001 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9'b000000001 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 6'b000010 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 6'b000010 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8'b00000001 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+WARNING: [Synth 8-3848] Net haddr in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:313]
+WARNING: [Synth 8-3848] Net hburst in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:314]
+WARNING: [Synth 8-3848] Net hmastlock in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:315]
+WARNING: [Synth 8-3848] Net hprot in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:316]
+WARNING: [Synth 8-3848] Net hsize in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:317]
+WARNING: [Synth 8-3848] Net htrans in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:318]
+WARNING: [Synth 8-3848] Net hwrite in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:319]
+WARNING: [Synth 8-3848] Net lsu_haddr in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:326]
+WARNING: [Synth 8-3848] Net lsu_hburst in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:327]
+WARNING: [Synth 8-3848] Net lsu_hmastlock in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:328]
+WARNING: [Synth 8-3848] Net lsu_hprot in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:329]
+WARNING: [Synth 8-3848] Net lsu_hsize in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:330]
+WARNING: [Synth 8-3848] Net lsu_htrans in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:331]
+WARNING: [Synth 8-3848] Net lsu_hwrite in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:332]
+WARNING: [Synth 8-3848] Net lsu_hwdata in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:333]
+WARNING: [Synth 8-3848] Net sb_haddr in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:341]
+WARNING: [Synth 8-3848] Net sb_hburst in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:342]
+WARNING: [Synth 8-3848] Net sb_hmastlock in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:343]
+WARNING: [Synth 8-3848] Net sb_hprot in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:344]
+WARNING: [Synth 8-3848] Net sb_hsize in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:345]
+WARNING: [Synth 8-3848] Net sb_htrans in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:346]
+WARNING: [Synth 8-3848] Net sb_hwrite in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:347]
+WARNING: [Synth 8-3848] Net sb_hwdata in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:348]
+WARNING: [Synth 8-3848] Net dma_hrdata in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:366]
+WARNING: [Synth 8-3848] Net dma_hreadyout in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:367]
+WARNING: [Synth 8-3848] Net dma_hresp in module/entity el2_swerv does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv.sv:368]
+	Parameter A bound to: 0 - type: integer 
+	Parameter EXTERNAL_MEM_RANGE_low bound to: 2147483647 - type: integer 
+	Parameter EXTERNAL_MEM_RANGE_high bound to: -1 - type: integer 
+	Parameter BRIDGE_RANGE_low bound to: 536870912 - type: integer 
+	Parameter BRIDGE_RANGE_high bound to: -2147483648 - type: integer 
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arready_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:466]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_rid_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:467]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_rdata_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:468]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_rresp_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:469]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_rlast_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:470]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_rvalid_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:471]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_bresp_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:472]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_bid_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:473]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awready_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:474]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wready_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:475]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_bvalid_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:476]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_rready_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:478]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arid_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:479]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_araddr_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:480]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arregion_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:481]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arlen_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:482]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arsize_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:483]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arburst_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:484]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arlock_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:485]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arcache_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:486]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arprot_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:487]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arqos_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:488]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arvalid_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:489]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awvalid_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:490]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awid_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:491]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awaddr_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:492]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awregion_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:493]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awlen_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:494]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awsize_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:495]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awburst_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:496]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awlock_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:497]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awcache_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:498]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awprot_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:499]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awqos_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:500]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wvalid_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:501]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wdata_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:502]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wstrb_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:503]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wlast_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:504]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_bready_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:505]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_rready_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:528]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arid_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:529]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_araddr_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:530]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arregion_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:531]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arlen_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:532]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arsize_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:533]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arburst_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:534]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arlock_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:535]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arcache_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:536]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arprot_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:537]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arqos_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:538]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_arvalid_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:539]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awvalid_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:540]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awid_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:541]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awaddr_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:542]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awregion_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:543]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awlen_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:544]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awsize_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:545]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awburst_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:546]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awlock_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:547]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awcache_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:548]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awprot_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:549]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_awqos_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:550]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wvalid_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:551]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wdata_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:552]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wstrb_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:553]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_wlast_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:554]
+WARNING: [Synth 8-87] always_comb on 'lsu_axi_bready_B_o_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:555]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_rid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:666]
+	Parameter AXI4_ADDRESS_WIDTH bound to: 32'b00000000000000000000000000100000 
+	Parameter AXI4_RDATA_WIDTH bound to: 32'b00000000000000000000000001000000 
+	Parameter AXI4_WDATA_WIDTH bound to: 32'b00000000000000000000000001000000 
+	Parameter AXI4_ID_WIDTH bound to: 32'b00000000000000000000000000010000 
+	Parameter AXI4_USER_WIDTH bound to: 32'b00000000000000000000000000001010 
+	Parameter AXI_NUMBYTES bound to: 32'b00000000000000000000000000001000 
+	Parameter BUFF_DEPTH_SLAVE bound to: 32'b00000000000000000000000000000100 
+	Parameter APB_NUM_SLAVES bound to: 32'b00000000000000000000000000001000 
+	Parameter APB_ADDR_WIDTH bound to: 32'b00000000000000000000000000001100 
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter USER_WIDTH bound to: 32'sb00000000000000000000000000001010 
+	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000001010111 
+	Parameter FALL_THROUGH bound to: 1'b0 
+	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000001010111 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000000100 
+	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000010 
+	Parameter FifoDepth bound to: 32'b00000000000000000000000000000100 
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter ADDR_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter USER_WIDTH bound to: 32'sb00000000000000000000000000001010 
+	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000001000000 
+	Parameter USER_WIDTH bound to: 32'sb00000000000000000000000000001010 
+	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter STRB_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000001010011 
+	Parameter FALL_THROUGH bound to: 1'b0 
+	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000001010011 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000000100 
+	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000010 
+	Parameter FifoDepth bound to: 32'b00000000000000000000000000000100 
+	Parameter ID_WIDTH bound to: 16 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter USER_WIDTH bound to: 10 - type: integer 
+	Parameter BUFFER_DEPTH bound to: 4 - type: integer 
+	Parameter STRB_WIDTH bound to: 8 - type: integer 
+	Parameter BUFFER_DEPTH bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000001011101 
+	Parameter FALL_THROUGH bound to: 1'b0 
+	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000001011101 
+	Parameter DEPTH bound to: 4 - type: integer 
+	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000010 
+	Parameter FifoDepth bound to: 4 - type: integer 
+	Parameter ID_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter USER_WIDTH bound to: 32'sb00000000000000000000000000001010 
+	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000100 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000011100 
+	Parameter FALL_THROUGH bound to: 1'b0 
+	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000011100 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000000100 
+	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000010 
+	Parameter FifoDepth bound to: 32'b00000000000000000000000000000100 
+	Parameter INIT bound to: 3'b000 
+	Parameter PORT1 bound to: 3'b001 
+	Parameter PORT2 bound to: 3'b010 
+	Parameter PORT3 bound to: 3'b011 
+	Parameter PORT4 bound to: 3'b100 
+	Parameter PORT5 bound to: 3'b101 
+	Parameter PORT6 bound to: 3'b110 
+	Parameter IDLE bound to: 3'b000 
+	Parameter SETUP bound to: 3'b001 
+	Parameter ACCESS bound to: 3'b010 
+	Parameter WAIT bound to: 3'b101 
+WARNING: [Synth 8-87] always_comb on 'psel1_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:56]
+WARNING: [Synth 8-87] always_comb on 'psel2_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:57]
+WARNING: [Synth 8-87] always_comb on 'psel3_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:58]
+WARNING: [Synth 8-87] always_comb on 'psel4_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:59]
+WARNING: [Synth 8-87] always_comb on 'psel5_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:60]
+WARNING: [Synth 8-87] always_comb on 'psel6_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:61]
+WARNING: [Synth 8-87] always_comb on 'addr_out5_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:84]
+WARNING: [Synth 8-87] always_comb on 'addr_out6_reg' did not result in combinational logic [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:85]
+	Parameter BUFFER_DEPTH bound to: 10 - type: integer 
+	Parameter APB_ADDR_WIDTH bound to: 12 - type: integer 
+	Parameter LOG_BUFFER_DEPTH bound to: 4 - type: integer 
+	Parameter FILL_BITS bound to: 3 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_spi_master.sv:213]
+	Parameter BUFFER_DEPTH bound to: 10 - type: integer 
+	Parameter APB_ADDR_WIDTH bound to: 12 - type: integer 
+	Parameter LOG_BUFFER_DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/spi_master_apb_if.sv:119]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter BUFFER_DEPTH bound to: 10 - type: integer 
+	Parameter LOG_BUFFER_DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/spi_master_controller.sv:156]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/spi_master_controller.sv:209]
+WARNING: [Synth 8-6014] Unused sequential element do_tx_reg was removed.  [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/spi_master_controller.sv:525]
+	Parameter APB_ADDR_WIDTH bound to: 12 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/timer.sv:92]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/timer.sv:116]
+	Parameter adr_ctrl_1 bound to: 0 - type: integer 
+	Parameter adr_divisor_1 bound to: 4 - type: integer 
+	Parameter adr_period_1 bound to: 8 - type: integer 
+	Parameter adr_DC_1 bound to: 12 - type: integer 
+	Parameter adr_ctrl_2 bound to: 16 - type: integer 
+	Parameter adr_divisor_2 bound to: 20 - type: integer 
+	Parameter adr_period_2 bound to: 24 - type: integer 
+	Parameter adr_DC_2 bound to: 28 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/pwm.sv:56]
+WARNING: [Synth 8-689] width (12) of port connection 'addr_i' does not match port width (8) of module 'pwm' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:902]
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter DCCM_WIDTH_BITS bound to: 2 - type: integer 
+	Parameter DCCM_INDEX_BITS bound to: 9'b000001100 
+	Parameter DCCM_INDEX_DEPTH bound to: 4096 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter PAD_BITS bound to: 2 - type: integer 
+	Parameter WIDTH bound to: 52 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 52 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 52 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8'b00000010 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 8'b00000010 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 19 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 19 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 19 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 28 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 28 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 28 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 142 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter OVERRIDE bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 142 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 142 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter OVERRIDE bound to: 1 - type: integer 
+	Parameter A bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 14 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 14 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 39 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 39 - type: integer 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9'b000000011 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 9'b000000011 
+	Parameter SHORT bound to: 0 - type: integer 
+	Parameter AWIDTH bound to: 7 - type: integer 
+	Parameter USER_DR_LENGTH bound to: 41 - type: integer 
+	Parameter TEST_LOGIC_RESET_STATE bound to: 0 - type: integer 
+	Parameter RUN_TEST_IDLE_STATE bound to: 1 - type: integer 
+	Parameter SELECT_DR_SCAN_STATE bound to: 2 - type: integer 
+	Parameter CAPTURE_DR_STATE bound to: 3 - type: integer 
+	Parameter SHIFT_DR_STATE bound to: 4 - type: integer 
+	Parameter EXIT1_DR_STATE bound to: 5 - type: integer 
+	Parameter PAUSE_DR_STATE bound to: 6 - type: integer 
+	Parameter EXIT2_DR_STATE bound to: 7 - type: integer 
+	Parameter UPDATE_DR_STATE bound to: 8 - type: integer 
+	Parameter SELECT_IR_SCAN_STATE bound to: 9 - type: integer 
+	Parameter CAPTURE_IR_STATE bound to: 10 - type: integer 
+	Parameter SHIFT_IR_STATE bound to: 11 - type: integer 
+	Parameter EXIT1_IR_STATE bound to: 12 - type: integer 
+	Parameter PAUSE_IR_STATE bound to: 13 - type: integer 
+	Parameter EXIT2_IR_STATE bound to: 14 - type: integer 
+	Parameter UPDATE_IR_STATE bound to: 15 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dmi/rvjtag_tap.v:95]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dmi/rvjtag_tap.v:177]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/dmi/rvjtag_tap.v:165]
+WARNING: [Synth 8-3848] Net PSLVERR_3 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:740]
+WARNING: [Synth 8-3848] Net PSLVERR_4 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:740]
+WARNING: [Synth 8-3848] Net PSLVERR_6 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:740]
+WARNING: [Synth 8-3848] Net PREADY_3 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:741]
+WARNING: [Synth 8-3848] Net PREADY_4 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:741]
+WARNING: [Synth 8-3848] Net PREADY_6 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:741]
+WARNING: [Synth 8-3848] Net rd_data3 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:739]
+WARNING: [Synth 8-3848] Net rd_data4 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:739]
+WARNING: [Synth 8-3848] Net rd_data6 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:739]
+WARNING: [Synth 8-3848] Net spi_sdi0 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:801]
+WARNING: [Synth 8-3848] Net spi_sdi1 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:802]
+WARNING: [Synth 8-3848] Net spi_sdi2 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:803]
+WARNING: [Synth 8-3848] Net spi_sdi3 in module/entity el2_swerv_wrapper does not have driver. [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:804]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:449]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:451]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awaddr' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:452]
+CRITICAL WARNING: [Synth 8-5972] variable 'TIMER_irq_o' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:453]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awregion' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:454]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awlen' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:455]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awsize' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:456]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awburst' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:457]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awlock' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:458]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awcache' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:459]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awprot' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:460]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_awqos' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:461]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_wvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:463]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_wdata' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:465]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_wstrb' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:466]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_wlast' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:467]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_bready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:470]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:475]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:477]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_araddr' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:478]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arregion' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:479]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arlen' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:480]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arsize' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:481]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arburst' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:482]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arlock' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:483]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arcache' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:484]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arprot' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:485]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_arqos' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:486]
+CRITICAL WARNING: [Synth 8-5972] variable 'lsu_axi_rready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:489]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:497]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:499]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awaddr' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:500]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awregion' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:501]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awlen' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:502]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awsize' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:503]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awburst' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:504]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awlock' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:505]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awcache' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:506]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awprot' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:507]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_awqos' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:508]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_wvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:510]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_wdata' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:512]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_wstrb' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:513]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_wlast' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:514]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_bready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:517]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:521]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:523]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_araddr' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:524]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arregion' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:525]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arlen' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:526]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arsize' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:527]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arburst' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:528]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arlock' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:529]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arcache' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:530]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arprot' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:531]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_arqos' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:532]
+CRITICAL WARNING: [Synth 8-5972] variable 'ifu_axi_rready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:535]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:543]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:545]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awaddr' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:546]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awregion' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:547]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awlen' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:548]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awsize' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:549]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awburst' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:550]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awlock' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:551]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awcache' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:552]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awprot' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:553]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_awqos' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:554]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_wvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:556]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_wdata' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:558]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_wstrb' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:559]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_wlast' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:560]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_bready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:563]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:568]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:570]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_araddr' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:571]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arregion' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:572]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arlen' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:573]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arsize' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:574]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arburst' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:575]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arlock' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:576]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arcache' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:577]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arprot' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:578]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_arqos' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:579]
+CRITICAL WARNING: [Synth 8-5972] variable 'sb_axi_rready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:582]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_awready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:592]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_wready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:602]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_bvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:607]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_bresp' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:609]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_arready' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:614]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_rvalid' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:622]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_rdata' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:625]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_rresp' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:626]
+CRITICAL WARNING: [Synth 8-5972] variable 'dma_axi_rlast' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:627]
+CRITICAL WARNING: [Synth 8-5972] variable 'mpc_debug_halt_ack' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:649]
+CRITICAL WARNING: [Synth 8-5972] variable 'mpc_debug_run_ack' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:651]
+CRITICAL WARNING: [Synth 8-5972] variable 'debug_brkpt_status' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:654]
+CRITICAL WARNING: [Synth 8-5972] variable 'o_cpu_halt_ack' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:657]
+CRITICAL WARNING: [Synth 8-5972] variable 'o_cpu_halt_status' cannot be written by both continuous and procedural assignments [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:658]
+INFO: [Common 17-14] Message 'Synth 8-5972' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter TAGW bound to: 3 - type: integer 
+	Parameter MAILBOX_ADDR bound to: -799539200 - type: integer 
+	Parameter MEM_SIZE_DW bound to: 8192 - type: integer 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'program.mem'; please make sure the file is added to project and has read permission, ignoring [/home/rehan/project_12/project_12.srcs/sources_1/imports/testbench/ahb_sif.sv:43]
+WARNING: [Synth 8-5788] Register bid_reg in module axi_slv is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/rehan/project_12/project_12.srcs/sources_1/imports/testbench/ahb_sif.sv:59]
+WARNING: [Synth 8-5788] Register rid_reg in module axi_slv is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/rehan/project_12/project_12.srcs/sources_1/imports/testbench/ahb_sif.sv:60]
+WARNING: [Synth 8-5788] Register rdata_reg in module axi_slv is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/rehan/project_12/project_12.srcs/sources_1/imports/testbench/ahb_sif.sv:63]
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM dissolved into registers
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM dissolved into registers
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-840] conflicting parameter overrides for parameter 'TAGW' [/home/rehan/project_12/project_12.srcs/sources_1/new/ReV-SoC_top_FPGA.sv:719]
+	Parameter M_ID_WIDTH bound to: 3 - type: integer 
+	Parameter S0_ID_WIDTH bound to: 3 - type: integer 
+	Parameter ICCM_BASE bound to: 16 - type: integer 
+	Parameter IDFIFOSZ bound to: 3 - type: integer 
+WARNING: [Synth 8-5788] Register wsel_reg in module axi_lsu_dma_bridge is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/rehan/project_12/project_12.srcs/sources_1/imports/testbench/axi_lsu_dma_bridge.sv:128]
+WARNING: [Synth 8-5788] Register arid_reg in module axi_lsu_dma_bridge is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-5788] Register awid_reg in module axi_lsu_dma_bridge is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'arid_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "arid_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'awid_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "awid_reg" dissolved into registers
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[15]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[14]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[13]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[12]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[11]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[10]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[9]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[8]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[7]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[6]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[5]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[4]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[3]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[2]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[1]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_araddr[0]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[15]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[14]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[13]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[12]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[11]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[10]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[9]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[8]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[7]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[6]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[5]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[4]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[3]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[2]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[1]
+WARNING: [Synth 8-3331] design axi_lsu_dma_bridge has unconnected port m_awaddr[0]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[7]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[6]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[5]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[4]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[3]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[2]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[1]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arlen[0]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arburst[1]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arburst[0]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arsize[2]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arsize[1]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port arsize[0]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port rready
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[7]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[6]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[5]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[4]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[3]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[2]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[1]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awlen[0]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awburst[1]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awburst[0]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awsize[2]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awsize[1]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port awsize[0]
+WARNING: [Synth 8-3331] design axi_slv has unconnected port wvalid
+WARNING: [Synth 8-3331] design axi_slv has unconnected port bready
+WARNING: [Synth 8-3331] design rvoclkhdr has unconnected port en
+WARNING: [Synth 8-3331] design rvoclkhdr has unconnected port scan_mode
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port TEST1
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port RME
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port RM[3]
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port RM[2]
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port RM[1]
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port RM[0]
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port LS
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port DS
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port SD
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port TEST_RNM
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port BC1
+WARNING: [Synth 8-3331] design ram_4096x39 has unconnected port BC2
+WARNING: [Synth 8-3331] design el2_ifu_iccm_mem has unconnected port iccm_wr_size[2]
+WARNING: [Synth 8-3331] design el2_ifu_iccm_mem has unconnected port scan_mode
+WARNING: [Synth 8-3331] design rvdffe__parameterized30 has unconnected port scan_mode
+WARNING: [Synth 8-3331] design rvdffe__parameterized29 has unconnected port scan_mode
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port TEST1
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port RME
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port RM[3]
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port RM[2]
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port RM[1]
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port RM[0]
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port LS
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port DS
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port SD
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port TEST_RNM
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port BC1
+WARNING: [Synth 8-3331] design ram_be_512x142 has unconnected port BC2
+WARNING: [Synth 8-3331] design rvdffie__parameterized16 has unconnected port scan_mode
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][TEST1]
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][RME]
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][RM][3]
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][RM][2]
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][RM][1]
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][RM][0]
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][LS]
+WARNING: [Synth 8-3331] design EL2_IC_DATA has unconnected port ic_data_ext_in_pkt[1][1][DS]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:03:30 ; elapsed = 00:03:52 . Memory (MB): peak = 3760.129 ; gain = 2512.875 ; free physical = 1070 ; free virtual = 7144
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin bpred.bp:ifc_fetch_req_f to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/ifu/el2_ifu.sv:250]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[0].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[0].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[0].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[1].GW[0].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[1].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[1].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[1].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[2].GW[0].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[2].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[2].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[2].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[3].GW[0].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[3].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[3].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[3].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[4].GW[0].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[4].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[4].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[4].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[5].GW[0].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[5].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[5].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[5].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[6].GW[0].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[6].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[6].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[6].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[7].GW[0].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[7].GW[1].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[7].GW[2].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin IO_CLK_GRP[7].GW[3].gw_inst:gw_clk to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_pic_ctrl.sv:238]
+WARNING: [Synth 8-3295] tying undriven pin bridge:test_en_i to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[9] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[8] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[7] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[6] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[5] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[4] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[3] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[2] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[1] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:AWUSER_i[0] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[9] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[8] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[7] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[6] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[5] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[4] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[3] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[2] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[1] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:WUSER_i[0] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[9] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[8] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[7] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[6] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[5] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[4] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[3] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[2] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[1] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin bridge:ARUSER_i[0] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:681]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:PSLVERR_3 to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:PSLVERR_4 to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:PSLVERR_6 to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:PREADY_3 to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:PREADY_4 to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:PREADY_6 to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[31] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[30] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[29] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[28] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[27] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[26] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[25] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[24] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[23] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[22] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[21] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[20] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[19] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[18] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[17] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[16] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[15] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[14] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[13] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[12] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[11] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[10] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[9] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[8] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[7] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[6] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[5] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[4] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[3] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[2] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+WARNING: [Synth 8-3295] tying undriven pin apb_interconnect:rd_data3[1] to constant 0 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/design/el2_swerv_wrapper.sv:754]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:19 ; elapsed = 00:04:43 . Memory (MB): peak = 3760.129 ; gain = 2512.875 ; free physical = 1302 ; free virtual = 7402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:19 ; elapsed = 00:04:43 . Memory (MB): peak = 3760.129 ; gain = 2512.875 ; free physical = 1302 ; free virtual = 7402
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/rehan/project_12/project_12.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_gen'
+Finished Parsing XDC File [/home/rehan/project_12/project_12.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_gen'
+Parsing XDC File [/home/rehan/project_12/project_12.srcs/constrs_1/imports/new/Arty-A7_35.xdc]
+Finished Parsing XDC File [/home/rehan/project_12/project_12.srcs/constrs_1/imports/new/Arty-A7_35.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rehan/project_12/project_12.srcs/constrs_1/imports/new/Arty-A7_35.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ReV_SoC_top_FPGA_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/ReV_SoC_top_FPGA_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.21 . Memory (MB): peak = 5660.137 ; gain = 0.000 ; free physical = 124 ; free virtual = 4643
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:07:55 ; elapsed = 00:07:43 . Memory (MB): peak = 5660.137 ; gain = 4412.883 ; free physical = 2206 ; free virtual = 6793
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+INFO: [Synth 8-5544] ROM "dbg_nxtstate2" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "abstractcs_busy_din" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dbg_nxtstate0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dbg_nxtstate1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dbg_nxtstate0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dbg_nxtstate0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sb_nxtstate0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sb_nxtstate0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sb_nxtstate0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sbcs_sbbusy_din" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sb_abmem_cmd_done_in" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sbcs_sberror_din0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sb_nxtstate1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/exu/el2_exu_mul_ctl.sv:184]
+INFO: [Synth 8-5546] ROM "mask" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mask" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "maxint0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[2]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[0]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[2]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[0]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[2]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[0]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[2]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_n_reg[0]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi2apb_64_32.sv:723]
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'axi2apb_64_32'
+INFO: [Synth 8-5546] ROM "BVALID" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ARREADY" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "read_req" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "W_word_sel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "decr_ARLEN" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sample_AW" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "sample_RDATA_0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sample_RDATA_1" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "incr_ARADDR" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RVALID" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NS" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_clk_div_valid" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_cmd" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_addr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_cmd_len" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_dummy_rd" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_csreg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_int_th_tx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/spi_master_fifo.sv:63]
+INFO: [Synth 8-5544] ROM "buffer_reg[9]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[8]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "buffer_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'rx_CS_reg' in module 'spi_master_rx'
+INFO: [Synth 8-5544] ROM "rx_NS" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'spi_master_controller'
+INFO: [Synth 8-5546] ROM "en_quad_int" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "spi_status" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_tx_reg' in module 'apb_spi_master'
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_rx_reg' in module 'apb_spi_master'
+INFO: [Synth 8-5544] ROM "s_int_tx" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_int_rx" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "irq_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "ctrl" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ctrl_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "period" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "period_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "divisor" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "divisor_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DC_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DC_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "addr_incr0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awready_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:474]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wready_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:475]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_bvalid_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:476]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_bresp_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:472]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_bid_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:473]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arready_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:466]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_rvalid_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:471]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_rid_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:467]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_rdata_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:468]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_rresp_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:469]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_rlast_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:470]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_rready_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:478]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arid_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:479]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_araddr_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:480]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arregion_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:481]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arlen_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:482]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arsize_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:483]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arburst_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:484]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arlock_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:485]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arcache_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:486]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arprot_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:487]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arqos_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:488]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arvalid_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:489]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awvalid_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:490]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awid_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:491]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awaddr_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:492]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awregion_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:493]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awlen_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:494]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awsize_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:495]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awburst_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:496]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awlock_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:497]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awcache_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:498]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awprot_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:499]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awqos_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:500]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wvalid_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:501]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wdata_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:502]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wstrb_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:503]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wlast_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:504]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_bready_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:505]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_rready_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:528]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arid_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:529]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_araddr_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:530]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arregion_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:531]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arlen_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:532]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arsize_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:533]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arburst_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:534]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arlock_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:535]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arcache_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:536]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arprot_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:537]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arqos_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:538]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_arvalid_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:539]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awvalid_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:540]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awid_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:541]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awaddr_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:542]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awregion_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:543]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awlen_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:544]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awsize_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:545]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awburst_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:546]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awlock_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:547]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awcache_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:548]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awprot_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:549]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_awqos_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:550]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wvalid_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:551]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wdata_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:552]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wstrb_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:553]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_wlast_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:554]
+WARNING: [Synth 8-327] inferring latch for variable 'lsu_axi_bready_B_o_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/axi_interconnect.sv:555]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0000 |                             0000
+           WAIT_R_PREADY |                             0001 |                             1010
+            SINGLE_RD_64 |                             0010 |                             0010
+               SINGLE_RD |                             0011 |                             0001
+             BURST_RD_64 |                             0100 |                             0101
+                BURST_RD |                             0101 |                             0100
+              BURST_RD_1 |                             0110 |                             0011
+           WAIT_W_PREADY |                             0111 |                             1011
+            SINGLE_WR_64 |                             1000 |                             1001
+               SINGLE_WR |                             1001 |                             1000
+             BURST_WR_64 |                             1010 |                             0111
+                BURST_WR |                             1011 |                             0110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'sequential' in module 'axi2apb_64_32'
+WARNING: [Synth 8-327] inferring latch for variable 'addr_out5_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:84]
+WARNING: [Synth 8-327] inferring latch for variable 'addr_out6_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:85]
+WARNING: [Synth 8-327] inferring latch for variable 'psel1_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:56]
+WARNING: [Synth 8-327] inferring latch for variable 'psel2_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:57]
+WARNING: [Synth 8-327] inferring latch for variable 'psel3_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:58]
+WARNING: [Synth 8-327] inferring latch for variable 'psel4_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:59]
+WARNING: [Synth 8-327] inferring latch for variable 'psel5_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:60]
+WARNING: [Synth 8-327] inferring latch for variable 'psel6_reg' [/home/rehan/project_12/project_12.srcs/sources_1/imports/imports/lib/apb_interconnect.sv:61]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                 RECEIVE |                               01 |                               01
+          WAIT_FIFO_DONE |                               10 |                               11
+               WAIT_FIFO |                               11 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rx_CS_reg' using encoding 'sequential' in module 'spi_master_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                            00000
+                     CMD |                              001 |                            00001
+                    ADDR |                              010 |                            00010
+                   DUMMY |                              011 |                            00100
+                 DATA_RX |                              100 |                            00110
+               WAIT_EDGE |                              101 |                            00111
+                 DATA_TX |                              110 |                            00101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'spi_master_controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+           INT_RX_ACTIVE |                              001 |                               00
+              GEN_INT_RX |                              010 |                               01
+         INT_RX_INACTIVE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_state_rx_reg' using encoding 'one-hot' in module 'apb_spi_master'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+           INT_TX_ACTIVE |                              001 |                               00
+              GEN_INT_TX |                              010 |                               01
+         INT_TX_INACTIVE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_state_tx_reg' using encoding 'one-hot' in module 'apb_spi_master'
