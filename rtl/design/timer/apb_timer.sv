@@ -33,11 +33,10 @@ module apb_timer
   output logic               [31:0] PRDATA=0,
   output logic                      PREADY,
   output logic                      PSLVERR=0,
-
   output logic                 irq_o //  cmp interrupt
-    );
-  
-  // Wires to connect wicth the peripheral
+  );
+
+    // Wires to connect wicth the peripheral
    
     logic [APB_ADDR_WIDTH-1:0] PADDR_p;
     logic               [31:0] PWDATA_p;
@@ -48,35 +47,28 @@ module apb_timer
 
 
     rv_timer #(
-        .AW(APB_ADDR_WIDTH),
-        .DW(APB_DATA_WIDTH)
-        ) timer_instance (
-        .clk_i(HCLK),
-        .rst_ni(HRESETn),
-        .reg_we(PWRITE),
-        .reg_re(~PWRITE),
-        .reg_addr(PADDR_p),
-        .reg_wdata(PWDATA_p),
-        .reg_be(4'b1111),
-        .reg_rdata(PRDATA_p),
-        .reg_error(PSLVERR_p),
-        .intr_timer_expired_0_0_o(irq_o)
-        );
-   
+      .AW(APB_ADDR_WIDTH),
+      .DW(APB_DATA_WIDTH)
+    ) timer_instance (
+      .clk_i(HCLK),
+      .rst_ni(HRESETn),
+      .reg_we(PWRITE),
+      .reg_re(~PWRITE),
+      .reg_addr(PADDR_p),
+      .reg_wdata(PWDATA_p),
+      .reg_be(4'b1111),
+      .reg_rdata(PRDATA_p),
+      .reg_error(PSLVERR_p),
+      .intr_timer_expired_0_0_o(irq_o)
+    );
     assign PREADY =1'b1;
    
     always_comb begin
-     
-        if(PSEL == 1'b1 && PENABLE == 1'b1 )begin
-           
-            PADDR_p   = PADDR    ;
-            PWDATA_p  = PWDATA   ;
-            PRDATA    = PRDATA_p ;
-            PSLVERR   = PSLVERR_p;
-
-        end
-        
-    end
-   
-    
-endmodule
+      if(PSEL == 1'b1 && PENABLE == 1'b1 )begin
+        PADDR_p   = PADDR    ;
+        PWDATA_p  = PWDATA   ;
+        PRDATA    = PRDATA_p ;
+        PSLVERR   = PSLVERR_p;
+      end
+    end    
+  endmodule
