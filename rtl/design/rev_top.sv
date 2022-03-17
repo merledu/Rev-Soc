@@ -15,16 +15,16 @@
 //
 
 module rev_top ( // FPGA TOP
-input clk_in1,
-input logic rst//, porst, 
-//output logic rst_ind, porst_ind, 
-//output led_on1
- );
+    input clk_in1,
+    input logic rst//, porst, 
+    //output logic rst_ind, porst_ind, 
+    //output led_on1
+);
 
     logic                       core_clk;
     assign core_clk = clk_in1;  // Use for simulation
-//    assign rst_ind = rst;  // Use for FPGA
-//    assign porst_ind = porst; // Use for FPGA
+    //    assign rst_ind = rst;  // Use for FPGA
+    //    assign porst_ind = porst; // Use for FPGA
     logic                       rst_l;
     logic                       porst_l;
     logic                       nmi_int=0;
@@ -76,7 +76,6 @@ input logic rst//, porst,
     logic        [4:0]          trace_rv_i_ecause_ip;
     logic                       trace_rv_i_interrupt_ip;
     logic        [31:0]         trace_rv_i_tval_ip;
-
     logic                       o_debug_mode_status;
   //  assign led_on1 = trace_rv_i_valid_ip; // Use for FPGA
 
@@ -108,7 +107,7 @@ input logic rst//, porst,
     logic [4:0]                 wb_dest=0;
     logic [31:0]                wb_data=0;
 
-//`ifdef RV_BUILD_AXI4
+    //`ifdef RV_BUILD_AXI4
    //-------------------------- LSU AXI signals--------------------------
    // AXI Write Channels
     wire                        lsu_axi_awvalid;
@@ -311,19 +310,19 @@ input logic rst//, porst,
     wire [`RV_LSU_BUS_TAG-1:0]  lmem_axi_bid;
     wire                        lmem_axi_bready;
 
-//`endif
-    wire[63:0] WriteData;
-//    string                      abi_reg[32]; // ABI register names
+    //`endif
+        wire[63:0] WriteData;
+    //    string                      abi_reg[32]; // ABI register names
 
-//`define DEC rvtop.swerv.dec
+    //`define DEC rvtop.swerv.dec
 
-   // assign mailbox_write = lmem.mailbox_write;
-//    assign WriteData = lmem.WriteData;
-//    assign mailbox_data_val = WriteData[7:0] > 8'h5 && WriteData[7:0] < 8'h7f;
+    // assign mailbox_write = lmem.mailbox_write;
+    //    assign WriteData = lmem.WriteData;
+    //    assign mailbox_data_val = WriteData[7:0] > 8'h5 && WriteData[7:0] < 8'h7f;
 
-//    parameter MAX_CYCLES = 2_000_000;
+    //    parameter MAX_CYCLES = 2_000_000;
 
-//    integer fd, tp, el;
+    //    integer fd, tp, el;
 
     always @(negedge core_clk) begin
         cycleCnt <= cycleCnt+1;
@@ -331,23 +330,23 @@ input logic rst//, porst,
     end
 
 
-//    assign rst_l = cycleCnt > 5;
+    //    assign rst_l = cycleCnt > 5;
     assign porst_l = rst_l; // Use for simulation
     assign rst_l   = ~rst;
-//    assign porst_l = ~porst; // Use for FPGA
+    //    assign porst_l = ~porst; // Use for FPGA
     
-    
-//    clk_wiz_0 clk_gen   // Use for FPGA 
-//     (
-//      // Clock out ports
-//     .clk_out1(core_clk),
-//     // Clock in ports
-//     .clk_in1(clk_in1)
-//     );
+    // Use for FPGA
+    //    clk_wiz_0 clk_gen   // Use for FPGA 
+    //     (
+    //      // Clock out ports
+    //     .clk_out1(core_clk),
+    //     // Clock in ports
+    //     .clk_in1(clk_in1)
+    //     );
 
-   //=========================================================================-
-   // RTL instance
-   //=========================================================================-
+//=========================================================================-
+// RTL instance
+//=========================================================================-
 el2_swerv_wrapper rvtop (
     .rst_l                  ( rst_l         ),
     .dbg_rst_l              ( porst_l       ),
@@ -562,7 +561,7 @@ el2_swerv_wrapper rvtop (
     .mpc_debug_run_ack      ( mpc_debug_run_ack),
     .mpc_debug_run_req      ( 1'b1),
     .mpc_reset_run_req      ( 1'b1),             // Start running after reset
-     .debug_brkpt_status    (debug_brkpt_status),
+    .debug_brkpt_status    (debug_brkpt_status),
 
     .i_cpu_halt_req         ( 1'b0  ),    // Async halt req to CPU
     .o_cpu_halt_ack         ( o_cpu_halt_ack ),    // core response to halt
