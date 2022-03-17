@@ -260,9 +260,5 @@ module lexicon_timer_tb #(
         end
     
     endmodule
-
-
-
- 
  
  
