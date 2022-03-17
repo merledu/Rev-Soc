@@ -14,35 +14,35 @@ module apb_interconnect (
   output logic psel1,psel2,psel3,psel4,psel5,psel6,
   output logic ready_out,
   output logic [31:0] readdata,
-  output logic PSLVERR);
-  //  assign PSLVERR = 1'b0; // No Error
+  output logic PSLVERR
+  );
+    //  assign PSLVERR = 1'b0; // No Error
 
     logic [2:0] port,state,sel_port;
-    localparam [2:0] INIT = 3'b000,
-                   PORT1 = 3'b001,
-                   PORT2 = 3'b010,
-                   PORT3 = 3'b011,
-                   PORT4 = 3'b100,
-                   PORT5 = 3'b101,
-                   PORT6 = 3'b110;
+    localparam [2:0]  INIT = 3'b000,
+                      PORT1 = 3'b001,
+                      PORT2 = 3'b010,
+                      PORT3 = 3'b011,
+                      PORT4 = 3'b100,
+                      PORT5 = 3'b101,
+                      PORT6 = 3'b110;
                 
   
     localparam [2:0]  IDLE    = 3'b000,
-                    SETUP   = 3'b001,
-                    ACCESS  = 3'b010,
-                    WAIT    = 3'b101;
+                      SETUP   = 3'b001,
+                      ACCESS  = 3'b010,
+                      WAIT    = 3'b101;
     assign sel_port = {addr_in[15],addr_in[14],addr_in[13]};              
                       
     always_comb begin
-
       case (sel_port)
         INIT: begin
-          wr_out1 = 1'b0;
-          wr_out2 = 1'b0;
-          wr_out3 = 1'b0;
-          wr_out4 = 1'b0;
-          wr_out5 = 1'b0;
-          wr_out6 = 1'b0;
+          wr_out1   = 1'b0;
+          wr_out2   = 1'b0;
+          wr_out3   = 1'b0;
+          wr_out4   = 1'b0;
+          wr_out5   = 1'b0;
+          wr_out6   = 1'b0;
           addr_out1 = 20'd0;
           addr_out2 = 20'd0;
           addr_out3 = 20'd0;
@@ -73,12 +73,12 @@ module apb_interconnect (
         end
           
         PORT1: begin
-          wr_out1 = wr_in;
-          wr_out2 = 1'b0;
-          wr_out3 = 1'b0;
-          wr_out4 = 1'b0;
-          wr_out5 = 1'b0;
-          wr_out6 = 1'b0;
+          wr_out1   = wr_in;
+          wr_out2   = 1'b0;
+          wr_out3   = 1'b0;
+          wr_out4   = 1'b0;
+          wr_out5   = 1'b0;
+          wr_out6   = 1'b0;
           addr_out1 = {8'd0,addr_in[11:0]};
           addr_out2 = 12'd0;
           addr_out3 = 12'd0;
@@ -117,7 +117,7 @@ module apb_interconnect (
           wr_out5 = 1'b0;
           wr_out6 = 1'b0;
           addr_out1 = 12'd0;
-          addr_out2 = addr_in;
+          addr_out2 = {8'd0,addr_in[11:0]};
           addr_out3 = 12'd0;
           addr_out4 = 12'd0;
           addr_out5 = 12'd0;
@@ -154,7 +154,7 @@ module apb_interconnect (
           wr_out6 = 1'b0;
           addr_out1 = 12'd0;
           addr_out2 = 12'd0;
-          addr_out3 = addr_in;
+          addr_out3 = {8'd0,addr_in[11:0]};
           addr_out4 = 12'd0;
           addr_out5 = 12'd0;
           addr_out6 = 12'd0;
@@ -192,7 +192,7 @@ module apb_interconnect (
           addr_out1 = 12'd0;
           addr_out2 = 12'd0;
           addr_out3 = 12'd0;
-          addr_out4 = addr_in;
+          addr_out4 = {8'd0,addr_in[11:0]};
           addr_out5 = 12'd0;
           addr_out6 = 12'd0;
           data_out1 = 32'd0;
@@ -230,7 +230,7 @@ module apb_interconnect (
           addr_out2 = 12'd0;
           addr_out3 = 12'd0;
           addr_out4 = 12'd0;
-          addr_out5 = addr_in;
+          addr_out5 = {8'd0,addr_in[11:0]};
           addr_out6 = 12'd0;
           data_out1 = 32'd0;
           data_out2 = 32'd0;
@@ -268,7 +268,7 @@ module apb_interconnect (
           addr_out3 = 12'd0;
           addr_out4 = 12'd0;
           addr_out5 = 12'd0;
-          addr_out6 = addr_in;
+          addr_out6 = {8'd0,addr_in[11:0]};
           data_out1 = 32'd0;
           data_out2 = 32'd0;
           data_out3 = 32'd0;
@@ -323,16 +323,9 @@ module apb_interconnect (
           PENABLE_6 = 1'b0;
 
         end
-
       endcase
-
-    
     end
-
-  
-
-
-endmodule
+  endmodule
 
 //0010000000000000 0x2000
 //0100000000000000 0x4000
