@@ -26,25 +26,25 @@ import el2_pkg::*;
 parameter A=0
 )
 (
-   input logic                             clk,
-   input logic                             rst_l,
-   input logic                             dbg_rst_l,
-   input logic [31:1]                      rst_vec,
-   input logic                             nmi_int,
-   input logic [31:1]                      nmi_vec,
-   input logic [31:1]                      jtag_id,
+      input logic                             clk,
+      input logic                             rst_l,
+      input logic                             dbg_rst_l,
+      input logic [31:1]                      rst_vec,
+      input logic                             nmi_int,
+      input logic [31:1]                      nmi_vec,
+      input logic [31:1]                      jtag_id,
 
 
-   output logic [31:0]                     trace_rv_i_insn_ip,
-   output logic [31:0]                     trace_rv_i_address_ip,
-   output logic                            trace_rv_i_valid_ip,
-   output logic                            trace_rv_i_exception_ip,
-   output logic [4:0]                      trace_rv_i_ecause_ip,
-   output logic                            trace_rv_i_interrupt_ip,
-   output logic [31:0]                     trace_rv_i_tval_ip,
+      output logic [31:0]                     trace_rv_i_insn_ip,
+      output logic [31:0]                     trace_rv_i_address_ip,
+      output logic                            trace_rv_i_valid_ip,
+      output logic                            trace_rv_i_exception_ip,
+      output logic [4:0]                      trace_rv_i_ecause_ip,
+      output logic                            trace_rv_i_interrupt_ip,
+      output logic [31:0]                     trace_rv_i_tval_ip,
 
    // Bus signals
-`ifdef RV_BUILD_AXI4
+   `ifdef RV_BUILD_AXI4
    //-------------------------- LSU AXI signals--------------------------
    // AXI Write Channels
       output logic                            lsu_axi_awvalid_o,
@@ -94,203 +94,204 @@ parameter A=0
 
    //-------------------------- IFU AXI signals--------------------------
    // AXI Write Channels
-   output logic                            ifu_axi_awvalid,
-   input  logic                            ifu_axi_awready,
-   output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_awid,
-   output logic [31:0]                     ifu_axi_awaddr,
-   output logic [3:0]                      ifu_axi_awregion,
-   output logic [7:0]                      ifu_axi_awlen,
-   output logic [2:0]                      ifu_axi_awsize,
-   output logic [1:0]                      ifu_axi_awburst,
-   output logic                            ifu_axi_awlock,
-   output logic [3:0]                      ifu_axi_awcache,
-   output logic [2:0]                      ifu_axi_awprot,
-   output logic [3:0]                      ifu_axi_awqos,
+      output logic                            ifu_axi_awvalid,
+      input  logic                            ifu_axi_awready,
+      output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_awid,
+      output logic [31:0]                     ifu_axi_awaddr,
+      output logic [3:0]                      ifu_axi_awregion,
+      output logic [7:0]                      ifu_axi_awlen,
+      output logic [2:0]                      ifu_axi_awsize,
+      output logic [1:0]                      ifu_axi_awburst,
+      output logic                            ifu_axi_awlock,
+      output logic [3:0]                      ifu_axi_awcache,
+      output logic [2:0]                      ifu_axi_awprot,
+      output logic [3:0]                      ifu_axi_awqos,
 
-   output logic                            ifu_axi_wvalid,
-   input  logic                            ifu_axi_wready,
-   output logic [63:0]                     ifu_axi_wdata,
-   output logic [7:0]                      ifu_axi_wstrb,
-   output logic                            ifu_axi_wlast,
+      output logic                            ifu_axi_wvalid,
+      input  logic                            ifu_axi_wready,
+      output logic [63:0]                     ifu_axi_wdata,
+      output logic [7:0]                      ifu_axi_wstrb,
+      output logic                            ifu_axi_wlast,
 
-   input  logic                            ifu_axi_bvalid,
-   output logic                            ifu_axi_bready,
-   input  logic [1:0]                      ifu_axi_bresp,
-   input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_bid,
+      input  logic                            ifu_axi_bvalid,
+      output logic                            ifu_axi_bready,
+      input  logic [1:0]                      ifu_axi_bresp,
+      input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_bid,
 
-   // AXI Read Channels
-   output logic                            ifu_axi_arvalid,
-   input  logic                            ifu_axi_arready,
-   output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_arid,
-   output logic [31:0]                     ifu_axi_araddr,
-   output logic [3:0]                      ifu_axi_arregion,
-   output logic [7:0]                      ifu_axi_arlen,
-   output logic [2:0]                      ifu_axi_arsize,
-   output logic [1:0]                      ifu_axi_arburst,
-   output logic                            ifu_axi_arlock,
-   output logic [3:0]                      ifu_axi_arcache,
-   output logic [2:0]                      ifu_axi_arprot,
-   output logic [3:0]                      ifu_axi_arqos,
+      // AXI Read Channels
+      output logic                            ifu_axi_arvalid,
+      input  logic                            ifu_axi_arready,
+      output logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_arid,
+      output logic [31:0]                     ifu_axi_araddr,
+      output logic [3:0]                      ifu_axi_arregion,
+      output logic [7:0]                      ifu_axi_arlen,
+      output logic [2:0]                      ifu_axi_arsize,
+      output logic [1:0]                      ifu_axi_arburst,
+      output logic                            ifu_axi_arlock,
+      output logic [3:0]                      ifu_axi_arcache,
+      output logic [2:0]                      ifu_axi_arprot,
+      output logic [3:0]                      ifu_axi_arqos,
 
-   input  logic                            ifu_axi_rvalid,
-   output logic                            ifu_axi_rready,
-   input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_rid,
-   input  logic [63:0]                     ifu_axi_rdata,
-   input  logic [1:0]                      ifu_axi_rresp,
-   input  logic                            ifu_axi_rlast,
+      input  logic                            ifu_axi_rvalid,
+      output logic                            ifu_axi_rready,
+      input  logic [pt.IFU_BUS_TAG-1:0]       ifu_axi_rid,
+      input  logic [63:0]                     ifu_axi_rdata,
+      input  logic [1:0]                      ifu_axi_rresp,
+      input  logic                            ifu_axi_rlast,
 
-   //-------------------------- SB AXI signals--------------------------
-   // AXI Write Channels
-   output logic                            sb_axi_awvalid,
-   input  logic                            sb_axi_awready,
-   output logic [pt.SB_BUS_TAG-1:0]        sb_axi_awid,
-   output logic [31:0]                     sb_axi_awaddr,
-   output logic [3:0]                      sb_axi_awregion,
-   output logic [7:0]                      sb_axi_awlen,
-   output logic [2:0]                      sb_axi_awsize,
-   output logic [1:0]                      sb_axi_awburst,
-   output logic                            sb_axi_awlock,
-   output logic [3:0]                      sb_axi_awcache,
-   output logic [2:0]                      sb_axi_awprot,
-   output logic [3:0]                      sb_axi_awqos,
+      //-------------------------- SB AXI signals--------------------------
+      // AXI Write Channels
+      output logic                            sb_axi_awvalid,
+      input  logic                            sb_axi_awready,
+      output logic [pt.SB_BUS_TAG-1:0]        sb_axi_awid,
+      output logic [31:0]                     sb_axi_awaddr,
+      output logic [3:0]                      sb_axi_awregion,
+      output logic [7:0]                      sb_axi_awlen,
+      output logic [2:0]                      sb_axi_awsize,
+      output logic [1:0]                      sb_axi_awburst,
+      output logic                            sb_axi_awlock,
+      output logic [3:0]                      sb_axi_awcache,
+      output logic [2:0]                      sb_axi_awprot,
+      output logic [3:0]                      sb_axi_awqos,
 
-   output logic                            sb_axi_wvalid,
-   input  logic                            sb_axi_wready,
-   output logic [63:0]                     sb_axi_wdata,
-   output logic [7:0]                      sb_axi_wstrb,
-   output logic                            sb_axi_wlast,
+      output logic                            sb_axi_wvalid,
+      input  logic                            sb_axi_wready,
+      output logic [63:0]                     sb_axi_wdata,
+      output logic [7:0]                      sb_axi_wstrb,
+      output logic                            sb_axi_wlast,
 
-   input  logic                            sb_axi_bvalid,
-   output logic                            sb_axi_bready,
-   input  logic [1:0]                      sb_axi_bresp,
-   input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_bid,
+      input  logic                            sb_axi_bvalid,
+      output logic                            sb_axi_bready,
+      input  logic [1:0]                      sb_axi_bresp,
+      input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_bid,
 
-   // AXI Read Channels
-   output logic                            sb_axi_arvalid,
-   input  logic                            sb_axi_arready,
-   output logic [pt.SB_BUS_TAG-1:0]        sb_axi_arid,
-   output logic [31:0]                     sb_axi_araddr,
-   output logic [3:0]                      sb_axi_arregion,
-   output logic [7:0]                      sb_axi_arlen,
-   output logic [2:0]                      sb_axi_arsize,
-   output logic [1:0]                      sb_axi_arburst,
-   output logic                            sb_axi_arlock,
-   output logic [3:0]                      sb_axi_arcache,
-   output logic [2:0]                      sb_axi_arprot,
-   output logic [3:0]                      sb_axi_arqos,
+      // AXI Read Channels
+      output logic                            sb_axi_arvalid,
+      input  logic                            sb_axi_arready,
+      output logic [pt.SB_BUS_TAG-1:0]        sb_axi_arid,
+      output logic [31:0]                     sb_axi_araddr,
+      output logic [3:0]                      sb_axi_arregion,
+      output logic [7:0]                      sb_axi_arlen,
+      output logic [2:0]                      sb_axi_arsize,
+      output logic [1:0]                      sb_axi_arburst,
+      output logic                            sb_axi_arlock,
+      output logic [3:0]                      sb_axi_arcache,
+      output logic [2:0]                      sb_axi_arprot,
+      output logic [3:0]                      sb_axi_arqos,
 
-   input  logic                            sb_axi_rvalid,
-   output logic                            sb_axi_rready,
-   input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_rid,
-   input  logic [63:0]                     sb_axi_rdata,
-   input  logic [1:0]                      sb_axi_rresp,
-   input  logic                            sb_axi_rlast,
+      input  logic                            sb_axi_rvalid,
+      output logic                            sb_axi_rready,
+      input  logic [pt.SB_BUS_TAG-1:0]        sb_axi_rid,
+      input  logic [63:0]                     sb_axi_rdata,
+      input  logic [1:0]                      sb_axi_rresp,
+      input  logic                            sb_axi_rlast,
 
-   //-------------------------- DMA AXI signals--------------------------
-   // AXI Write Channels
-   input  logic                            dma_axi_awvalid,
-   output logic                            dma_axi_awready,
-   input  logic [pt.DMA_BUS_TAG-1:0]       dma_axi_awid,
-   input  logic [31:0]                     dma_axi_awaddr,
-   input  logic [2:0]                      dma_axi_awsize,
-   input  logic [2:0]                      dma_axi_awprot,
-   input  logic [7:0]                      dma_axi_awlen,
-   input  logic [1:0]                      dma_axi_awburst,
+      //-------------------------- DMA AXI signals--------------------------
+      // AXI Write Channels
+      input  logic                            dma_axi_awvalid,
+      output logic                            dma_axi_awready,
+      input  logic [pt.DMA_BUS_TAG-1:0]       dma_axi_awid,
+      input  logic [31:0]                     dma_axi_awaddr,
+      input  logic [2:0]                      dma_axi_awsize,
+      input  logic [2:0]                      dma_axi_awprot,
+      input  logic [7:0]                      dma_axi_awlen,
+      input  logic [1:0]                      dma_axi_awburst,
 
 
-   input  logic                            dma_axi_wvalid,
-   output logic                            dma_axi_wready,
-   input  logic [63:0]                     dma_axi_wdata,
-   input  logic [7:0]                      dma_axi_wstrb,
-   input  logic                            dma_axi_wlast,
+      input  logic                            dma_axi_wvalid,
+      output logic                            dma_axi_wready,
+      input  logic [63:0]                     dma_axi_wdata,
+      input  logic [7:0]                      dma_axi_wstrb,
+      input  logic                            dma_axi_wlast,
 
-   output logic                            dma_axi_bvalid,
-   input  logic                            dma_axi_bready,
-   output logic [1:0]                      dma_axi_bresp,
-   output logic [pt.DMA_BUS_TAG-1:0]       dma_axi_bid,
+      output logic                            dma_axi_bvalid,
+      input  logic                            dma_axi_bready,
+      output logic [1:0]                      dma_axi_bresp,
+      output logic [pt.DMA_BUS_TAG-1:0]       dma_axi_bid,
 
-   // AXI Read Channels
-   input  logic                            dma_axi_arvalid,
-   output logic                            dma_axi_arready,
-   input  logic [pt.DMA_BUS_TAG-1:0]       dma_axi_arid,
-   input  logic [31:0]                     dma_axi_araddr,
-   input  logic [2:0]                      dma_axi_arsize,
-   input  logic [2:0]                      dma_axi_arprot,
-   input  logic [7:0]                      dma_axi_arlen,
-   input  logic [1:0]                      dma_axi_arburst,
+      // AXI Read Channels
+      input  logic                            dma_axi_arvalid,
+      output logic                            dma_axi_arready,
+      input  logic [pt.DMA_BUS_TAG-1:0]       dma_axi_arid,
+      input  logic [31:0]                     dma_axi_araddr,
+      input  logic [2:0]                      dma_axi_arsize,
+      input  logic [2:0]                      dma_axi_arprot,
+      input  logic [7:0]                      dma_axi_arlen,
+      input  logic [1:0]                      dma_axi_arburst,
 
-   output logic                            dma_axi_rvalid,
-   input  logic                            dma_axi_rready,
-   output logic [pt.DMA_BUS_TAG-1:0]       dma_axi_rid,
-   output logic [63:0]                     dma_axi_rdata,
-   output logic [1:0]                      dma_axi_rresp,
-   output logic                            dma_axi_rlast,
-`endif
+      output logic                            dma_axi_rvalid,
+      input  logic                            dma_axi_rready,
+      output logic [pt.DMA_BUS_TAG-1:0]       dma_axi_rid,
+      output logic [63:0]                     dma_axi_rdata,
+      output logic [1:0]                      dma_axi_rresp,
+      output logic                            dma_axi_rlast,
+   `endif
 
-`ifdef RV_BUILD_AHB_LITE
- //// AHB LITE BUS
-   output logic [31:0]                     haddr,
-   output logic [2:0]                      hburst,
-   output logic                            hmastlock,
-   output logic [3:0]                      hprot,
-   output logic [2:0]                      hsize,
-   output logic [1:0]                      htrans,
-   output logic                            hwrite,
+   `ifdef RV_BUILD_AHB_LITE
+   //// AHB LITE BUS
+      output logic [31:0]                     haddr,
+      output logic [2:0]                      hburst,
+      output logic                            hmastlock,
+      output logic [3:0]                      hprot,
+      output logic [2:0]                      hsize,
+      output logic [1:0]                      htrans,
+      output logic                            hwrite,
 
-   input logic [63:0]                      hrdata,
-   input logic                             hready,
-   input logic                             hresp,
+      input logic [63:0]                      hrdata,
+      input logic                             hready,
+      input logic                             hresp,
 
-   // LSU AHB Master
-   output logic [31:0]                     lsu_haddr,
-   output logic [2:0]                      lsu_hburst,
-   output logic                            lsu_hmastlock,
-   output logic [3:0]                      lsu_hprot,
-   output logic [2:0]                      lsu_hsize,
-   output logic [1:0]                      lsu_htrans,
-   output logic                            lsu_hwrite,
-   output logic [63:0]                     lsu_hwdata,
+      // LSU AHB Master
+      output logic [31:0]                     lsu_haddr,
+      output logic [2:0]                      lsu_hburst,
+      output logic                            lsu_hmastlock,
+      output logic [3:0]                      lsu_hprot,
+      output logic [2:0]                      lsu_hsize,
+      output logic [1:0]                      lsu_htrans,
+      output logic                            lsu_hwrite,
+      output logic [63:0]                     lsu_hwdata,
 
-   input logic [63:0]                      lsu_hrdata,
-   input logic                             lsu_hready,
-   input logic                             lsu_hresp,
-   // Debug Syster Bus AHB
-   output logic [31:0]                     sb_haddr,
-   output logic [2:0]                      sb_hburst,
-   output logic                            sb_hmastlock,
-   output logic [3:0]                      sb_hprot,
-   output logic [2:0]                      sb_hsize,
-   output logic [1:0]                      sb_htrans,
-   output logic                            sb_hwrite,
-   output logic [63:0]                     sb_hwdata,
+      input logic [63:0]                      lsu_hrdata,
+      input logic                             lsu_hready,
+      input logic                             lsu_hresp,
+      // Debug Syster Bus AHB
+      output logic [31:0]                     sb_haddr,
+      output logic [2:0]                      sb_hburst,
+      output logic                            sb_hmastlock,
+      output logic [3:0]                      sb_hprot,
+      output logic [2:0]                      sb_hsize,
+      output logic [1:0]                      sb_htrans,
+      output logic                            sb_hwrite,
+      output logic [63:0]                     sb_hwdata,
 
-   input  logic [63:0]                     sb_hrdata,
-   input  logic                            sb_hready,
-   input  logic                            sb_hresp,
+      input  logic [63:0]                     sb_hrdata,
+      input  logic                            sb_hready,
+      input  logic                            sb_hresp,
 
-   // DMA Slave
-   input logic                             dma_hsel,
-   input logic [31:0]                      dma_haddr,
-   input logic [2:0]                       dma_hburst,
-   input logic                             dma_hmastlock,
-   input logic [3:0]                       dma_hprot,
-   input logic [2:0]                       dma_hsize,
-   input logic [1:0]                       dma_htrans,
-   input logic                             dma_hwrite,
-   input logic [63:0]                      dma_hwdata,
-   input logic                             dma_hreadyin,
+      // DMA Slave
+      input logic                             dma_hsel,
+      input logic [31:0]                      dma_haddr,
+      input logic [2:0]                       dma_hburst,
+      input logic                             dma_hmastlock,
+      input logic [3:0]                       dma_hprot,
+      input logic [2:0]                       dma_hsize,
+      input logic [1:0]                       dma_htrans,
+      input logic                             dma_hwrite,
+      input logic [63:0]                      dma_hwdata,
+      input logic                             dma_hreadyin,
 
-   output logic [63:0]                     dma_hrdata,
-   output logic                            dma_hreadyout,
-   output logic                            dma_hresp,
-`endif
+      output logic [63:0]                     dma_hrdata,
+      output logic                            dma_hreadyout,
+      output logic                            dma_hresp,
+   `endif
+  
    // clk ratio signals
    input logic                             lsu_bus_clk_en, // Clock ratio b/w cpu core clk & AHB master interface
    input logic                             ifu_bus_clk_en, // Clock ratio b/w cpu core clk & AHB master interface
    input logic                             dbg_bus_clk_en, // Clock ratio b/w cpu core clk & AHB master interface
    input logic                             dma_bus_clk_en, // Clock ratio b/w cpu core clk & AHB slave interface
 
- // all of these test inputs are brought to top-level; must be tied off based on usage by physical design (ie. icache or not, iccm or not, dccm or not)
+   // all of these test inputs are brought to top-level; must be tied off based on usage by physical design (ie. icache or not, iccm or not, dccm or not)
 
    input                                   el2_dccm_ext_in_pkt_t  [pt.DCCM_NUM_BANKS-1:0] dccm_ext_in_pkt,
    input                                   el2_ccm_ext_in_pkt_t  [pt.ICCM_NUM_BANKS-1:0] iccm_ext_in_pkt,
@@ -401,10 +402,10 @@ parameter A=0
 
 
    // zero out the signals not presented at the wrapper instantiation level
-`ifdef RV_BUILD_AXI4
+   `ifdef RV_BUILD_AXI4
 
-   logic [31:0]                     haddr;
-   logic [2:0]               hburst;
+      logic [31:0]                     haddr;
+      logic [2:0]               hburst;
       logic                     hmastlock;
       logic [3:0]               hprot;
       logic [2:0]               hsize;
@@ -416,121 +417,121 @@ parameter A=0
       logic                     hresp;
       
       
-       // LSU AHB Master
-        logic [31:0]              lsu_haddr;
-        logic [2:0]               lsu_hburst;
-        logic                     lsu_hmastlock;
-        logic [3:0]               lsu_hprot;
-        logic [2:0]               lsu_hsize;
-        logic [1:0]               lsu_htrans;
-        logic                     lsu_hwrite;
-        logic [63:0]              lsu_hwdata;
-     
-        logic [63:0]              lsu_hrdata;
-        logic                     lsu_hready;
-        logic                     lsu_hresp;
-        // Debug Syster Bus AHB
-        logic [31:0]              sb_haddr;
-        logic [2:0]               sb_hburst;
-        logic                     sb_hmastlock;
-        logic [3:0]               sb_hprot;
-        logic [2:0]               sb_hsize;
-        logic [1:0]               sb_htrans;
-        logic                     sb_hwrite;
-        logic [63:0]              sb_hwdata;
-     
-         logic [63:0]             sb_hrdata;
-         logic                    sb_hready;
-         logic                    sb_hresp;
-     
-        // DMA Slave
-        logic                     dma_hsel;
-        logic [31:0]              dma_haddr;
-        logic [2:0]               dma_hburst;
-        logic                     dma_hmastlock;
-        logic [3:0]               dma_hprot;
-        logic [2:0]               dma_hsize;
-        logic [1:0]               dma_htrans;
-        logic                     dma_hwrite;
-        logic [63:0]              dma_hwdata;
-        logic                     dma_hreadyin;
-     
-        logic [63:0]              dma_hrdata;
-        logic                     dma_hreadyout;
-        logic                     dma_hresp;
-     
-     
-     
-        // AHB
-        assign  hrdata[63:0]                           = '0;
-        assign  hready                                 = '0;
-        assign  hresp                                  = '0;
-        // LSU
-        assign  lsu_hrdata[63:0]                       = '0;
-        assign  lsu_hready                             = '0;
-        assign  lsu_hresp                              = '0;
-        // Debu
-        assign  sb_hrdata[63:0]                        = '0;
-        assign  sb_hready                              = '0;
-        assign  sb_hresp                               = '0;
-     
-        // DMA
-        assign  dma_hsel                               = '0;
-        assign  dma_haddr[31:0]                        = '0;
-        assign  dma_hburst[2:0]                        = '0;
-        assign  dma_hmastlock                          = '0;
-        assign  dma_hprot[3:0]                         = '0;
-        assign  dma_hsize[2:0]                         = '0;
-        assign  dma_htrans[1:0]                        = '0;
-        assign  dma_hwrite                             = '0;
-        assign  dma_hwdata[63:0]                       = '0;
-        assign  dma_hreadyin                           = '0;
+      // LSU AHB Master
+      logic [31:0]              lsu_haddr;
+      logic [2:0]               lsu_hburst;
+      logic                     lsu_hmastlock;
+      logic [3:0]               lsu_hprot;
+      logic [2:0]               lsu_hsize;
+      logic [1:0]               lsu_htrans;
+      logic                     lsu_hwrite;
+      logic [63:0]              lsu_hwdata;
+   
+      logic [63:0]              lsu_hrdata;
+      logic                     lsu_hready;
+      logic                     lsu_hresp;
+      // Debug Syster Bus AHB
+      logic [31:0]              sb_haddr;
+      logic [2:0]               sb_hburst;
+      logic                     sb_hmastlock;
+      logic [3:0]               sb_hprot;
+      logic [2:0]               sb_hsize;
+      logic [1:0]               sb_htrans;
+      logic                     sb_hwrite;
+      logic [63:0]              sb_hwdata;
+   
+      logic [63:0]             sb_hrdata;
+      logic                    sb_hready;
+      logic                    sb_hresp;
+   
+      // DMA Slave
+      logic                     dma_hsel;
+      logic [31:0]              dma_haddr;
+      logic [2:0]               dma_hburst;
+      logic                     dma_hmastlock;
+      logic [3:0]               dma_hprot;
+      logic [2:0]               dma_hsize;
+      logic [1:0]               dma_htrans;
+      logic                     dma_hwrite;
+      logic [63:0]              dma_hwdata;
+      logic                     dma_hreadyin;
+   
+      logic [63:0]              dma_hrdata;
+      logic                     dma_hreadyout;
+      logic                     dma_hresp;
+   
+   
+   
+      // AHB
+      assign  hrdata[63:0]                           = '0;
+      assign  hready                                 = '0;
+      assign  hresp                                  = '0;
+      // LSU
+      assign  lsu_hrdata[63:0]                       = '0;
+      assign  lsu_hready                             = '0;
+      assign  lsu_hresp                              = '0;
+      // Debu
+      assign  sb_hrdata[63:0]                        = '0;
+      assign  sb_hready                              = '0;
+      assign  sb_hresp                               = '0;
+   
+      // DMA
+      assign  dma_hsel                               = '0;
+      assign  dma_haddr[31:0]                        = '0;
+      assign  dma_hburst[2:0]                        = '0;
+      assign  dma_hmastlock                          = '0;
+      assign  dma_hprot[3:0]                         = '0;
+      assign  dma_hsize[2:0]                         = '0;
+      assign  dma_htrans[1:0]                        = '0;
+      assign  dma_hwrite                             = '0;
+      assign  dma_hwdata[63:0]                       = '0;
+      assign  dma_hreadyin                           = '0;
 
-      
-   logic                            lsu_axi_awvalid;
-   logic                            lsu_axi_awready;
-   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_awid;
-   logic [31:0]                     lsu_axi_awaddr;
-   logic [3:0]                      lsu_axi_awregion;
-   logic [7:0]                      lsu_axi_awlen;
-   logic [2:0]                      lsu_axi_awsize;
-   logic [1:0]                      lsu_axi_awburst;
-   logic                            lsu_axi_awlock;
-   logic [3:0]                      lsu_axi_awcache;
-   logic [2:0]                      lsu_axi_awprot;
-   logic [3:0]                      lsu_axi_awqos;
+         
+      logic                            lsu_axi_awvalid;
+      logic                            lsu_axi_awready;
+      logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_awid;
+      logic [31:0]                     lsu_axi_awaddr;
+      logic [3:0]                      lsu_axi_awregion;
+      logic [7:0]                      lsu_axi_awlen;
+      logic [2:0]                      lsu_axi_awsize;
+      logic [1:0]                      lsu_axi_awburst;
+      logic                            lsu_axi_awlock;
+      logic [3:0]                      lsu_axi_awcache;
+      logic [2:0]                      lsu_axi_awprot;
+      logic [3:0]                      lsu_axi_awqos;
 
-   logic                            lsu_axi_wvalid;
-   logic                            lsu_axi_wready;
-   logic [63:0]                     lsu_axi_wdata;
-   logic [7:0]                      lsu_axi_wstrb;
-   logic                            lsu_axi_wlast;
+      logic                            lsu_axi_wvalid;
+      logic                            lsu_axi_wready;
+      logic [63:0]                     lsu_axi_wdata;
+      logic [7:0]                      lsu_axi_wstrb;
+      logic                            lsu_axi_wlast;
 
-   logic                            lsu_axi_bvalid;
-   logic                            lsu_axi_bready;
-   logic [1:0]                      lsu_axi_bresp;
-   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_bid;
+      logic                            lsu_axi_bvalid;
+      logic                            lsu_axi_bready;
+      logic [1:0]                      lsu_axi_bresp;
+      logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_bid;
 
-   // AXI Read Channels
-   logic                            lsu_axi_arvalid;
-   logic                            lsu_axi_arready;
-   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_arid;
-   logic [31:0]                     lsu_axi_araddr;
-   logic [3:0]                      lsu_axi_arregion;
-   logic [7:0]                      lsu_axi_arlen;
-   logic [2:0]                      lsu_axi_arsize;
-   logic [1:0]                      lsu_axi_arburst;
-   logic                            lsu_axi_arlock;
-   logic [3:0]                      lsu_axi_arcache;
-   logic [2:0]                      lsu_axi_arprot;
-   logic [3:0]                      lsu_axi_arqos;
+      // AXI Read Channels
+      logic                            lsu_axi_arvalid;
+      logic                            lsu_axi_arready;
+      logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_arid;
+      logic [31:0]                     lsu_axi_araddr;
+      logic [3:0]                      lsu_axi_arregion;
+      logic [7:0]                      lsu_axi_arlen;
+      logic [2:0]                      lsu_axi_arsize;
+      logic [1:0]                      lsu_axi_arburst;
+      logic                            lsu_axi_arlock;
+      logic [3:0]                      lsu_axi_arcache;
+      logic [2:0]                      lsu_axi_arprot;
+      logic [3:0]                      lsu_axi_arqos;
 
-   logic                            lsu_axi_rvalid;
-   logic                            lsu_axi_rready;
-   logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_rid;
-   logic [63:0]                     lsu_axi_rdata;
-   logic [1:0]                      lsu_axi_rresp;
-   logic                            lsu_axi_rlast;
+      logic                            lsu_axi_rvalid;
+      logic                            lsu_axi_rready;
+      logic [pt.LSU_BUS_TAG-1:0]       lsu_axi_rid;
+      logic [63:0]                     lsu_axi_rdata;
+      logic [1:0]                      lsu_axi_rresp;
+      logic                            lsu_axi_rlast;
    
 
       // AXI Read Channels
@@ -587,16 +588,16 @@ parameter A=0
       localparam int unsigned APB_NUM_SLAVES     = 8;
       localparam int unsigned APB_ADDR_WIDTH     = 20;
       logic                           PENABLE    ;
-          logic                           PWRITE     ;
-          logic                           PSEL       ;
-          logic [31:0]                    PWDATA     ;
-          logic [31:0]                    PRDATA     ;
-          logic                           PREADY     ;
-          logic                           PSLVERR    ;  
-             logic [APB_ADDR_WIDTH-1:0]      PADDR      ;
+      logic                           PWRITE     ;
+      logic                           PSEL       ;
+      logic [31:0]                    PWDATA     ;
+      logic [31:0]                    PRDATA     ;
+      logic                           PREADY     ;
+      logic                           PSLVERR    ;  
+      logic [APB_ADDR_WIDTH-1:0]      PADDR      ;
 
 
-`endif //  `ifdef RV_BUILD_AXI4
+   `endif //  `ifdef RV_BUILD_AXI4
 
 
 
@@ -624,7 +625,7 @@ parameter A=0
    );
    
     // AXI to APB Bridge Instatiation 
-     axi2apb_64_32 #(
+   axi2apb_64_32 #(
       .AXI4_ADDRESS_WIDTH(AXI4_ADDRESS_WIDTH),
       .AXI4_RDATA_WIDTH(AXI4_RDATA_WIDTH), 
       .AXI4_WDATA_WIDTH(AXI4_WDATA_WIDTH), 
@@ -635,63 +636,63 @@ parameter A=0
       .APB_NUM_SLAVES(APB_NUM_SLAVES), 
       .APB_ADDR_WIDTH(APB_ADDR_WIDTH)
       )
-     bridge (  
-       .ACLK(clk),
-       .ARESETn(core_rst_l),
-       .ARUSER_i(),
-       .BUSER_o(),
-       .WUSER_i(),
-       .RUSER_o(),
-       .AWUSER_i(),
-       .test_en_i(),
-       .AWVALID_i(lsu_axi_awvalid_B_o),
-       .AWREADY_o(lsu_axi_awready_B_o),
-       .AWID_i(lsu_axi_awid_B_o),
-       .AWADDR_i(lsu_axi_awaddr_B_o),
-       .AWREGION_i(lsu_axi_awregion_B_o),
-       .AWLEN_i(lsu_axi_awlen_B_o),
-       .AWSIZE_i(lsu_axi_awsize_B_o),
-       .AWBURST_i(lsu_axi_awburst_B_o),
-       .AWLOCK_i(lsu_axi_awlock_B_o),
-       .AWCACHE_i(lsu_axi_awcache_B_o),
-       .AWPROT_i(lsu_axi_awprot_B_o),
-       .AWQOS_i(lsu_axi_awqos_B_o),
-       .WVALID_i(lsu_axi_wvalid_B_o),
-       .WREADY_o(lsu_axi_wready_B_o),
-       .WDATA_i(lsu_axi_wdata_B_o),
-       .WSTRB_i(lsu_axi_wstrb_B_o),
-       .WLAST_i(lsu_axi_wlast_B_o),
-       .BVALID_o(lsu_axi_bvalid_B_o),
-       .BREADY_i(lsu_axi_bready_B_o),
-       .BRESP_o(lsu_axi_bresp_B_o),
-       .BID_o(lsu_axi_bid_B_o),
-       .ARVALID_i(lsu_axi_arvalid_B_o),
-       .ARREADY_o(lsu_axi_arready_B_o),
-       .ARID_i(lsu_axi_arid_B_o),
-       .ARADDR_i(lsu_axi_araddr_B_o),
-       .ARREGION_i(lsu_axi_arregion_B_o),
-       .ARLEN_i(lsu_axi_arlen_B_o),
-       .ARSIZE_i(lsu_axi_arsize_B_o),
-       .ARBURST_i(lsu_axi_arburst_B_o),
-       .ARLOCK_i(lsu_axi_arlock_B_o),
-       .ARCACHE_i(lsu_axi_arcache_B_o),
-       .ARPROT_i(lsu_axi_arprot_B_o),
-       .ARQOS_i(lsu_axi_arqos_B_o),
-       .RVALID_o(lsu_axi_rvalid_B_o),
-       .RREADY_i(lsu_axi_rready_B_o),
-       .RID_o(lsu_axi_rid_B_o),
-       .RDATA_o(lsu_axi_rdata_B_o),
-       .RRESP_o(lsu_axi_rresp_B_o),
-       .RLAST_o(lsu_axi_rlast_B_o),
-       .PENABLE(PENABLE),
-       .PWRITE(PWRITE),
-       .PADDR(PADDR),
-       .PSEL(PSEL),
-       .PWDATA(PWDATA),
-       .PRDATA(PRDATA),
-       .PREADY(PREADY),
-       .PSLVERR(PSLVERR)
-        );
+      bridge (  
+         .ACLK(clk),
+         .ARESETn(core_rst_l),
+         .ARUSER_i(),
+         .BUSER_o(),
+         .WUSER_i(),
+         .RUSER_o(),
+         .AWUSER_i(),
+         .test_en_i(),
+         .AWVALID_i(lsu_axi_awvalid_B_o),
+         .AWREADY_o(lsu_axi_awready_B_o),
+         .AWID_i(lsu_axi_awid_B_o),
+         .AWADDR_i(lsu_axi_awaddr_B_o),
+         .AWREGION_i(lsu_axi_awregion_B_o),
+         .AWLEN_i(lsu_axi_awlen_B_o),
+         .AWSIZE_i(lsu_axi_awsize_B_o),
+         .AWBURST_i(lsu_axi_awburst_B_o),
+         .AWLOCK_i(lsu_axi_awlock_B_o),
+         .AWCACHE_i(lsu_axi_awcache_B_o),
+         .AWPROT_i(lsu_axi_awprot_B_o),
+         .AWQOS_i(lsu_axi_awqos_B_o),
+         .WVALID_i(lsu_axi_wvalid_B_o),
+         .WREADY_o(lsu_axi_wready_B_o),
+         .WDATA_i(lsu_axi_wdata_B_o),
+         .WSTRB_i(lsu_axi_wstrb_B_o),
+         .WLAST_i(lsu_axi_wlast_B_o),
+         .BVALID_o(lsu_axi_bvalid_B_o),
+         .BREADY_i(lsu_axi_bready_B_o),
+         .BRESP_o(lsu_axi_bresp_B_o),
+         .BID_o(lsu_axi_bid_B_o),
+         .ARVALID_i(lsu_axi_arvalid_B_o),
+         .ARREADY_o(lsu_axi_arready_B_o),
+         .ARID_i(lsu_axi_arid_B_o),
+         .ARADDR_i(lsu_axi_araddr_B_o),
+         .ARREGION_i(lsu_axi_arregion_B_o),
+         .ARLEN_i(lsu_axi_arlen_B_o),
+         .ARSIZE_i(lsu_axi_arsize_B_o),
+         .ARBURST_i(lsu_axi_arburst_B_o),
+         .ARLOCK_i(lsu_axi_arlock_B_o),
+         .ARCACHE_i(lsu_axi_arcache_B_o),
+         .ARPROT_i(lsu_axi_arprot_B_o),
+         .ARQOS_i(lsu_axi_arqos_B_o),
+         .RVALID_o(lsu_axi_rvalid_B_o),
+         .RREADY_i(lsu_axi_rready_B_o),
+         .RID_o(lsu_axi_rid_B_o),
+         .RDATA_o(lsu_axi_rdata_B_o),
+         .RRESP_o(lsu_axi_rresp_B_o),
+         .RLAST_o(lsu_axi_rlast_B_o),
+         .PENABLE(PENABLE),
+         .PWRITE(PWRITE),
+         .PADDR(PADDR),
+         .PSEL(PSEL),
+         .PWDATA(PWDATA),
+         .PRDATA(PRDATA),
+         .PREADY(PREADY),
+         .PSLVERR(PSLVERR)
+   );
 
 //0010000000000000 0x2000
 //0100000000000000 0x4000
@@ -711,58 +712,58 @@ parameter A=0
 //#define SPI_BASE             0x2000A000
 //#define I2C_BASE             0x2000E000
 
-logic [31:0] rd_data1,rd_data2,rd_data3,rd_data4,rd_data5,rd_data6;
-logic PSLVERR_1,PSLVERR_2,PSLVERR_3,PSLVERR_4,PSLVERR_5,PSLVERR_6;
-logic PREADY_1,PREADY_2,PREADY_3,PREADY_4,PREADY_5,PREADY_6;
-logic PENABLE_1,PENABLE_2,PENABLE_3,PENABLE_4,PENABLE_5,PENABLE_6;
-    // APB INTERCONNECT SIGNALS
-  logic [31:0] data_in;
-  logic wr_out1,wr_out2,wr_out3,wr_out4,wr_out5,wr_out6;
-  logic [19:0] addr_out1,addr_out2,addr_out3,addr_out4,addr_out5,addr_out6;
-  logic [31:0] data_out1,data_out2,data_out3,data_out4,data_out5,data_out6;
-  logic psel1,psel2,psel3,psel4,psel5,psel6;
+   logic [31:0] rd_data1,rd_data2,rd_data3,rd_data4,rd_data5,rd_data6;
+   logic PSLVERR_1,PSLVERR_2,PSLVERR_3,PSLVERR_4,PSLVERR_5,PSLVERR_6;
+   logic PREADY_1,PREADY_2,PREADY_3,PREADY_4,PREADY_5,PREADY_6;
+   logic PENABLE_1,PENABLE_2,PENABLE_3,PENABLE_4,PENABLE_5,PENABLE_6;
+      // APB INTERCONNECT SIGNALS
+   logic [31:0] data_in;
+   logic wr_out1,wr_out2,wr_out3,wr_out4,wr_out5,wr_out6;
+   logic [19:0] addr_out1,addr_out2,addr_out3,addr_out4,addr_out5,addr_out6;
+   logic [31:0] data_out1,data_out2,data_out3,data_out4,data_out5,data_out6;
+   logic psel1,psel2,psel3,psel4,psel5,psel6;
 
 
     // APB interconnect Instatiation 
-      apb_interconnect apb_interconnect (
-       .*,
-       .clk(clk),
-       .rst(core_rst_l),
-       .addr_in(PADDR),
-       .wr_in(PWRITE),
-       .sel(PSEL),
-       .data_in(PWDATA),
-       .ready_out(PREADY),
-       .en_in(PENABLE),
-       .readdata(PRDATA),
-       .PSLVERR(PSLVERR),
-       .rd_data1(rd_data1),
-       .rd_data2(rd_data2),
-       .rd_data3(rd_data3),
-       .rd_data4(rd_data4),
-       .rd_data5(rd_data5),
-       .rd_data6(rd_data6)    
-       );
+   apb_interconnect apb_interconnect (
+      .*,
+      .clk(clk),
+      .rst(core_rst_l),
+      .addr_in(PADDR),
+      .wr_in(PWRITE),
+      .sel(PSEL),
+      .data_in(PWDATA),
+      .ready_out(PREADY),
+      .en_in(PENABLE),
+      .readdata(PRDATA),
+      .PSLVERR(PSLVERR),
+      .rd_data1(rd_data1),
+      .rd_data2(rd_data2),
+      .rd_data3(rd_data3),
+      .rd_data4(rd_data4),
+      .rd_data5(rd_data5),
+      .rd_data6(rd_data6)    
+   );
        
-       logic TIMER_irq_o;
-          apb_timer #(
-        // parameters
-        .APB_ADDR_WIDTH(APB_ADDR_WIDTH))
-          TIMER_peripheral(
-             .*,
-             .irq_o(TIMER_irq_o),
-             .HRESETn(core_rst_l),
-             .HCLK(clk),
-             .PSEL(psel1),
-             .PADDR(addr_out1),
-             .PWDATA(data_out1),
-             .PRDATA(rd_data1),
-             .PWRITE(wr_out1),
-             .PENABLE(PENABLE_1),
-             .PREADY(PREADY_1),
-             .PSLVERR(PSLVERR_1)
-    
-          );
+   logic TIMER_irq_o;
+   apb_timer #(
+   // parameters
+   .APB_ADDR_WIDTH(APB_ADDR_WIDTH))
+      TIMER_peripheral(
+      .*,
+      .irq_o(TIMER_irq_o),
+      .HRESETn(core_rst_l),
+      .HCLK(clk),
+      .PSEL(psel1),
+      .PADDR(addr_out1),
+      .PWDATA(data_out1),
+      .PRDATA(rd_data1),
+      .PWRITE(wr_out1),
+      .PENABLE(PENABLE_1),
+      .PREADY(PREADY_1),
+      .PSLVERR(PSLVERR_1)
+
+   );
 
 
    //  JTAG/DMI instance
