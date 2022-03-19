@@ -25,11 +25,11 @@ pwm #(
 PWM_peripheral (
 .clk_i(PCLK_i),
 .rst_ni(PRST_ni),
-.w_en(PWRITE),
-.rd_en(~PWRITE),
+.w_en(PWRITE_i),
+.rd_en(~PWRITE_i),
 .wdata_i(wdata),
 .addr_i(addr),
-.rdata_o(rdata),
+.rdata_o(PRDATA_o),
 .o_pwm_1(o_pwm_1),
 .o_pwm_2(o_pwm_2),
 .oe_pwm1(oe_pwm1),
@@ -38,7 +38,6 @@ PWM_peripheral (
 
 assign wdata = (PSEL_i && PENABLE_i)? PWDATA_i :'d0;
 assign addr  = (PSEL_i && PENABLE_i)? PADDR_i  :'d0;
-assign rdata  = (PSEL_i && PENABLE_i)? PRDATA_o  :'d0;
 
 	assign PSLVERR_o = 1'b0;
 	assign PREADY_o = 1'b1;
