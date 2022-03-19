@@ -21,7 +21,7 @@ module axi2apb_64_32 #(
     parameter int unsigned AXI4_ADDRESS_WIDTH = 32,
     parameter int unsigned AXI4_RDATA_WIDTH   = 64,
     parameter int unsigned AXI4_WDATA_WIDTH   = 64,
-    parameter int unsigned AXI4_ID_WIDTH      = 16,
+    parameter int unsigned AXI4_ID_WIDTH      = 3,
     parameter int unsigned AXI4_USER_WIDTH    = 10,
     parameter int unsigned AXI_NUMBYTES       = AXI4_WDATA_WIDTH/8,
 

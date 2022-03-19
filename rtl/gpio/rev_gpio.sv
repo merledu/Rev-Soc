@@ -49,7 +49,7 @@ module rev_gpio #(
    input  logic [GPIO_PINS-1:0]   pwrdata,
    input  logic [GPIO_PINS/8-1:0] pstrb,
    output logic                   pready,
-   output logic [GPIO_PINS-1:0]   prddata=0,
+   output logic [GPIO_PINS-1:0]   prddata,
    output logic                   pslverr,
    output logic                   irq_o=0,
    output logic [GPIO_PINS-1:0]   gpio_o=0,
