@@ -580,7 +580,7 @@ parameter A=0
           localparam int unsigned AXI4_ADDRESS_WIDTH = 32;
       localparam int unsigned AXI4_RDATA_WIDTH   = 64;
       localparam int unsigned AXI4_WDATA_WIDTH   = 64;
-      localparam int unsigned AXI4_ID_WIDTH      = 16;
+      localparam int unsigned AXI4_ID_WIDTH      = 3;
       localparam int unsigned AXI4_USER_WIDTH    = 10;
       localparam int unsigned AXI_NUMBYTES       = AXI4_WDATA_WIDTH/8;
   
@@ -746,9 +746,10 @@ parameter A=0
    );
        
    logic TIMER_irq_o;
+
    apb_timer #(
    // parameters
-   .APB_ADDR_WIDTH(APB_ADDR_WIDTH))
+      .APB_ADDR_WIDTH(APB_ADDR_WIDTH))
       TIMER_peripheral(
       .*,
       .irq_o(TIMER_irq_o),
@@ -762,8 +763,105 @@ parameter A=0
       .PENABLE(PENABLE_1),
       .PREADY(PREADY_1),
       .PSLVERR(PSLVERR_1)
-
    );
+
+
+   localparam GPIO_PINS = 32,
+              STAGES    =  2;
+
+      // // GPIO signals
+    logic [GPIO_PINS-1:0]  gpio_i ,
+                           gpio_oe,
+                           gpio_o ;
+   logic                   irq_o;
+
+   rev_gpio #(
+    // parameters
+      .GPIO_PINS(GPIO_PINS),
+      .PADDR_SIZE(APB_ADDR_WIDTH),
+      .STAGES(STAGES)) Gpio_peripheral(
+      .pclk   (clk),
+      .gpio_i (gpio_i),  
+      .prstn  (core_rst_l),   
+      .psel   (psel2),  
+      .penable(PENABLE_2),  
+      .paddr  (addr_out2),   
+      .pwrite (wr_out2),   
+      .pwrdata(data_out2),   
+      .pstrb  (4'b1111),   
+      .pready (PREADY_2),  
+      .prddata(rd_data2), 
+      .pslverr(PSLVERR_2),  
+      .irq_o  (irq_o), 
+      .gpio_o (gpio_o), 
+      .gpio_oe(gpio_oe)
+   );
+
+
+      // SPI SIGNALS
+   localparam BUFFER_DEPTH   = 10;
+   logic                      HCLK;
+   logic                      HRESETn;
+   logic                [1:0] events_o;
+   logic                      spi_clk;
+   logic                      spi_csn0;
+   logic                      spi_csn1;
+   logic                      spi_csn2;
+   logic                      spi_csn3;
+   logic                [1:0] spi_mode;
+   logic                      spi_sdo0;
+   logic                      spi_sdo1;
+   logic                      spi_sdo2;
+   logic                      spi_sdo3;
+   logic                      spi_sdi0;
+   logic                      spi_sdi1;
+   logic                      spi_sdi2;
+   logic                      spi_sdi3;
+   
+     // SPI peripheral Instatiation
+
+      apb_spi_master #(
+      .BUFFER_DEPTH(BUFFER_DEPTH),
+      .APB_ADDR_WIDTH(APB_ADDR_WIDTH) )  //APB slaves are 4KB by default) 
+      SPI_peripheral(
+         .*,
+         .HRESETn(core_rst_l),
+         .HCLK(clk),
+         .PSEL(psel3),
+         .PADDR(addr_out3),
+         .PWDATA(data_out3),
+         .PRDATA(rd_data3),
+         .PWRITE(wr_out3),
+         .PENABLE(PENABLE_3),
+         .PREADY(PREADY_3),
+         .PSLVERR(PSLVERR_3)
+
+      );
+
+
+   // PWM SIGANLS
+   localparam PWM_DATA_WIDTH = 32;																																																		
+   logic         o_pwm;
+   logic         o_pwm_2;
+   logic     	oe_pwm1;
+   logic     	oe_pwm2;
+
+   apb_pwm #(.DATA_WIDTH(PWM_DATA_WIDTH),
+             .ADDR_WIDTH(APB_ADDR_WIDTH))
+      Pwm_Peripheral(
+      .*,
+      .PRST_ni(core_rst_l),
+      .PCLK_i(clk),
+      .PSEL_i(psel4),
+      .PADDR_i(addr_out4),
+      .PWDATA_i(data_out4),
+      .PRDATA_o(rd_data4),
+      .PWRITE_i(wr_out4),
+      .PENABLE_i(PENABLE_4),
+      .PREADY_o(PREADY_4),
+      .PSLVERR_o(PSLVERR_4)
+   );
+
 
 
    //  JTAG/DMI instance
