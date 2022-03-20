@@ -12,8 +12,8 @@
 // Language:       SystemVerilog                                                                       //
 //                                                                                                     //
 // Description:                                                                                        //
-//     Pulse width modulation (PWM) is a modulation technique that generates variable-width	pulses     //
-// 	   to represent the amplitude of an analog input signal.                                           //
+//     Pulse width modulation (PWM) is a modulation technique that generates variable-width pulses     //
+// 	   to represent the amplitude of an analog input signal.                                       //
 //       .....                                                                                         //
 //                                                                                                     //
 // Revision Date:                                                                                      //
