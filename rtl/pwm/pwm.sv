@@ -1,36 +1,37 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Company: MICRO-ELECTRONICS RESEARCH LABORATORY //
-// //
-// Engineer: Wishah Naseer - Hardware Designer //
-// //
-// Additional contributions by: Rehan Ejaz, M. Uzair Qureshi//
-// //
-// Create Date: 01-MARCH-2022 //
-// Design Name: PWM Peripheral //
-// Module Name: pwm.sv //
-// Project Name: ReV-SoC //
-// Language: SystemVerilog //
-// //
-// Description: Pulse width modulation (PWM) is a modulation technique that generates 
-// variable-width pulses to represent the amplitude of an analog input signal.//
-// //
-// //
-// Revision Date: //
-// //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Wishah Naseer - Hardware Designer                                                   //
+//                                                                                                     //
+// Additional contributions by:  Rehan Ejaz, M. Uzair Qureshi                                          //
+//                                                                                                     //
+// Create Date:    01-MARCH-2022                                                                       //
+// Design Name:    PWM Peropheral                                                                      //
+// Module Name:    pwm.sv                                                                              //
+// Project Name:   ReV-SoC                                                                             //
+// Language:       SystemVerilog                                                                       //
+//                                                                                                     //
+// Description:                                                                                        //
+//     Pulse width modulation (PWM) is a modulation technique that generates variable-width	pulses     //
+// 	   to represent the amplitude of an analog input signal.                                           //
+//       .....                                                                                         //
+//                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module	pwm #(parameter DATA_WIDTH = 32, ADDR_WIDTH = 8)
 (
-	input   logic	     								clk_i,		// CLK signal											
-	input   logic	     								rst_ni,		// Active low reset												
+	input   logic	     								clk_i,		// CLK signal
+	input   logic	     								rst_ni,		// Active low reset
 	input   logic	    			 					w_en_i,		//write enable
-	input   logic	    			 					rd_en_i,	// read enable						
-	input   logic [ADDR_WIDTH -1:0]  	addr_i,		// Adress of register to set/modify											
-	input   logic [DATA_WIDTH -1:0] 	wdata_i,	//write data																		
-	output  logic [DATA_WIDTH -1:0] 	rdata_o,	// read channel 																								
-  output  logic        							o_pwm_1, 	// PWM output of 1st channel 
- 	output  logic        							o_pwm_2, 	// PWM output of 2nd channel 
-	output  logic     	 							oe_pwm1, 	// PWM valid indication 
+	input   logic	    			 					rd_en_i,	// read enable
+	input   logic [ADDR_WIDTH -1:0]  	addr_i,		// Adress of register to set/modify
+	input   logic [DATA_WIDTH -1:0] 	wdata_i,	//write data
+	output  logic [DATA_WIDTH -1:0] 	rdata_o,	// read channel
+  output  logic        							o_pwm_1, 	// PWM output of 1st channel
+ 	output  logic        							o_pwm_2, 	// PWM output of 2nd channel
+	output  logic     	 							oe_pwm1, 	// PWM valid indication
 	output  logic     	 							oe_pwm2 	// PWM valid indication
 );
 ////////////////////control logic////////////////////////////
@@ -73,7 +74,7 @@ always @(posedge clk_i or negedge rst_ni) begin
 			ADDR_PERIOD_1   : period_1   	<= wdata_i	[DATA_WIDTH -1:0];
 			ADDR_PERIOD_2   : period_2   	<= wdata_i	[DATA_WIDTH -1:0];
 			ADDR_DC_1       : DC_1        <= wdata_i	[DATA_WIDTH -1:0];
-			ADDR_DC_2       : DC_2        <= wdata_i	[DATA_WIDTH -1:0];				
+			ADDR_DC_2       : DC_2        <= wdata_i	[DATA_WIDTH -1:0];
 		endcase
 	end
 end
@@ -122,7 +123,7 @@ always @(posedge clock_p1 or negedge rst_ni) begin
 		pts_1           <= 1'b0;
 		oe_pwm1         <= 1'b0;
 		period_counter1 <=  'd0;
-	end
+	end //if (!rst_ni)
 	else if (ctrl_1[0]) begin
 		if (pwm_1) begin
 			oe_pwm1 <= 1'b1;
@@ -134,9 +135,9 @@ always @(posedge clock_p1 or negedge rst_ni) begin
 				pts_1 <= 1'b1;
 			else
 				pts_1 <= 1'b0;
-		end
-	end
-end
+		end //if (pwm_1)
+	end //else if (ctrl_1[0])
+end 
 always @(posedge clock_p2 or negedge rst_ni) begin
 	if (!rst_ni) begin
 		pts_2 			<= 1'b0;
@@ -154,8 +155,8 @@ always @(posedge clock_p2 or negedge rst_ni) begin
 				pts_2 <= 1'b1;
 			else
 				pts_2 <= 1'b0;
-		end
-	end 
+		end //if (pwm_2) 
+	end //if (pwm_2)
 end
 
 assign o_pwm_1 = ((ctrl_1[2]) ? pts_1 : 1'b0);
