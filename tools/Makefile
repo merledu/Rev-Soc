@@ -105,7 +105,12 @@ clean:
 	rm -rf *.log *.s *.hex *.dis *.tbl irun* vcs* simv* *.map snapshots swerv* \
 	verilator* *.exe obj* *.o ucli.key vc_hdrs.h csrc *.csv work\
 	dataset.asdb  library.cfg vsimsa.cfg  riviera-build wave.asdb *.elf \
-	*.history *.key *.shm .bpad .simvision
+	*.history *.key *.shm .bpad .simvision ./build-Linux/*.log *.txt
+	clear
+	echo "Cleaning"
+	sleep 0.5
+	clear
+	
 
 
 
@@ -217,18 +222,25 @@ LINK_FLAGS=-march=rv32imac -mabi=ilp32 -nostartfiles -T$(LINK)
 GCCFLAGS=-mabi=ilp32 -march=rv32imac
 GCC=$(GCC_PREFIX)-gcc
 
-program.hex: irun-build build $(TEST).elf $(LINK) 
+program.hex: irun-build build $(TEST).exe $(LINK) 
 	@echo Building $(TEST)
-	$(GCC_PREFIX)-gcc $(TEST_DIR)/crt0.s $(LINK_FLAGS) -Wl,-Map=$(TEST).map -lgcc -o $(TEST).elf $(TEST).o 
-	$(GCC_PREFIX)-objcopy -O verilog  $(TEST).elf program.hex 
-	$(GCC_PREFIX)-objdump -S  $(TEST).elf > $(TEST).dis
+	$(GCC_PREFIX)-gcc $(TEST_DIR)/crt0.s $(LINK_FLAGS) -Wl,-Map=$(TEST).map -lgcc -o $(TEST).exe $(TEST).o 
+	$(GCC_PREFIX)-objcopy -O verilog  $(TEST).exe program.hex 
+	$(GCC_PREFIX)-objdump -S  $(TEST).exe > $(TEST).dis
 	@echo Completed building $(TEST)
 
 build:
 	$(GCC) $(GCCFLAGS) -c $(CTEST_DIR)/$(TEST).c -o $(TEST).o -lgcc
-	$(GCC) $(TEST_DIR)/crt0.s $(LINK_FLAGS)   $(TEST).o -o $(TEST).elf  -lgcc 
+	$(GCC) $(TEST_DIR)/crt0.s $(LINK_FLAGS)   $(TEST).o -o $(TEST).exe  -lgcc 
+
+whisperlog: irun
+	$(RV_ROOT)/build-Linux/whisper --logfile $(RV_ROOT)/build-Linux/$(TEST)_whisper.log $(TEST).exe --configfile $(BUILD_DIR)/whisper.json
+	touch whisperlog
+
 
 endif
+cmp:
+	python3 $(RV_ROOT)/build-Linux/comparison.py ./build-Linux/$(TEST)_whisper.log exec.log
 
 endif
 
