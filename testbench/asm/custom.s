@@ -11,7 +11,7 @@ addi	s0,sp,32
 lui	a5,0xd0580
 sw	a5,-20(s0)
 lw	a5,-20(s0)
-li	a4,255
+li	a4,255	
 sw	a4,0(a5) # d0580000 <STACK+0xe053f000>
 sw	zero,-24(s0)
 sw	zero,-24(s0)

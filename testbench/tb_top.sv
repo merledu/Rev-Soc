@@ -335,7 +335,7 @@ module tb_top ( input bit core_clk );
             $write("%c", WriteData[7:0]);
         end
         // End Of test monitor
-        if(mailbox_write && WriteData[7:0] == 8'hff) begin
+        if(mailbox_write && WriteData[7:0] == 8'h1) begin
             $display("TEST_PASSED");
             $display("\nFinished : minstret = %0d, mcycle = %0d", `DEC.tlu.minstretl[31:0],`DEC.tlu.mcyclel[31:0]);
             $display("See \"exec.log\" for execution trace with register updates..\n");

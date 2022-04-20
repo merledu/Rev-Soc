@@ -105,7 +105,7 @@ clean:
 	rm -rf *.log *.s *.hex *.dis *.tbl irun* vcs* simv* *.map snapshots swerv* \
 	verilator* *.exe obj* *.o ucli.key vc_hdrs.h csrc *.csv work\
 	dataset.asdb  library.cfg vsimsa.cfg  riviera-build wave.asdb *.elf \
-	*.history *.key *.shm .bpad .simvision ./build-Linux/*.log *.txt
+	*.history *.key *.shm .bpad .simvision ./build-Linux/*.log *.txt .reinvoke.sim
 	clear
 	echo "Cleaning"
 	sleep 0.5
@@ -235,11 +235,10 @@ build:
 
 whisperlog: irun
 	$(RV_ROOT)/build-Linux/whisper --logfile $(RV_ROOT)/build-Linux/$(TEST)_whisper.log $(TEST).exe --configfile $(BUILD_DIR)/whisper.json
-	touch whisperlog
 
 
 endif
-cmp:
+cmp: whisperlog
 	python3 $(RV_ROOT)/build-Linux/comparison.py ./build-Linux/$(TEST)_whisper.log exec.log
 
 endif

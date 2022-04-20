@@ -33,10 +33,10 @@ _start:
 .global _finish
 _finish:
         la t0, tohost
-        li t1, 0xff
+        li t1, 0x1
         sb t1, 0(t0) # DemoTB test termination
-        li t1, 1
-        sw t1, 0(t0) # Whisper test termination
+        # li t1, 1
+        # sw t1, 0(t0) # Whisper test termination
         beq x0, x0, _finish
         .rept 10
         nop
