@@ -888,9 +888,9 @@ import el2_pkg::*;
 
 //#define TIMER_BASE           0x20002000
 //#define GPIO_BASE            0x20004000
-//#define UART_BASE            0x20006000
+//#define SPI_BASE             0x20006000
 //#define PWM_BASE             0x20008000
-//#define SPI_BASE             0x2000A000
+//#define UART_BASE            0x2000A000
 //#define I2C_BASE             0x2000C000
 
    logic [31:0] rd_data1,rd_data2,rd_data3,rd_data4,rd_data5,rd_data6;
@@ -1042,6 +1042,47 @@ import el2_pkg::*;
       .PREADY_o(PREADY_4),
       .PSLVERR_o(PSLVERR_4)
    );
+
+    logic [31:0] pwdata_i;
+    logic [11:0] paddr_i;
+    logic psel_i;
+    logic pwrite_i;
+    logic penable_i;
+    logic rx_i;
+    logic pslverr_o;
+    logic [31:0] prdata_o;
+    logic pready_o;
+    logic tx_o;
+    logic intr_tx;
+    logic intr_rx;
+    logic intr_tx_level;
+    logic intr_rx_timeout;
+    logic intr_tx_full;
+    logic intr_tx_empty;
+    logic intr_rx_full;
+    logic intr_rx_empty;
+
+    apb_uart(
+      .pclk_i(clk),
+		.prst_ni(core_rst_l), 
+		.pwrite_i(wr_out5),
+		.pwdata_i(data_out5),
+		.prdata_o(rd_data5),
+		.paddr_i(addr_out5),
+      .pslverr_o(PSLVERR_5),
+      .pready_o(PREADY_5),
+      .penable_i(PENABLE_5)
+		.tx_o(tx_o),
+		.rx_i(rx_i),
+		.intr_tx(intr_tx),
+		.intr_rx(intr_rx),
+		.intr_tx_level(intr_tx_level),
+		.intr_rx_timeout(intr_rx_timeout),
+		.intr_tx_full(intr_tx_full),
+		.intr_rx_full(intr_rx_full),
+		.intr_rx_empty(intr_rx_empty),
+		.intr_tx_empty(intr_tx_empty)
+    );  
 
 
    //  JTAG/DMI instance
