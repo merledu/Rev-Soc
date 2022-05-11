@@ -35,7 +35,7 @@
 module rev_gpio #(
     // parameters
     GPIO_PINS  = 32, // Must be a multiple of 8
-    PADDR_SIZE = 4,
+    PADDR_SIZE = 20,
     STAGES     = 2   // Steges to add more stability to inputs
 ) (
    // ports
@@ -57,14 +57,14 @@ module rev_gpio #(
 );
 
    localparam MODE      = 0,
-              DIRECTION = 1,
-              OUTPUT    = 2,
-              INPUT     = 3,
-              TR_TYPE   = 4,
-              TR_LVL0   = 5,
-              TR_LVL1   = 6,
-              TR_STAT   = 7,
-              IRQ_EN    = 8;
+              DIRECTION = 4,
+              OUTPUT    = 8,
+              INPUT     = 12,
+              TR_TYPE   = 16,
+              TR_LVL0   = 20,
+              TR_LVL1   = 24,
+              TR_STAT   = 28,
+              IRQ_EN    = 32;
               
    
    // CONTROL REGISTERS
