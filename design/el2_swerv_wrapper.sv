@@ -875,7 +875,7 @@ import el2_pkg::*;
          .PSLVERR(PSLVERR)
    );
 
-   //0010000000000000 0x2000
+//0010000000000000 0x2000
 //0100000000000000 0x4000
 //0110000000000000 0x6000
 //1000000000000000 0x8000
@@ -887,11 +887,11 @@ import el2_pkg::*;
 //#define STDOUT     0xd0580000
 
 //#define TIMER_BASE           0x20002000
-//#define PWM_BASE             0x20004000
+//#define GPIO_BASE            0x20004000
 //#define UART_BASE            0x20006000
-//#define GPIO_BASE            0x20008000
+//#define PWM_BASE             0x20008000
 //#define SPI_BASE             0x2000A000
-//#define I2C_BASE             0x2000E000
+//#define I2C_BASE             0x2000C000
 
    logic [31:0] rd_data1,rd_data2,rd_data3,rd_data4,rd_data5,rd_data6;
    logic PSLVERR_1,PSLVERR_2,PSLVERR_3,PSLVERR_4,PSLVERR_5,PSLVERR_6;
@@ -948,7 +948,7 @@ import el2_pkg::*;
 
 
    localparam GPIO_PINS = 32,
-              STAGES    =  2;
+              STAGES    =  1;
 
       // // GPIO signals
     logic [GPIO_PINS-1:0]  gpio_i ,
