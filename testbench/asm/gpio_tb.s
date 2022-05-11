@@ -26,17 +26,17 @@
 #define SPI_BASE             0x20006000
 #define PWM_BASE             0x20008000
 //#define UART_BASE            0x2000A000
-//#define I2C_BASE             0x2000E000
+//#define I2C_BASE             0x2000C000
 // Register adresses
 #define MODE_REG             0x0
-#define DIR_REG              0x1
-#define OUT_REG              0x2
-#define IN_REG               0x3
-#define TRIG_TYPE_REG        0x4
-#define TRIG_LV0_REG         0x5
-#define TRIG_LV1_REG         0x6
-#define TRIG_STATUS_REG      0x7
-#define IRQ_EN_REG           0x8 
+#define DIR_REG              0x4
+#define OUT_REG              0x8
+#define IN_REG               0xc
+#define TRIG_TYPE_REG        0x10
+#define TRIG_LV0_REG         0x14
+#define TRIG_LV1_REG         0x18
+#define TRIG_STATUS_REG      0x1c
+#define IRQ_EN_REG           0x20 
 
 // Code to execute
 .section .text
