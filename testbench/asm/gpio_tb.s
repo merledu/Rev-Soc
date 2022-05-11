@@ -48,31 +48,27 @@ li t0,GPIO_BASE
 li t1,0x0
 sw t1,MODE_REG(t0)
 
-li t0,GPIO_BASE
+// Setting Direction 
+li t1,0x1
+sw t1,DIR_REG(t0)
+
 // Setting Output
 li t1,0x1
 sw t1,OUT_REG(t0)
-li t0,GPIO_BASE
 // setting trigger type
-li t1,0x0
+li t1,0x1
 sw t1,TRIG_TYPE_REG(t0)
-li t0,GPIO_BASE
 // setting trigger level0
 li t1,0x0
 sw t1,TRIG_LV0_REG(t0)
-li t0,GPIO_BASE
 // setting trigger level1
 li t1,0x0
 sw t1,TRIG_LV1_REG(t0)
-li t0,GPIO_BASE
 // setting Interrupt enable 
 li t1,0x0
 sw t1,IRQ_EN_REG(t0)
 
-li t0,GPIO_BASE
-// Setting Direction 
-li t1,0x1
-sw t1,DIR_REG(t0)
+
 
 LOOP:
 addi t0,t1,2
