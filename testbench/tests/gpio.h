@@ -1,0 +1,10 @@
+#define GPIO_BASE            0x20004000
+#define MODE_REG             0x0
+#define DIR_REG              0x4
+#define OUT_REG              0x8
+#define IN_REG               0xc
+#define TRIG_TYPE_REG        0x10
+#define TRIG_LV0_REG         0x14
+#define TRIG_LV1_REG         0x18
+#define TRIG_STATUS_REG      0x1c
+#define IRQ_EN_REG           0x20 
