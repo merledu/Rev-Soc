@@ -74,3 +74,29 @@ $RV_ROOT/design/lib/el2_lib.sv
 -v $RV_ROOT/design/lib/mem_lib.sv
 -y $RV_ROOT/design/lib
 -v $RV_ROOT/testbench/axi_lsu_dma_bridge.sv
+$RV_ROOT/design/fpu/common_cells/include/common_cells/registers.svh
+$RV_ROOT/design/fpu/fpnew_pkg.sv
+$RV_ROOT/design/fpu/defs_div_sqrt_mvp.sv
+$RV_ROOT/design/fpu/cf_math_pkg.sv
+$RV_ROOT/design/fpu/rr_arb_tree.sv
+$RV_ROOT/design/fpu/lzc.sv
+$RV_ROOT/design/fpu/div_sqrt_top_mvp.sv
+$RV_ROOT/design/fpu/fpnew_classifier.sv
+$RV_ROOT/design/fpu/fpnew_divsqrt_multi.sv
+$RV_ROOT/design/fpu/fp_decoder.sv
+$RV_ROOT/design/fpu/fpnew_cast_multi.sv
+$RV_ROOT/design/fpu/fpnew_fma_multi.sv
+$RV_ROOT/design/fpu/fpnew_opgroup_fmt_slice.sv
+$RV_ROOT/design/fpu/fpnew_rounding.sv
+$RV_ROOT/design/fpu/fpnew_opgroup_block.sv
+$RV_ROOT/design/fpu/fp_register.sv
+$RV_ROOT/design/fpu/fpnew_opgroup_multifmt_slice.sv
+$RV_ROOT/design/fpu/fpnew_noncomp.sv
+$RV_ROOT/design/fpu/fpnew_fma.sv
+$RV_ROOT/design/fpu/fpnew_top.sv
+$RV_ROOT/design/fpu/nrbd_nrsc_mvp.sv
+$RV_ROOT/design/fpu/norm_div_sqrt_mvp.sv
+$RV_ROOT/design/fpu/preprocess_mvp.sv
+$RV_ROOT/design/fpu/control_mvp.sv
+$RV_ROOT/design/fpu/iteration_div_sqrt_mvp.sv
+$RV_ROOT/design/fpu/fp_wrapper.sv

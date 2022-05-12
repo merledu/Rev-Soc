@@ -47,7 +47,6 @@ import el2_pkg::*;
    input logic [31:1]                             ifu_fetch_pc,             // starting pc of fetch
 
 
-
    output logic                                   ifu_i0_valid,             // Instruction 0 is valid
    output logic                                   ifu_i0_icaf,              // Instruction 0 has access fault
    output logic [1:0]                             ifu_i0_icaf_type,         // Instruction 0 access fault type
@@ -554,7 +553,7 @@ end
 
    // inst access fault on any byte of inst results in access fault for the inst
    assign ifu_i0_icaf        = (first4B & (|alignicaf[1:0])) |
-                               (first2B &   alignicaf[0]   );
+                               (first2B &   alignicaf[0]   ) ;
 
    assign ifu_i0_icaf_type[1:0] = (first4B & ~f0val[1] & f0val[0] & ~alignicaf[0] & ~aligndbecc[0]) ? f1ictype[1:0] : f0ictype[1:0];
 

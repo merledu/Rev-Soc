@@ -12,12 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
+#	
 
 CONF_PARAMS = -set build_axi4
 GCC=$(GCC_PREFIX)-gcc
 TEST_CFLAGS = -g -O3 -funroll-all-loops
-ABI = -mabi=ilp32 -march=rv32imac
+ABI = -mabi=ilp32 -march=rv32imafc
 RV_ROOT?=
 
 # Check for RV_ROOT
@@ -88,6 +88,9 @@ defines += ${RV_ROOT}/design/include/el2_def.sv
 defines += $(BUILD_DIR)/el2_pdef.vh
 defines += $(RV_ROOT)/design/timer/rv_timer_reg_pkg.sv
 includes = -I${BUILD_DIR}
+defines += ${RV_ROOT}/design/fpu/fpnew_pkg.sv
+defines += ${RV_ROOT}/design/fpu/cf_math_pkg.sv
+defines += ${RV_ROOT}/design/fpu/defs_div_sqrt_mvp.sv
 
 # CFLAGS for verilator generated Makefiles. Without -std=c++11 it
 # complains for `auto` variables
@@ -124,7 +127,7 @@ verilator-build: ${TBFILES} ${BUILD_DIR}/defines.h test_tb_top.cpp
 	echo '`undef RV_ASSERT_ON' >> ${BUILD_DIR}/common_defines.vh
 	$(VERILATOR)  --cc -CFLAGS ${CFLAGS} $(defiqnes) \
 	  $(includes) -I${RV_ROOT}/testbench -f ${RV_ROOT}/testbench/flist \
-	  -Wno-WIDTH -Wno-UNOPTFLAT ${TBFILES} --top-module tb_top \
+	  -Wno-WIDTH -Wno-UNOPTFLAT ${TBFILES} --top-module tb_top -Wno-LITENDIAN -Wno-UNSIGNED\
 	  -exe test_tb_top.cpp --autoflush $(VERILATOR_DEBUG)
 	cp ${RV_ROOT}/testbench/test_tb_top.cpp obj_dir/
 	$(MAKE) -j -e -C obj_dir/ -f Vtb_top.mk $(VERILATOR_MAKE_FLAGS)
@@ -218,8 +221,8 @@ else
 	LINK = $(TEST_DIR)/$(TEST).ld
 endif
 
-LINK_FLAGS=-march=rv32imac -mabi=ilp32 -nostartfiles -T$(LINK) 
-GCCFLAGS=-mabi=ilp32 -march=rv32imac
+LINK_FLAGS=-march=rv32imafc -mabi=ilp32 -nostartfiles -T$(LINK) 
+GCCFLAGS=-mabi=ilp32 -march=rv32imafc
 GCC=$(GCC_PREFIX)-gcc
 
 program.hex: irun-build build $(TEST).exe $(LINK) 

@@ -380,7 +380,13 @@ import el2_pkg::*;
    input logic [pt.PIC_TOTAL_INT:1]           extintsrc_req,
    input logic                   timer_int,
    input logic                   soft_int,
-   input logic                   scan_mode
+   input logic                   scan_mode,
+   //for FPU
+   output logic [31:0]           ifu_i0_instr,
+   output logic                  ifu_i0_valid,
+   output logic [31:0]           dec_i0_wdata_r,
+   input  logic [31:0]           fpu_result,
+   input  logic                  fpu_valid
 );
 
 

@@ -103,10 +103,10 @@ import el2_pkg::*;
 
 
    output logic [31:0]  exu_div_result,                                // Divide result
-   output logic         exu_div_wren                                   // Divide write enable to GPR
+   output logic         exu_div_wren     ,                              // Divide write enable to GPR
+   input logic [31:0]   fpu_result,
+   input  logic         fpu_valid
   );
-
-
 
 
    logic [31:0]                i0_rs1_bypass_data_d;
@@ -271,7 +271,8 @@ import el2_pkg::*;
 
 
 
-   assign exu_i0_result_x[31:0]    =  (mul_valid_x)  ?  mul_result_x[31:0]  :  alu_result_x[31:0];
+   assign exu_i0_result_x[31:0]    =  (mul_valid_x)  ?  mul_result_x[31:0]  : 
+                                     ( fpu_valid )    ?  fpu_result          : alu_result_x[31:0];
 
 
 
