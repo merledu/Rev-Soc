@@ -34,7 +34,7 @@ uart_core utc(
 		.reg_rdata(prdata_o),
 		.reg_addr(paddr_p),   
 		.tx_o(tx_o),
-		.rx_i(rx_i),
+		.rx_i(tx_o),
 		.intr_tx(intr_tx),
 		.intr_rx(intr_rx),
 		.intr_tx_level(intr_tx_level),
@@ -53,6 +53,6 @@ always_comb begin
 end 
 
 assign pslverr_o = 1'b0;
-assign pready_o = 1'b0;
+assign pready_o = 1'b1;
 
 endmodule

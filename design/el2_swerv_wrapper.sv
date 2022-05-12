@@ -1062,7 +1062,7 @@ import el2_pkg::*;
     logic intr_rx_full;
     logic intr_rx_empty;
 
-    apb_uart(
+    apb_uart UartPeripheral(
       .pclk_i(clk),
 		.prst_ni(core_rst_l), 
 		.pwrite_i(wr_out5),
@@ -1071,7 +1071,8 @@ import el2_pkg::*;
 		.paddr_i(addr_out5),
       .pslverr_o(PSLVERR_5),
       .pready_o(PREADY_5),
-      .penable_i(PENABLE_5)
+      .penable_i(PENABLE_5),
+      .psel_i(psel5),
 		.tx_o(tx_o),
 		.rx_i(rx_i),
 		.intr_tx(intr_tx),
