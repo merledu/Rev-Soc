@@ -19,6 +19,12 @@ $RV_ROOT/design/axi2apb_bridge/axi_w_buffer.sv
 $RV_ROOT/design/axi2apb_bridge/fifo_v3.sv
 $RV_ROOT/design/pwm/pwm.sv
 $RV_ROOT/design/gpio/rev_gpio.sv
+$RV_ROOT/design/uart/apb_uart.sv
+$RV_ROOT/design/uart/gen_fifo.sv
+$RV_ROOT/design/uart/timer_rx.sv
+$RV_ROOT/design/uart/uart_core.sv
+$RV_ROOT/design/uart/uart_tx.sv
+$RV_ROOT/design/uart/uart_rx.sv
 $RV_ROOT/design/pwm/apb_pwm.sv
 $RV_ROOT/design/apb_interconnect/apb_interconnect.sv
 $RV_ROOT/design/spi/apb_spi_master.sv
