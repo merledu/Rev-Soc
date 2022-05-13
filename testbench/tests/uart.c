@@ -45,7 +45,7 @@ rx_en = (int*)(UART_BASE + ADDR_RX_EN);
 int main(){
   int a=1,b=2,c=300;
   uartTx(115200,100000000,4,8,16,150);
-  for(int i=0; i<10000; i++){
+  for(int i=0; i<1000; i++){
     c = a+b;
     a++;
     b++;
