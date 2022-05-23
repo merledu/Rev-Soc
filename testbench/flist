@@ -80,7 +80,6 @@ $RV_ROOT/design/lib/el2_lib.sv
 -v $RV_ROOT/design/lib/mem_lib.sv
 -y $RV_ROOT/design/lib
 -v $RV_ROOT/testbench/axi_lsu_dma_bridge.sv
-$RV_ROOT/design/fpu/common_cells/include/common_cells/registers.svh
 $RV_ROOT/design/fpu/fpnew_pkg.sv
 $RV_ROOT/design/fpu/defs_div_sqrt_mvp.sv
 $RV_ROOT/design/fpu/cf_math_pkg.sv

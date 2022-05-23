@@ -33,7 +33,7 @@ always_comb begin
     assign foperand_c_o = registers[freg3_i];
   end
 end
-assign registers[freg1_i] = 32'd4;
-assign registers[freg2_i] = 32'd3;
-assign registers[freg3_i] = 32'd1;
+// assign registers[freg1_i] = 32'd4;
+// assign registers[freg2_i] = 32'd3;
+// assign registers[freg3_i] = 32'd1;
 endmodule

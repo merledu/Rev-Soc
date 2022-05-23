@@ -560,8 +560,6 @@ import el2_pkg::*;
    logic         dec_tlu_flush_noredir_r;
    logic         dec_tlu_flush_leak_one_r;
    logic         dec_tlu_flush_err_r;
-   logic         ifu_i0_valid;
-   logic [31:0]  ifu_i0_instr;
    logic [31:1]  ifu_i0_pc;
 
    logic        exu_flush_final;

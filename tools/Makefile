@@ -88,6 +88,7 @@ defines += ${RV_ROOT}/design/include/el2_def.sv
 defines += $(BUILD_DIR)/el2_pdef.vh
 defines += $(RV_ROOT)/design/timer/rv_timer_reg_pkg.sv
 includes = -I${BUILD_DIR}
+includes += -I${RV_ROOT}/design/fpu/common_cells/include/common_cells/registers.svh
 defines += ${RV_ROOT}/design/fpu/fpnew_pkg.sv
 defines += ${RV_ROOT}/design/fpu/cf_math_pkg.sv
 defines += ${RV_ROOT}/design/fpu/defs_div_sqrt_mvp.sv
