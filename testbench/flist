@@ -40,7 +40,7 @@ $RV_ROOT/design/timer/prim_subreg.sv
 $RV_ROOT/design/timer/prim_subreg_arb.sv
 $RV_ROOT/design/timer/prim_subreg_ext.sv
 $RV_ROOT/design/timer/rv_timer.sv
-$RV_ROOT/design/timer/rv_timer_reg_pkg.sv
+//$RV_ROOT/design/timer/rv_timer_reg_pkg.sv
 $RV_ROOT/design/timer/rv_timer_reg_top.sv
 $RV_ROOT/design/timer/timer_core.sv
 $RV_ROOT/design/ifu/el2_ifu_compress_ctl.sv
