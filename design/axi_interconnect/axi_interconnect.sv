@@ -169,7 +169,7 @@ import el2_pkg::*;
   );
 
        localparam BRIDGE_RANGE_low        =  32'h1fffffff;
-       localparam BRIDGE_RANGE_high       =  32'h80000000;
+       localparam BRIDGE_RANGE_high       =  32'h60000000;
 
 
 
