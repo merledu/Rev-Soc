@@ -21,6 +21,9 @@
 
 module axi_interconnect
 import el2_pkg::*;
+#(
+`include "el2_param.vh"
+ )
   (
 
        //-------------------------- LSU AXI signals--------------------------

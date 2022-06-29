@@ -803,7 +803,7 @@ import el2_pkg::*;
                              .*
                              );
 
-   axi_interconnect Axi_interconnect (.*);
+   axi_interconnect #(.pt(pt)) Axi_interconnect (.*);
    
     // AXI to APB Bridge Instatiation 
    axi2apb_64_32 #(
@@ -1020,12 +1020,12 @@ import el2_pkg::*;
       );
 
 
-   // PWM SIGANLS
+   // PWM SIGNALS
    localparam PWM_DATA_WIDTH = 32;																																																		
-   logic         o_pwm;
+   logic         o_pwm_1;
    logic         o_pwm_2;
-   logic     	oe_pwm1;
-   logic     	oe_pwm2;
+   logic     		 oe_pwm1;
+   logic     		 oe_pwm2;
 
    apb_pwm #(.DATA_WIDTH(PWM_DATA_WIDTH),
              .ADDR_WIDTH(APB_ADDR_WIDTH))
