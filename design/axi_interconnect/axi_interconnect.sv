@@ -169,7 +169,7 @@ import el2_pkg::*;
   );
 
        localparam BRIDGE_RANGE_low        =  32'h1fffffff;
-       localparam BRIDGE_RANGE_high       =  32'h80000000;
+       localparam BRIDGE_RANGE_high       =  32'h60000000;
 
 
 
@@ -219,6 +219,38 @@ import el2_pkg::*;
                      lsu_axi_wstrb_B_o      = lsu_axi_wstrb    ;
                      lsu_axi_wlast_B_o      = lsu_axi_wlast    ;
                      lsu_axi_bready_B_o     = lsu_axi_bready   ;     
+                     
+                     
+                     lsu_axi_rready_o     = 0;
+                     lsu_axi_arid_o       = 0;
+                     lsu_axi_araddr_o     = 0;
+                     lsu_axi_arregion_o   = 0;
+                     lsu_axi_arlen_o      = 0;
+                     lsu_axi_arsize_o     = 0;
+                     lsu_axi_arburst_o    = 0;
+                     lsu_axi_arlock_o     = 0;
+                     lsu_axi_arcache_o    = 0;
+                     lsu_axi_arprot_o     = 0;
+                     lsu_axi_arqos_o      = 0;                      
+                     lsu_axi_arvalid_o    = 0;
+                     lsu_axi_awvalid_o    = 0;
+                     lsu_axi_awid_o       = 0;
+                     lsu_axi_awaddr_o     = 0;
+                     lsu_axi_awregion_o   = 0;
+                     lsu_axi_awlen_o      = 0;
+                     lsu_axi_awsize_o     = 0;
+                     lsu_axi_awburst_o    = 0;
+                     lsu_axi_awlock_o     = 0;
+                     lsu_axi_awcache_o    = 0;
+                     lsu_axi_awprot_o     = 0;
+                     lsu_axi_awqos_o      = 0;
+                     lsu_axi_wvalid_o     = 0;
+                     lsu_axi_wdata_o      = 0;
+                     lsu_axi_wstrb_o      = 0;
+                     lsu_axi_wlast_o      = 0;
+                     lsu_axi_bready_o     = 0;     
+                     lsu_axi_bready_o     = 0;
+                     
                           
        
               end
@@ -270,6 +302,38 @@ import el2_pkg::*;
                      lsu_axi_wlast_o      = lsu_axi_wlast    ;
                      lsu_axi_bready_o     = lsu_axi_bready   ;     
                      lsu_axi_bready_o     = lsu_axi_bready   ;  
+                     
+                     
+                     
+                     lsu_axi_rready_B_o     = 0;
+                     lsu_axi_arid_B_o       = 0;
+                     lsu_axi_araddr_B_o     = 0;
+                     lsu_axi_arregion_B_o   = 0;
+                     lsu_axi_arlen_B_o      = 0;
+                     lsu_axi_arsize_B_o     = 0;
+                     lsu_axi_arburst_B_o    = 0;
+                     lsu_axi_arlock_B_o     = 0;
+                     lsu_axi_arcache_B_o    = 0;
+                     lsu_axi_arprot_B_o     = 0;
+                     lsu_axi_arqos_B_o      = 0;                      
+                     lsu_axi_arvalid_B_o    = 0;
+                     lsu_axi_awvalid_B_o    = 0;
+                     lsu_axi_awid_B_o       = 0;
+                     lsu_axi_awaddr_B_o     = 0;
+                     lsu_axi_awregion_B_o   = 0;
+                     lsu_axi_awlen_B_o      = 0;
+                     lsu_axi_awsize_B_o     = 0;
+                     lsu_axi_awburst_B_o    = 0;
+                     lsu_axi_awlock_B_o     = 0;
+                     lsu_axi_awcache_B_o    = 0;
+                     lsu_axi_awprot_B_o     = 0;
+                     lsu_axi_awqos_B_o      = 0;
+                     lsu_axi_wvalid_B_o     = 0;
+                     lsu_axi_wdata_B_o      = 0;
+                     lsu_axi_wstrb_B_o      = 0;
+                     lsu_axi_wlast_B_o      = 0;
+                     lsu_axi_bready_B_o     = 0;     
+
               end
 
        end
