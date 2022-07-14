@@ -61,4 +61,6 @@ sw t2,adr_ctrl_1(t0)
 
 LOOP:
 addi t0,t1,2
-j LOOP
+li t0,1
+li t1,STDOUT
+sw t0,0(t1)

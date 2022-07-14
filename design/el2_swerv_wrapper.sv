@@ -789,6 +789,9 @@ import el2_pkg::*;
    logic                   dmi_reg_wr_en;
    logic [31:0]            dmi_reg_wdata;
    logic [31:0]            dmi_reg_rdata;
+   logic [31:0]            ifu_i0_instr;
+   logic                   ifu_i0_valid;
+   logic [31:0]            dec_i0_wdata_r;
 
    // Instantiate the el2_swerv core
    el2_swerv #(.pt(pt)) swerv (
@@ -1105,6 +1108,43 @@ import el2_pkg::*;
     .reg_en      (dmi_reg_en),      // Write interface bit to Processor
     .reg_wr_en   (dmi_reg_wr_en),   // Write enable to Processor
     .dmi_hard_reset   ()
+   );
+//////////////////////////////////////////////////////////////////////////////
+///////////////////FLOATING POINT INTEGRATED//////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+  logic              illegal_insn  ;
+  logic              in_ready_o    ;
+  logic              flush_i       ;
+  logic              tag_o         ;
+  logic              out_valid_o   ;
+  logic              out_ready_i   ;
+  logic              busy_o        ;
+  logic [31:0]       fpu_result    ;
+  logic              fpu_valid     ;
+  logic              fp_load_o     ;
+  logic              fp_store_en   ;
+  logic [31:0]       output_to_store;
+  logic              fp_move_en     ;
+fp_wrapper fpwrapper(
+   .clk_i(clk),
+   .rst_ni(rst_l),
+   .instr_i(ifu_i0_instr),
+   .core_valid(ifu_i0_valid),
+   .wb_data_i(dec_i0_wdata_r),
+   .result_o(fpu_result),
+   .illegal_insn(illegal_insn),
+   .in_ready_o(in_ready_o),
+   .flush_i(flush_i),
+   .tag_o(tag_o),
+   .out_valid_o(out_valid_o),
+   .out_ready_i(out_ready_i),
+   .busy_o(busy_o),
+   .fp_load_o(fp_load_o),
+   .fpu_valid(fpu_valid),
+   .output_to_store(output_to_store),
+   .fp_move_en(fp_move_en),
+   .fp_store_en(fp_store_en)
    );
 
 `ifdef RV_ASSERT_ON

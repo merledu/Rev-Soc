@@ -380,9 +380,18 @@ import el2_pkg::*;
    input logic [pt.PIC_TOTAL_INT:1]           extintsrc_req,
    input logic                   timer_int,
    input logic                   soft_int,
-   input logic                   scan_mode
+   input logic                   scan_mode,
+   //for FPU
+   output logic [31:0]           ifu_i0_instr,
+   output logic                  ifu_i0_valid,
+   output logic [31:0]           dec_i0_wdata_r,
+   input  logic [31:0]           fpu_result,
+   input  logic                  fpu_valid,
+   input  logic                  fp_load_o,
+   input logic                   fp_move_en,
+   input logic                   fp_store_en,
+   input logic    [31:0]         output_to_store
 );
-
 
 
 
@@ -554,8 +563,6 @@ import el2_pkg::*;
    logic         dec_tlu_flush_noredir_r;
    logic         dec_tlu_flush_leak_one_r;
    logic         dec_tlu_flush_err_r;
-   logic         ifu_i0_valid;
-   logic [31:0]  ifu_i0_instr;
    logic [31:1]  ifu_i0_pc;
 
    logic        exu_flush_final;

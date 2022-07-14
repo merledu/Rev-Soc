@@ -70,10 +70,4 @@ always @(posedge clk_i or negedge rst_ni) begin
           end
       end 
 end
-
-//always_comb begin
-//    if (rd_en) begin
-//      data_o = mem[counter1_rd];
-//    end
-//end
 endmodule

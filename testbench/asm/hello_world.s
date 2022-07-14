@@ -28,44 +28,23 @@
 .global _start
 _start:
 
-    // Clear minstret
-    csrw minstret, zero
-    csrw minstreth, zero
-
-    // Set up MTVEC - not expecting to use it though
-    li x1, RV_ICCM_SADR
-    csrw mtvec, x1
-
-
-    // Enable Caches in MRAC
-    li x1, 0x5f555555
-    csrw 0x7c0, x1
-
-    // Load string from hw_data
-    // and write to stdout address
-
-    li x3, STDOUT
-    la x4, hw_data
-
-loop:
-   lb x5, 0(x4)
-   sb x5, 0(x3)
-   addi x4, x4, 1
-   bnez x5, loop
+    li t1,0xF0040000
+    fsw f1,0x0(t1)
+    flw f3,0x0(t1)
 
 // Write 0xff to STDOUT for TB to termiate test.
 _finish:
     li x3, STDOUT
-    addi x5, x0, 0xff
+    addi x5, x0, 0x1
     sb x5, 0(x3)
     beq x0, x0, _finish
 .rept 100
     nop
 .endr
 
-.data
-hw_data:
-.ascii "----------------------------------\n"
-.ascii "Hello World from ReV-SoC @WDC !!\n"
-.ascii "----------------------------------\n"
-.byte 0
+//.data
+//hw_data:
+//.ascii "----------------------------------\n"
+//.ascii "Hello World from SweRV EL2 @WDC !!\n"
+//.ascii "----------------------------------\n"
+//.byte 0

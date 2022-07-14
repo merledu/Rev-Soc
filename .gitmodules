@@ -1,0 +1,12 @@
+[submodule "swerv_fpu"]
+	path = swerv_fpu
+	url = https://github.com/merledu/fpnew.git
+[submodule "design/fpu/swerv_fpu"]
+	path = design/fpu/swerv_fpu
+	url = https://github.com/merledu/fpnew.git
+[submodule "design/fpu/fpnew"]
+	path = design/fpu/fpnew
+	url = https://github.com/merledu/fpnew.git
+[submodule "fpnew"]
+	path = fpnew
+	url = https://github.com/merledu/fpnew.git

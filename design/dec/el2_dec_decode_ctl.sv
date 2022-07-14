@@ -195,7 +195,13 @@ import el2_pkg::*;
 
    output logic       dec_div_active,                 // non-block divide is active
 
-   input  logic       scan_mode
+   input  logic       scan_mode,
+   input logic fpu_valid,
+   input logic [31:0]   fpu_result,
+   input logic          fp_load_o,
+   input logic [31:0]   dccm_rd_data_lo, // DCCM read data low bank
+   input logic fp_move_en,
+   input logic [31:0] gpr_i0_rs1_d
    );
 
 
@@ -1044,7 +1050,7 @@ end : cam_array
    assign i0_div_prior_div_stall = i0_dp.div & div_active;
 
    // Raw block has everything excepts the stalls coming from the lsu
-   assign i0_block_raw_d = (i0_dp.csr_read & prior_csr_write) |
+   assign i0_block_raw_d = ( (i0_dp.csr_read & prior_csr_write) |
                             dec_extint_stall |
                             pause_stall |
                             leak1_i0_stall |
@@ -1055,10 +1061,10 @@ end : cam_array
                             i0_nonblock_load_stall |
                             i0_load_block_d |
                             i0_nonblock_div_stall |
-                            i0_div_prior_div_stall;
+                            i0_div_prior_div_stall) & ~fpu_valid;
 
-   assign i0_block_d    = i0_block_raw_d | i0_store_stall_d | i0_load_stall_d;
-   assign i0_exublock_d = i0_block_raw_d;
+   assign i0_block_d    = (i0_block_raw_d | i0_store_stall_d | i0_load_stall_d) & ~fpu_valid;
+   assign i0_exublock_d = i0_block_raw_d & ~fpu_valid;
 
 
    // block reads if there is a prior csr write in the pipeline
@@ -1127,7 +1133,7 @@ end : cam_array
    assign any_csr_d      =  i0_dp.csr_read | i0_csr_write;
    assign bitmanip_legal =  bitmanip_zbb_legal & bitmanip_zbs_legal & bitmanip_zbe_legal & bitmanip_zbc_legal & bitmanip_zbp_legal & bitmanip_zbr_legal & bitmanip_zbf_legal & bitmanip_zba_legal & bitmanip_zbb_zbp_legal & bitmanip_zbp_zbe_zbf_legal &  bitmanip_zbb_zbp_zbe_zbf_legal;
 
-   assign i0_legal       =  i0_dp.legal & (~any_csr_d | dec_csr_legal_d) & bitmanip_legal;
+   assign i0_legal       = (i0_dp.legal & (~any_csr_d | dec_csr_legal_d) & bitmanip_legal) | fpu_valid;
 
 
 
@@ -1145,11 +1151,11 @@ end : cam_array
 
 
    // allow illegals to flow down the pipe
-   assign dec_i0_decode_d = i0_valid_d & ~i0_block_d    & ~dec_tlu_flush_lower_r & ~flush_final_r;
+   assign dec_i0_decode_d = (i0_valid_d & ~i0_block_d    & ~dec_tlu_flush_lower_r & ~flush_final_r)  | fpu_valid;
    assign i0_exudecode_d  = i0_valid_d & ~i0_exublock_d & ~dec_tlu_flush_lower_r & ~flush_final_r;
 
    // define i0 legal decode
-   assign i0_legal_decode_d    = dec_i0_decode_d & i0_legal;
+   assign i0_legal_decode_d    = (dec_i0_decode_d & i0_legal) | fpu_valid;
    assign i0_exulegal_decode_d = i0_exudecode_d  & i0_legal;
 
 
@@ -1363,9 +1369,8 @@ end : cam_array
 
    assign     i0_wen_r              =  r_d_in.i0v & ~dec_tlu_i0_kill_writeb_r;
    assign dec_i0_wen_r              =  i0_wen_r   & ~r_d_in.i0div & ~i0_load_kill_wen_r;  // don't write a nonblock load 1st time down the pipe
-   assign dec_i0_wdata_r[31:0]      =  i0_result_corr_r[31:0];
-
-
+   //assign dec_i0_wdata_r[31:0]      =  (fpu_valid )? fpu_result[31:0]  :  i0_result_corr_r[31:0];
+   assign dec_i0_wdata_r[31:0]      =  (fpu_valid)? ((fp_load_o)? dccm_rd_data_lo[31:0] : (fp_move_en)? gpr_i0_rs1_d : fpu_result[31:0] ) : i0_result_corr_r[31:0];
    // divide stuff
    assign div_e1_to_r         = (x_d.i0div & x_d.i0valid) |
                                 (r_d.i0div & r_d.i0valid);

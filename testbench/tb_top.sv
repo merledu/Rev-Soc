@@ -341,7 +341,7 @@ module tb_top ( input bit core_clk );
             $display("See \"exec.log\" for execution trace with register updates..\n");
             $finish;
         end
-        else if(mailbox_write && WriteData[7:0] == 8'h139) begin
+        else if(mailbox_write && WriteData[7:0] == 8'h1) begin
             $display("TEST_FAILED");
             $finish;
         end
