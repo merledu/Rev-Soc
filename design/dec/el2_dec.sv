@@ -306,8 +306,11 @@ import el2_pkg::*;
    output logic  dec_tlu_i0_commit_cmt,              // committed i0 instruction
    input  logic  scan_mode     ,                      // Flop scan mode control
    output logic [31:0] dec_i0_wdata_r,
-   input  logic fpu_valid        //valid from fpu
-
+   input  logic fpu_valid,        //valid from fpu
+   input logic [31:0] fpu_result,
+   input  logic       fp_load_o,
+   input logic [31:0] dccm_rd_data_lo,
+   input logic fp_move_en
    );
 
 

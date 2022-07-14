@@ -102,6 +102,10 @@ import el2_pkg::*;
 
    input logic [pt.DCCM_FDATA_WIDTH-1:0]   dccm_rd_data_lo, // DCCM read data low bank
    input logic [pt.DCCM_FDATA_WIDTH-1:0]   dccm_rd_data_hi, // DCCM read data hi bank
+   input logic                             fp_load_o,
+   input logic                             fp_store_en,
+   input logic  [31:0]                     fpu_result,
+   input logic  [31:0]                     output_to_store,
 
    // PIC ports
    output logic                            picm_wren,    // PIC memory write enable

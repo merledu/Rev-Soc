@@ -152,6 +152,10 @@ import el2_pkg::*;
    output logic [31:0]                     picm_wraddr,             // address for pic write access
    output logic [31:0]                     picm_wr_data,            // write data
    input logic [31:0]                      picm_rd_data,            // read data
+   input logic                             fp_load_o,
+   input logic                             fp_store_en,
+   input logic  [31:0]                     fpu_result,
+   input logic  [31:0]                     output_to_store,
 
    input logic                             scan_mode                // scan mode
 );
@@ -277,18 +281,18 @@ import el2_pkg::*;
    assign lsu_dccm_wren_d = dma_dccm_wen;
 
    // DCCM inputs
-   assign dccm_wren                             = lsu_dccm_wren_d | lsu_stbuf_commit_any | ld_single_ecc_error_r_ff;
-   assign dccm_rden                             = lsu_dccm_rden_d & addr_in_dccm_d;
+   assign dccm_wren                             = lsu_dccm_wren_d | lsu_stbuf_commit_any | ld_single_ecc_error_r_ff | fp_store_en;
+   assign dccm_rden                             = (lsu_dccm_rden_d & addr_in_dccm_d) | ~fp_load_o;
    assign dccm_wr_addr_lo[pt.DCCM_BITS-1:0]     = ld_single_ecc_error_r_ff ? (ld_single_ecc_error_lo_r_ff ? ld_sec_addr_lo_r_ff[pt.DCCM_BITS-1:0] : ld_sec_addr_hi_r_ff[pt.DCCM_BITS-1:0]) :
                                                                              lsu_dccm_wren_d ? lsu_addr_d[pt.DCCM_BITS-1:0] : stbuf_addr_any[pt.DCCM_BITS-1:0];
    assign dccm_wr_addr_hi[pt.DCCM_BITS-1:0]     = ld_single_ecc_error_r_ff ? (ld_single_ecc_error_hi_r_ff ? ld_sec_addr_hi_r_ff[pt.DCCM_BITS-1:0] : ld_sec_addr_lo_r_ff[pt.DCCM_BITS-1:0]) :
                                                                              lsu_dccm_wren_d ? end_addr_d[pt.DCCM_BITS-1:0] : stbuf_addr_any[pt.DCCM_BITS-1:0];
    assign dccm_rd_addr_lo[pt.DCCM_BITS-1:0]     = lsu_addr_d[pt.DCCM_BITS-1:0];
    assign dccm_rd_addr_hi[pt.DCCM_BITS-1:0]     = end_addr_d[pt.DCCM_BITS-1:0];
-   assign dccm_wr_data_lo[pt.DCCM_FDATA_WIDTH-1:0] = ld_single_ecc_error_r_ff ? (ld_single_ecc_error_lo_r_ff ? {sec_data_ecc_lo_r_ff[pt.DCCM_ECC_WIDTH-1:0],sec_data_lo_r_ff[pt.DCCM_DATA_WIDTH-1:0]} :
+   assign dccm_wr_data_lo[pt.DCCM_FDATA_WIDTH-1:0] = (fp_store_en)?  output_to_store : (ld_single_ecc_error_r_ff ? (ld_single_ecc_error_lo_r_ff ? {sec_data_ecc_lo_r_ff[pt.DCCM_ECC_WIDTH-1:0],sec_data_lo_r_ff[pt.DCCM_DATA_WIDTH-1:0]} :
                                                                                                                {sec_data_ecc_hi_r_ff[pt.DCCM_ECC_WIDTH-1:0],sec_data_hi_r_ff[pt.DCCM_DATA_WIDTH-1:0]}) :
                                                                                 (dma_dccm_wen ? {dma_dccm_wdata_ecc_lo[pt.DCCM_ECC_WIDTH-1:0],dma_dccm_wdata_lo[pt.DCCM_DATA_WIDTH-1:0]} :
-                                                                                                {stbuf_ecc_any[pt.DCCM_ECC_WIDTH-1:0],stbuf_data_any[pt.DCCM_DATA_WIDTH-1:0]});
+                                                                                                {stbuf_ecc_any[pt.DCCM_ECC_WIDTH-1:0],stbuf_data_any[pt.DCCM_DATA_WIDTH-1:0]}));
    assign dccm_wr_data_hi[pt.DCCM_FDATA_WIDTH-1:0] = ld_single_ecc_error_r_ff ? (ld_single_ecc_error_hi_r_ff ? {sec_data_ecc_hi_r_ff[pt.DCCM_ECC_WIDTH-1:0],sec_data_hi_r_ff[pt.DCCM_DATA_WIDTH-1:0]} :
                                                                                                                {sec_data_ecc_lo_r_ff[pt.DCCM_ECC_WIDTH-1:0],sec_data_lo_r_ff[pt.DCCM_DATA_WIDTH-1:0]}) :
                                                                                 (dma_dccm_wen ? {dma_dccm_wdata_ecc_hi[pt.DCCM_ECC_WIDTH-1:0],dma_dccm_wdata_hi[pt.DCCM_DATA_WIDTH-1:0]} :

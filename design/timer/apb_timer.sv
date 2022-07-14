@@ -69,10 +69,5 @@ module apb_timer
         PWDATA_p  = PWDATA   ;
         PSLVERR   = PSLVERR_p;
       end
-      else begin
-        PADDR_p   = 0 ;
-        PWDATA_p  = 0 ;
-        PSLVERR   = 0 ;
-      end
     end    
   endmodule

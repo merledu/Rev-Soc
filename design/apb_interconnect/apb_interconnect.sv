@@ -321,13 +321,6 @@ module apb_interconnect (
           PENABLE_4 = 1'b0;
           PENABLE_5 = 1'b0;
           PENABLE_6 = 1'b0;
-          psel1     = 1'b0;
-          psel2     = 1'b0;
-          psel3     = 1'b0;
-          psel4     = 1'b0;
-          psel5     = 1'b0;
-          psel6     = 1'b0;
-
 
         end
       endcase

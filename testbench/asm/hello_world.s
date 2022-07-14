@@ -28,26 +28,23 @@
 .global _start
 _start:
 
-    li t0,4
-    add t2,t0,t0
-    fadd.s f1,f2,f3
-    li t1,6
-    add t3,t1,t1
-    
+    li t1,0xF0040000
+    fsw f1,0x0(t1)
+    flw f3,0x0(t1)
 
 // Write 0xff to STDOUT for TB to termiate test.
 _finish:
     li x3, STDOUT
-    addi x5, x0, 0xff
+    addi x5, x0, 0x1
     sb x5, 0(x3)
     beq x0, x0, _finish
 .rept 100
     nop
 .endr
 
-.data
-hw_data:
-.ascii "----------------------------------\n"
-.ascii "Hello World from SweRV EL2 @WDC !!\n"
-.ascii "----------------------------------\n"
-.byte 0
+//.data
+//hw_data:
+//.ascii "----------------------------------\n"
+//.ascii "Hello World from SweRV EL2 @WDC !!\n"
+//.ascii "----------------------------------\n"
+//.byte 0

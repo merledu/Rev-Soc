@@ -7,3 +7,6 @@
 [submodule "design/fpu/fpnew"]
 	path = design/fpu/fpnew
 	url = https://github.com/merledu/fpnew.git
+[submodule "fpnew"]
+	path = fpnew
+	url = https://github.com/merledu/fpnew.git

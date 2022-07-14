@@ -386,9 +386,12 @@ import el2_pkg::*;
    output logic                  ifu_i0_valid,
    output logic [31:0]           dec_i0_wdata_r,
    input  logic [31:0]           fpu_result,
-   input  logic                  fpu_valid
+   input  logic                  fpu_valid,
+   input  logic                  fp_load_o,
+   input logic                   fp_move_en,
+   input logic                   fp_store_en,
+   input logic    [31:0]         output_to_store
 );
-
 
 
 

@@ -196,7 +196,12 @@ import el2_pkg::*;
    output logic       dec_div_active,                 // non-block divide is active
 
    input  logic       scan_mode,
-   input logic fpu_valid
+   input logic fpu_valid,
+   input logic [31:0]   fpu_result,
+   input logic          fp_load_o,
+   input logic [31:0]   dccm_rd_data_lo, // DCCM read data low bank
+   input logic fp_move_en,
+   input logic [31:0] gpr_i0_rs1_d
    );
 
 
@@ -1364,9 +1369,8 @@ end : cam_array
 
    assign     i0_wen_r              =  r_d_in.i0v & ~dec_tlu_i0_kill_writeb_r;
    assign dec_i0_wen_r              =  i0_wen_r   & ~r_d_in.i0div & ~i0_load_kill_wen_r;  // don't write a nonblock load 1st time down the pipe
-   assign dec_i0_wdata_r[31:0]      =  i0_result_corr_r[31:0];
-
-
+   //assign dec_i0_wdata_r[31:0]      =  (fpu_valid )? fpu_result[31:0]  :  i0_result_corr_r[31:0];
+   assign dec_i0_wdata_r[31:0]      =  (fpu_valid)? ((fp_load_o)? dccm_rd_data_lo[31:0] : (fp_move_en)? gpr_i0_rs1_d : fpu_result[31:0] ) : i0_result_corr_r[31:0];
    // divide stuff
    assign div_e1_to_r         = (x_d.i0div & x_d.i0valid) |
                                 (r_d.i0div & r_d.i0valid);
