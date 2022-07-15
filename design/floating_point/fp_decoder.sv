@@ -23,7 +23,9 @@ module fp_decoder
     output logic                  fp_move_en,
     output logic                  fp_regwrite_o,
     output logic                  fpu_valid,
-    output logic                  fp_store_en
+    output logic                  fp_store_en,
+    output logic                  regread_en,
+    output logic                  cvt_en
 );
   
   logic        fp_invalid_rm;
@@ -66,9 +68,11 @@ module fp_decoder
     fp_regwrite_o         = 0;
     fp_move_en            = 1'b0;
     fp_store_en           = 1'b0;
+    regread_en            = 1'b0;
     fp_alu_op_mod_o       = 1'b0;
     fp_alu_operator_o     = FMADD;
     fpu_valid             = 1'b0;
+    cvt_en                = 1'b0;  
 
     unique case (opcode)
       OPCODE_STORE_FP: begin
@@ -77,6 +81,7 @@ module fp_decoder
             illegal_insn = (RVF == RV32FNone) ? 1'b1 : 1'b0;
             fp_src_fmt_o = FP32;  
             fp_store_en  = 1'b1;
+            regread_en = 1'b1;
             fpu_valid  = 1'b1;
           end
           default: illegal_insn = 1'b1;
@@ -148,35 +153,40 @@ module fp_decoder
       OPCODE_OP_FP: begin
         fp_src_fmt_o       = FP32;
         illegal_insn = ((RVF == RV32FNone) & (~fp_invalid_rm)) ? 1'b1 : 1'b0;
-        fp_regwrite_o = 1'b1;
         unique case (instr[31:25]) 
           7'b0000000: begin // FADD.S
             fp_alu_operator_o     = ADD;
             fpu_valid             = 1'b1;
+            fp_regwrite_o = 1'b1;
           end
           7'b0000100: begin // FSUB.S
             fp_alu_operator_o     = ADD;
             fp_alu_op_mod_o       = 1'b1;
             fpu_valid             = 1'b1;
+            fp_regwrite_o = 1'b1;
           end
           7'b0001000: begin // FMUL.S
             fp_alu_operator_o     = MUL;
+            fp_regwrite_o = 1'b1;
             fpu_valid             = 1'b1;
           end
           7'b0001100: begin // FDIV.S
             fp_alu_operator_o     = DIV;
             fpu_valid             = 1'b1;
+            fp_regwrite_o = 1'b1;
           end
           7'b0101100: begin // FSQRT.S
             if (~|instr[24:20]) begin
               fp_alu_operator_o     = SQRT;
               fpu_valid             = 1'b1;
+              fp_regwrite_o = 1'b1;
             end
           end
           7'b0010000: begin // FSGNJ.S, FSGNJN.S, FSGNJX.S
             if (~(instr[14] | (&instr[13:12]))) begin
               fp_alu_operator_o     = SGNJ;
               fpu_valid             = 1'b1;
+              fp_regwrite_o = 1'b1;
             end
           end
           7'b0010100: begin // FMIN.S, FMAX.S
@@ -215,9 +225,11 @@ module fp_decoder
             end
           end
           7'b1101000: begin // FCVT.S.W, FCVT.S.WU
+            cvt_en = 1'b1;  
+            fp_regwrite_o = 1'b1;
             if (~|instr[24:21]) begin
               fp_alu_operator_o     = I2F;
-              fpu_valid    = 1'b1;      
+              fpu_valid    = 1'b1;    
                 if (instr[20])
                   fp_alu_op_mod_o     = 1'b1;
                   fpu_valid    = 1'b1;  
@@ -227,6 +239,7 @@ module fp_decoder
             if (~(|instr[24:20]) | (|instr[14:12])) begin
               fp_move_en    = 1'b1;
               fpu_valid   = 1'b1;
+              fp_alu_operator_o     = ADD;
             end
           end
           default: illegal_insn = 1'b1;
