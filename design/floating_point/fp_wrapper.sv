@@ -22,7 +22,7 @@ module fp_wrapper
     output                        fp_load_o     ,
     output                        fp_store_en   ,
     output [31:0]                 output_to_store,
-    output fp_move_en
+    input [31:0]  gpr_i0_rs1_d
   
   );
     localparam int unsigned NUM_FP_FORMATS = 5; 
@@ -46,6 +46,9 @@ module fp_wrapper
     logic [2:0]                        fp_rounding_mode ;
     fpnew_pkg::status_t                status_o         ;
     logic                              fp_regwrite_o    ;
+    logic                              regread_en       ;
+    logic                              cvt_en           ;
+    logic                              fp_move_en       ;
   fp_decoder fpdecoder(           //all complete
     .clk_i(clk_i)                         ,
     .rst_ni(rst_ni)                       ,
@@ -65,7 +68,9 @@ module fp_wrapper
     .fpu_valid(fpu_valid)                 ,
     .core_valid(core_valid)               ,
     .fp_move_en(fp_move_en)               ,
-    .fp_store_en(fp_store_en)
+    .fp_store_en(fp_store_en)             ,
+    .regread_en(regread_en)               ,
+    .cvt_en(cvt_en)
   );
   
   fp_register fpregister(         //all complete
@@ -80,8 +85,11 @@ module fp_wrapper
     .foperand_a_o(foperand_a)   ,  
     .foperand_b_o(foperand_b)   ,  
     .foperand_c_o(foperand_c)   ,
-    .fp_store_en(fp_store_en)   ,
-    .output_to_store(output_to_store)
+    .regread_en(regread_en)     ,
+    .output_to_store(output_to_store),
+    .gpr_i0_rs1_d(gpr_i0_rs1_d) ,
+    .cvt_en(cvt_en)             ,
+    .fp_move_en(fp_move_en)     
   );
   fpnew_top fpnewtop(         //all complete
     .clk_i(clk_i)                     ,
