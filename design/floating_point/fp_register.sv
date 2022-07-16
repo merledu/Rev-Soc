@@ -36,7 +36,7 @@ end
       registers[freg1_i] = gpr_i0_rs1_d;
     end
     if (fp_move_en) begin
-      registers[frd_i] = gpr_i0_rs1_d;
+      registers[freg1_i] = gpr_i0_rs1_d;
     end
   end
 
