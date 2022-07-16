@@ -1,28 +1,30 @@
 module fp_wrapper 
   import fpnew_pkg::*;
     (
-    input                         clk_i         ,
-    input                         rst_ni        ,
-    input  [31 : 0]               instr_i       ,
-    input  [31 : 0]               wb_data_i     ,
-    output [31 : 0]               result_o      ,
-    output                        illegal_insn  ,
+    input                         clk_i           ,
+    input                         rst_ni          ,
+    input  [31 : 0]               instr_i         ,
+    input  [31 : 0]               wb_data_i       ,
+    output [31 : 0]               result_o        ,
+    output                        illegal_insn    ,
     // Input Handshake
-    input                         core_valid    ,
-    output                        in_ready_o    ,
-    input                         flush_i       ,
+    input                         core_valid      ,
+    output                        in_ready_o      ,
+    input                         flush_i         ,
     // Output signals
-    output                        tag_o         ,
+    output                        tag_o           ,
     // Output handshake
-    output                        out_valid_o   ,
-    input                         out_ready_i   ,
+    output                        out_valid_o     ,
+    input                         out_ready_i     ,
     // Indication of valid data in flight
-    output                        busy_o        ,
-    output                        fpu_valid     ,
-    output                        fp_load_o     ,
-    output                        fp_store_en   ,
-    output [31:0]                 output_to_store,
-    input [31:0]  gpr_i0_rs1_d
+    output                        busy_o          ,
+    output                        fpu_valid       ,
+    output                        fp_load_o       ,
+    output                        fp_store_en     ,
+    output [31:0]                 output_to_store ,
+    input [31:0]                  gpr_i0_rs1_d    ,
+    output                        int_reg_write   ,
+    output  [4:0]                 frd   
   
   );
     localparam int unsigned NUM_FP_FORMATS = 5; 
@@ -34,7 +36,6 @@ module fp_wrapper
     logic [4:0]                        freg1            ;
     logic [4:0]                        freg2            ;
     logic [4:0]                        freg3            ;
-    logic [4:0]                        frd              ;
     logic [31:0]                       foperand_a       ;
     logic [31:0]                       foperand_b       ;
     logic [31:0]                       foperand_c       ;
@@ -49,6 +50,7 @@ module fp_wrapper
     logic                              regread_en       ;
     logic                              cvt_en           ;
     logic                              fp_move_en       ;
+
   fp_decoder fpdecoder(           //all complete
     .clk_i(clk_i)                         ,
     .rst_ni(rst_ni)                       ,
@@ -70,7 +72,8 @@ module fp_wrapper
     .fp_move_en(fp_move_en)               ,
     .fp_store_en(fp_store_en)             ,
     .regread_en(regread_en)               ,
-    .cvt_en(cvt_en)
+    .cvt_en(cvt_en)                       ,
+    .int_reg_write(int_reg_write)
   );
   
   fp_register fpregister(         //all complete
