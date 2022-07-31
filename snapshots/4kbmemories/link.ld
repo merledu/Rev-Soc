@@ -1,8 +1,8 @@
 /*
  NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE
- This is an automatically generated file by rejaz on Sun 31 Jul 18:03:53 PKT 2022
+ This is an automatically generated file by rejaz on Sun 31 Jul 18:16:20 PKT 2022
 
- cmd:    swerv -iccm_size=4 -dccm_size=4 -snapshot=4kbmemories 
+ cmd:    swerv -iccm_size=4 -dccm_size=4 -iccm_enable=1 -dccm_enable=1 -snapshot=4kbmemories 
 
 */
 OUTPUT_ARCH( "riscv" )
