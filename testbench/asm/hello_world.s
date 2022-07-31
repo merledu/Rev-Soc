@@ -63,9 +63,9 @@ _finish:
     nop
 .endr
 
-.data
-hw_data:
-.ascii "----------------------------------\n"
-.ascii "Hello World from ReV-SoC @WDC !!\n"
-.ascii "----------------------------------\n"
-.byte 0
+# .data
+# hw_data:
+# .ascii "----------------------------------\n"
+# .ascii "Hello World from ReV-SoC @WDC !!\n"
+# .ascii "----------------------------------\n"
+# .byte 0

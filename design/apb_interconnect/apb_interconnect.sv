@@ -339,8 +339,8 @@ module apb_interconnect (
 //#define STDOUT     0xd0580000
 
 //#define TIMER_BASE           0x20002000
-//#define PWM_BASE             0x20004000
-//#define UART_BASE            0x20006000
-//#define GPIO_BASE            0x20008000
-//#define SPI_BASE             0x2000A000
-//#define I2C_BASE             0x2000E000
+//#define GPIO_BASE            0x20004000
+//#define SPI_BASE             0x20006000
+//#define PWM_BASE             0x20008000
+//#define UART_BASE            0x2000A000
+//#define I2C_BASE             0x2000C000

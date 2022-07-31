@@ -30,37 +30,43 @@ ctrl = (int*)(PWM_BASE + ctrl_1);
 }
 
 int main(){
-  int a=1,b=2,c=300;
-  pwm(10,100);
-  for(int i=0; i<100; i++){
-    c = a+b;
-    a++;
-    b++;
+  // int a=1,b=2,c=300;
+  // pwm(10,100);
+  // for(int i=0; i<100; i++){
+  //   c = a+b;
+  //   a++;
+  //   b++;
+  // }
+int i=0,a;
+     pwm(10,100);
+
+  while (i=0){
+    a=a+1;
   }
-  pwm(30,100);
-  for(int i=0; i<100; i++){
-  c = a+b;
-  a++;
-  b++;
-  }
-  pwm(60,100);
-  for(int i=0; i<100; i++){
-  c = a+b;
-  a++;
-  b++;
-  }
-  pwm(80,100);
-  for(int i=0; i<100; i++){
-  c = a+b;
-  a++;
-  b++;
-  }
-    pwm(100,100);
-  for(int i=0; i<100; i++){
-  c = a+b;
-  a++;
-  b++;
-  }
+  // pwm(30,100);
+  // for(int i=0; i<100; i++){
+  // c = a+b;
+  // a++;
+  // b++;
+  // }
+  // pwm(60,100);
+  // for(int i=0; i<100; i++){
+  // c = a+b;
+  // a++;
+  // b++;
+  // }
+  // pwm(80,100);
+  // for(int i=0; i<100; i++){
+  // c = a+b;
+  // a++;
+  // b++;
+  // }
+  //   pwm(100,100);
+  // for(int i=0; i<100; i++){
+  // c = a+b;
+  // a++;
+  // b++;
+  // }
 
   return 0;
 }

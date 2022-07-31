@@ -85,6 +85,8 @@ module tb_top ( input bit core_clk );
     logic                       mailbox_write;
     logic        [63:0]         dma_hrdata       ;
     logic        [63:0]         dma_hwdata       ;
+    logic                       TIMER_irq_o      ;
+
     logic                       dma_hready       ;
     logic                       dma_hresp        ;
 
@@ -318,7 +320,7 @@ module tb_top ( input bit core_clk );
     assign WriteData = lmem.WriteData;
     assign mailbox_data_val = WriteData[7:0] > 8'h5 && WriteData[7:0] < 8'h7f;
 
-    parameter MAX_CYCLES = 2_000_000;
+    parameter MAX_CYCLES = 40000000000;
 
     integer fd, tp, el;
 
@@ -449,6 +451,7 @@ el2_swerv_wrapper rvtop (
     .nmi_int                ( nmi_int       ),
     .nmi_vec                ( nmi_vector[31:1]),
     .jtag_id                ( jtag_id[31:1]),
+    .TIMER_irq_o            (TIMER_irq_o),
 
 `ifdef RV_BUILD_AHB_LITE
     .haddr                  ( ic_haddr      ),
@@ -694,8 +697,7 @@ el2_swerv_wrapper rvtop (
     .dma_axi_rlast          (dma_axi_rlast),
 `endif
     .timer_int              ( 1'b0     ),
-    .extintsrc_req          ( '0  ),
-
+    .extintsrc_req          ({29'd0,TIMER_irq_o,TIMER_irq_o,1'd0}),
     .lsu_bus_clk_en         ( 1'b1  ),// Clock ratio b/w cpu core clk & AHB master interface
     .ifu_bus_clk_en         ( 1'b1  ),// Clock ratio b/w cpu core clk & AHB master interface
     .dbg_bus_clk_en         ( 1'b1  ),// Clock ratio b/w cpu core clk & AHB Debug master interface
