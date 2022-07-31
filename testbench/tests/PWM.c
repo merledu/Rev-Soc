@@ -40,8 +40,9 @@ int main(){
 int i=0,a;
      pwm(10,100);
 
-  while (i=0){
+  while (i<1000){
     a=a+1;
+    i++;
   }
   // pwm(30,100);
   // for(int i=0; i<100; i++){
