@@ -37,10 +37,10 @@ int main(){
   //   a++;
   //   b++;
   // }
-int i=0,a;
+int i=0,a=1;
      pwm(10,100);
 
-  while (i<100){
+  while (i<10){
     a=a+1;
     i++;
   }
