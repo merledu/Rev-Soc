@@ -40,7 +40,7 @@ int main(){
 int i=0,a;
      pwm(10,100);
 
-  while (i<1000){
+  while (i<100){
     a=a+1;
     i++;
   }
