@@ -142,7 +142,7 @@ localparam ADDR_RX_FIFO_CLR = 12'h014;
 localparam ADDR_TX_FIFO_LEVEL = 12'h018;
 localparam ADDR_RD_EN_TXFIFO = 12'h01c;
 
-always @(posedge clk_i or negedge rst_ni) begin
+always @(posedge clk_i ) begin
 	if (~rst_ni) begin									//When reset is set to 0, it resets all the registers(active low)
 			baud <= 16'd0;
 			rx_en <= 1'b0;
@@ -152,7 +152,6 @@ always @(posedge clk_i or negedge rst_ni) begin
 			rd_en_fifo <= 0;
 			tx_data <= 0;
 			intr_tx <= 0;
-			intr_rx <= 0;
 			r_tx_byte_done <= 0;
 			reg_rdata <= 0;
 			fifo_tx_clear = 0;
@@ -246,7 +245,7 @@ always @(posedge clk_i or negedge rst_ni) begin
 		pwrite_d <= reg_we;
 end
 
-always @(posedge clk_i or negedge rst_ni) begin
+always @(posedge clk_i ) begin
 	rd_d <= rd;
 	// if (rd_d == 1'b1 && rd == 1'b0 ) begin																					
 	// 		tx_en <= 1'b1;																													//tx_en triggers when new byte is to be transfered from the tx_fifo			
@@ -263,7 +262,7 @@ always @(posedge clk_i or negedge rst_ni) begin
 end
 
 
-always @(posedge clk_i or negedge rst_ni) begin
+always @(posedge clk_i ) begin
 	rx_done_d <= rx_done;
 	if(rx_done == 1'b0 && rx_done_d == 1'b1) begin
 		 rx_fifo_wr <= 1'b1;																										//when each byte is received rx_fifo_wr is set high to write the byte in the rx_fifo

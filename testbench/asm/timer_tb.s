@@ -94,7 +94,7 @@ sw t1,TIMER_U(t0)
 
 // Setting Compare lower reg  to 10
 
-li t1,10
+li t1,0x3D090
 sw t1,CMP_L(t0)
 
 // Setting Compare UPPER reg  to 0
@@ -120,7 +120,7 @@ sw t1,CTRL(t0)
 // LOOP
 LOOP:
 
-addi t5,t5,1
+addi x0,x0,0
 j LOOP
 
 

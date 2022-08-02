@@ -42,6 +42,8 @@ import el2_pkg::*;
    output logic [4:0]                      trace_rv_i_ecause_ip,
    output logic                            trace_rv_i_interrupt_ip,
    output logic [31:0]                     trace_rv_i_tval_ip,
+   output logic                            TIMER_irq_o,
+
 
    // Bus signals
 `ifdef RV_BUILD_AXI4
@@ -926,7 +928,6 @@ import el2_pkg::*;
       .rd_data6(rd_data6)    
    );
        
-   logic TIMER_irq_o;
 
    apb_timer #(
    // parameters

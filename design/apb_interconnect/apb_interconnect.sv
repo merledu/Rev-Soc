@@ -321,6 +321,13 @@ module apb_interconnect (
           PENABLE_4 = 1'b0;
           PENABLE_5 = 1'b0;
           PENABLE_6 = 1'b0;
+          psel1     = 1'b0;
+          psel2     = 1'b0;
+          psel3     = 1'b0;
+          psel4     = 1'b0;
+          psel5     = 1'b0;
+          psel6     = 1'b0;
+
 
         end
       endcase
@@ -339,8 +346,8 @@ module apb_interconnect (
 //#define STDOUT     0xd0580000
 
 //#define TIMER_BASE           0x20002000
-//#define PWM_BASE             0x20004000
-//#define UART_BASE            0x20006000
-//#define GPIO_BASE            0x20008000
-//#define SPI_BASE             0x2000A000
-//#define I2C_BASE             0x2000E000
+//#define GPIO_BASE            0x20004000
+//#define SPI_BASE             0x20006000
+//#define PWM_BASE             0x20008000
+//#define UART_BASE            0x2000A000
+//#define I2C_BASE             0x2000C000

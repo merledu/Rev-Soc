@@ -128,12 +128,12 @@ clear_gateway_\@:
 
 .macro init_trap_vector_rt
 init_trap_vector_rt_\@:
-la a0, trap_vector 
+la a0, eint_handler 
 //a0=trap_address
 
 slli t0, a0, 2 //Shift the address [31..2]
 andi t0, a0, 0xFFFFFFFC //Base[31..2] maps with mtvec[31..2]
-addi t0, t0, 1 //+1 for the vectored mode
+# addi t0, t0, 1 //+1 for the vectored mode
 csrw mtvec, t0 //move
 .endm
 

@@ -42,23 +42,9 @@
 _start:
 
 // Setting Clk divisor to 2
-li t0,PWM_BASE
-li t1,0x2
-sw t1,adr_divisor_1(t0)
-
-// Setting period
-li t2,0xA
-sw t2,adr_period_1(t0)  
-
-// Setting DC
-li t1,0x6
-sw t1,adr_DC_1(t0)
-
-
-// Granting Control To Channel 01
-li t2,0x7
-sw t2,adr_ctrl_1(t0)
-
+li t0,TIMER_BASE
+li t1,1
+sw t1,0(t0)
 LOOP:
-addi t0,t1,2
+addi x0,x0,0
 j LOOP
