@@ -54,8 +54,17 @@ ctrl = (int*)(TIMER_BASE_ADDRESS + CTRL);
 
 int main(){
 
+   float a = 4.2,b=4.0,c = 1.0, d;
+   if(a > b)
+   c = c+1;
+   else 
+   c = 0;
 
-  int a=1,b=2,c=300,d=0,*e,f=10;
+   if (c==2.0)
+   digitalWrite(1,1);
+
+
+  // int a=1,b=2,c=300,d=0,*e,f=10;
 
 // while (f<1){
 
