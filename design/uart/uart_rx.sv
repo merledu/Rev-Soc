@@ -88,7 +88,7 @@ always @(posedge clk_i or negedge rst_ni) begin
 			end
 
 			START: begin
-				c_START = 1'b1;
+				c_START <= 1'b1;
 				if (r_clk_count == ((clks_per_bit - 1'b1)>>1)) begin    //shifts 1 bit towards right i.e. divide by two , to check the middle of start bit if it's still low                    //start bit detected i.e. equal to 0
 						if (r_rx_data_mr == 1'b0) begin                 //start bit detected i.e. equal to 0
 							r_clk_count <= 16'd0;                       // reset counter, found the middle
@@ -105,7 +105,7 @@ always @(posedge clk_i or negedge rst_ni) begin
 			end
 	
 			DATA: begin
-				c_START = 1'b0;
+				c_START <= 1'b0;
 				if (r_clk_count < (clks_per_bit - 1'b1)) begin         
 					r_clk_count <= r_clk_count + 16'd1;             //Increments clock counts until next bit
 					r_states <= DATA;                               //jumps to state bit until next bit

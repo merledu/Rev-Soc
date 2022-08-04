@@ -169,16 +169,16 @@ module rev_gpio #(
     always_comb
         if(read_valid())
         case(paddr)
-         MODE     : prddata <= gpio_mode;
-         DIRECTION: prddata <= gpio_direction;
-         OUTPUT   : prddata <= gpio_output;
-         INPUT    : prddata <= gpio_input;
-         TR_TYPE  : prddata <= gpio_tr_type;
-         TR_LVL0  : prddata <= gpio_tr_lvl0;
-         TR_LVL1  : prddata <= gpio_tr_lvl1;
-         TR_STAT  : prddata <= gpio_tr_stat;
-         IRQ_EN   : prddata <= gpio_irq_en;
-         default  : prddata <= {GPIO_PINS{1'b0}};
+         MODE     : prddata = gpio_mode;
+         DIRECTION: prddata = gpio_direction;
+         OUTPUT   : prddata = gpio_output;
+         INPUT    : prddata = gpio_input;
+         TR_TYPE  : prddata = gpio_tr_type;
+         TR_LVL0  : prddata = gpio_tr_lvl0;
+         TR_LVL1  : prddata = gpio_tr_lvl1;
+         TR_STAT  : prddata = gpio_tr_stat;
+         IRQ_EN   : prddata = gpio_irq_en;
+         default  : prddata = {GPIO_PINS{1'b0}};
         endcase
     
    //  mode

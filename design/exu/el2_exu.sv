@@ -103,15 +103,16 @@ import el2_pkg::*;
 
 
    output logic [31:0]  exu_div_result,                                // Divide result
-   output logic         exu_div_wren                                   // Divide write enable to GPR
+   output logic         exu_div_wren  ,                                 // Divide write enable to GPR
+   output logic         i0_rs1_bypass_en_d,
+   output logic         i0_rs2_bypass_en_d,
+   output logic [31:0]  i0_rs1_d,  
+   output logic [31:0]  i0_rs2_d
   );
 
 
    logic [31:0]                i0_rs1_bypass_data_d;
    logic [31:0]                i0_rs2_bypass_data_d;
-   logic                       i0_rs1_bypass_en_d;
-   logic                       i0_rs2_bypass_en_d;
-   logic [31:0]                i0_rs1_d,  i0_rs2_d;
    logic [31:0]                muldiv_rs1_d;
    logic [31:1]                pred_correct_npc_r;
    logic                       i0_pred_correct_upper_r;
@@ -282,7 +283,7 @@ import el2_pkg::*;
 
    assign exu_pmu_i0_br_misp       =  i0_pp_r.misp;
    assign exu_pmu_i0_br_ataken     =  i0_pp_r.ataken;
-   assign exu_pmu_i0_pc4           =  i0_pp_r.pc4;
+   assign exu_pmu_i0_pc4           =  i0_pp_r.pc4 ;
 
 
    assign i0_valid_d               =  i0_predict_p_d.valid  & dec_i0_alu_decode_d & ~dec_tlu_flush_lower_r;
