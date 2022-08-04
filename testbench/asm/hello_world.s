@@ -28,9 +28,10 @@
 .global _start
 _start:
 
-    li t1,0xF0040000
-    fsw f1,0x0(t1)
-    flw f3,0x0(t1)
+    li t1,3
+    fmv.s.x f2,t1
+    fmv.x.s t2,f2
+    fle.s x1,f2,f2
 
 // Write 0xff to STDOUT for TB to termiate test.
 _finish:

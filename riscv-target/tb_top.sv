@@ -335,7 +335,7 @@ module tb_top ( input bit core_clk );
             $write("%c", WriteData[7:0]);
         end
         // End Of test monitor
-        if(mailbox_write && WriteData[7:0] == 8'h1) begin
+        if(mailbox_write && WriteData[7:0] == 8'hff) begin
             $display("TEST_PASSED");
             $display("\nFinished : minstret = %0d, mcycle = %0d", `DEC.tlu.minstretl[31:0],`DEC.tlu.mcyclel[31:0]);
             $display("See \"exec.log\" for execution trace with register updates..\n");
@@ -418,8 +418,8 @@ module tb_top ( input bit core_clk );
         nmi_vector   = 32'hee000000;
         nmi_int   = 0;
 
-        // $readmemh("program.hex",  lmem.mem);
-        // $readmemh("program.hex",  imem.mem);
+        //$readmemh("program.hex",  lmem.mem);
+        //$readmemh("program.hex",  imem.mem);
         tp = $fopen("trace_port.csv","w");
         el = $fopen("exec.log","w");
         $fwrite (el, "//   Cycle : #inst    0    pc    opcode    reg=value   ; mnemonic\n");
@@ -427,7 +427,8 @@ module tb_top ( input bit core_clk );
         commit_count = 0;
         preload_dccm();
         preload_iccm();
-        if ($value$plusargs("ram_init_file=%s", ram_init_file)) begin
+        
+				if ($value$plusargs("ram_init_file=%s", ram_init_file)) begin
 					 $display("Loading RAM contents from %0s", ram_init_file);
 					 $readmemh(ram_init_file, imem.mem);
 					 $readmemh(ram_init_file, lmem.mem);
@@ -1181,6 +1182,7 @@ endfunction
 /* verilator lint_off CASEINCOMPLETE */
 `include "dasm.svi"
 /* verilator lint_on CASEINCOMPLETE */
- reg [1023:0] ram_init_file;
-
+   
+   reg [1023:0] ram_init_file;
+   
 endmodule

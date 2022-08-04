@@ -50,6 +50,9 @@ always_comb begin
     paddr_p   = paddr_i    ;
     pwdata_p  = pwdata_i   ;
     end
+    else
+    paddr_p   = 0    ;
+    pwdata_p  = 0    ;
 end 
 
 assign pslverr_o = 1'b0;

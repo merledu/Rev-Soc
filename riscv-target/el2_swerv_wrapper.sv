@@ -789,14 +789,6 @@ import el2_pkg::*;
    logic                   dmi_reg_wr_en;
    logic [31:0]            dmi_reg_wdata;
    logic [31:0]            dmi_reg_rdata;
-   logic [31:0]            ifu_i0_instr;
-   logic                   ifu_i0_valid;
-   logic [31:0]            dec_i0_wdata_r;
-   logic  [31:0]           gpr_i0_rs1_d;
-   logic                   i0_rs1_bypass_en_d;
-   logic                   i0_rs2_bypass_en_d;
-   logic [31:0]            i0_rs1_d;  
-   logic [31:0]            i0_rs2_d;
 
    // Instantiate the el2_swerv core
    el2_swerv #(.pt(pt)) swerv (
@@ -811,7 +803,7 @@ import el2_pkg::*;
                              .*
                              );
 
-   axi_interconnect Axi_interconnect (.*);
+   axi_interconnect #(.pt(pt)) Axi_interconnect (.*);
    
     // AXI to APB Bridge Instatiation 
    axi2apb_64_32 #(
@@ -1028,12 +1020,12 @@ import el2_pkg::*;
       );
 
 
-   // PWM SIGANLS
+   // PWM SIGNALS
    localparam PWM_DATA_WIDTH = 32;																																																		
    logic         o_pwm_1;
    logic         o_pwm_2;
-   logic     	oe_pwm1;
-   logic     	oe_pwm2;
+   logic     		 oe_pwm1;
+   logic     		 oe_pwm2;
 
    apb_pwm #(.DATA_WIDTH(PWM_DATA_WIDTH),
              .ADDR_WIDTH(APB_ADDR_WIDTH))
@@ -1114,51 +1106,6 @@ import el2_pkg::*;
     .reg_wr_en   (dmi_reg_wr_en),   // Write enable to Processor
     .dmi_hard_reset   ()
    );
-//////////////////////////////////////////////////////////////////////////////
-///////////////////FLOATING POINT INTEGRATED//////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-
-  logic              illegal_insn      ;
-  logic              in_ready_o        ;
-  logic              flush_i           ;
-  logic              tag_o             ;
-  logic              out_valid_o       ;
-  logic              busy_o            ;
-  logic [31:0]       fpu_result        ;
-  logic              fpu_valid         ;
-  logic              fp_move_en        ;
-  logic              fp_load_o         ;
-  logic              fp_store_en       ;
-  logic [31:0]       output_to_store   ;
-  logic              int_reg_write     ;
-  logic [4:0]        frd               ;
-  logic              fp_move_xs        ;
-  logic  [31:0]      move_data_xs      ;
-
-fp_wrapper fpwrapper(
-   .clk_i(clk)                      ,
-   .rst_ni(rst_l)                   ,
-   .instr_i(ifu_i0_instr)           ,
-   .core_valid(ifu_i0_valid)        ,
-   .wb_data_i(dec_i0_wdata_r)       ,
-   .result_o(fpu_result)            ,
-   .illegal_insn(illegal_insn)      ,
-   .in_ready_o(in_ready_o)          ,
-   .flush_i(flush_i)                ,   
-   .tag_o(tag_o)                    , 
-   .out_valid_o(out_valid_o)        ,
-   .busy_o(busy_o)                  ,
-   .fp_load_o(fp_load_o)            ,
-   .fpu_valid(fpu_valid)            ,
-   .output_to_store(output_to_store),
-   .fp_store_en(fp_store_en)        ,
-   .gpr_i0_rs1_d(gpr_i0_rs1_d)      ,
-   .int_reg_write(int_reg_write)    ,
-   .frd(frd)                        ,
-   .fp_move_en(fp_move_en)          ,
-   .fp_move_xs(fp_move_xs)          ,
-   .move_data_xs(move_data_xs)
-   );
 
 `ifdef RV_ASSERT_ON
 // to avoid internal assertions failure at time 0
@@ -1189,4 +1136,5 @@ end
             $finish;
         end
    end
+
 endmodule

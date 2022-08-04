@@ -26,13 +26,14 @@ module fp_decoder
     output logic                  fp_store_en,
     output logic                  regread_en,
     output logic                  cvt_en,
-    output logic                  int_reg_write
+    output logic                  int_reg_write,
+    output logic                  fp_move_xs,
+    output logic                  fp_move_sx
 );
   
   logic        fp_invalid_rm;
   logic        fp_rm_dynamic_o;
   logic        illegal_insn;
-  logic [6:0]   opcode_fpu;
   logic [31:0] instr;
   logic [4:0] instr_rs1;
   logic [4:0] instr_rs2;
@@ -49,6 +50,15 @@ module fp_decoder
       assign instr_rs3 = instr[31:27];
       //destination register
       assign instr_rd   = instr[11:7];
+    end
+    else begin
+      assign instr     = 32'b0;
+      // source registers
+      assign instr_rs1 = 5'b0;
+      assign instr_rs2 = 5'b0;
+      assign instr_rs3 = 5'b0;
+      //destination register
+      assign instr_rd   = 5'b0;
     end
   end
   // fp source registers
@@ -67,7 +77,7 @@ module fp_decoder
     fp_dst_fmt_o          = FP32;
     opcode                = opcode_e'(instr[6:0]);
     fp_regwrite_o         = 0;
-    fp_move_en            = 1'b0;
+    fp_move_en            = 1'b1;
     fp_store_en           = 1'b0;
     regread_en            = 1'b0;
     fp_alu_op_mod_o       = 1'b0;
@@ -75,6 +85,8 @@ module fp_decoder
     fpu_valid             = 1'b0;
     cvt_en                = 1'b0;  
     int_reg_write         = 1'b0;
+    fp_move_xs            = 1'b0;
+    fp_move_sx            = 1'b0;
 
     unique case (opcode)
       OPCODE_STORE_FP: begin
@@ -199,20 +211,21 @@ module fp_decoder
             end
           end
           7'b1100000: begin // FCVT.W.S, FCVT.WU.S
-            fp_alu_operator_o     = F2I;
             int_reg_write         = 1'b1;
             if (~|instr[24:21]) begin
               fpu_valid             = 1'b1;
-
+              fp_alu_operator_o     = F2I;
               if (instr[20])
                 fp_alu_op_mod_o       = 1'b1;
                 fpu_valid             = 1'b1;
             end
           end
-          7'b1110000: begin // FMV.X.W , FCLASS.S
+          7'b1110000: begin // FMV.X.S , FCLASS.S
             unique case ({instr[24:20],instr[14:12]})
               {5'b00000,3'b000}: begin
                 fpu_valid             = 1'b1;
+                int_reg_write         = 1'b1;
+                fp_move_xs            = 1'b1;
               end
               {5'b00000,3'b001}: begin
                 fp_alu_operator_o     = CLASSIFY;
@@ -233,20 +246,21 @@ module fp_decoder
           end
           7'b1101000: begin // FCVT.S.W, FCVT.S.WU
             cvt_en = 1'b1;  
-            fp_regwrite_o = 1'b1;
             if (~|instr[24:21]) begin
               fp_alu_operator_o     = I2F;
-              fpu_valid    = 1'b1;    
+              fpu_valid    = 1'b1;   
+              fp_regwrite_o = 1'b1; 
                 if (instr[20])
                   fp_alu_op_mod_o     = 1'b1;
                   fpu_valid    = 1'b1;  
+                  fp_regwrite_o = 1'b1;
             end
           end
           7'b1111000: begin // FMV.S.X
-            fp_alu_operator_o     = ADD;
             if (~(|instr[24:20]) | (|instr[14:12])) begin
-              fp_move_en    = 1'b1;
+              fp_move_sx    = 1'b1;
               fpu_valid   = 1'b1;
+              fp_regwrite_o = 1'b1;
             end
           end
           default: illegal_insn = 1'b1;

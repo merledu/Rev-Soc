@@ -85,10 +85,10 @@ defines += $(BUILD_DIR)/el2_pdef.vh
 defines += $(RV_ROOT)/design/timer/rv_timer_reg_pkg.sv
 includes = -I${BUILD_DIR}
 defines += ${RV_ROOT}/design/lib/common_cells/registers.svh
-defines += ${RV_ROOT}/fpnew/src/fpnew_pkg.sv
+defines += ${RV_ROOT}/design/floating_point/fpnew_pkg.sv
 defines += ${RV_ROOT}/design/floating_point/fp_pkg.sv
-defines += ${RV_ROOT}/fpnew/src/common_cells/src/cf_math_pkg.sv
-defines += ${RV_ROOT}/fpnew/src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv
+defines += ${RV_ROOT}/design/floating_point/common_cells/src/cf_math_pkg.sv
+defines += ${RV_ROOT}/design/floating_point/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv
 
 # CFLAGS for verilator generated Makefiles. Without -std=c++11 it
 # complains for `auto` variables
@@ -119,7 +119,7 @@ verilator-build: ${TBFILES} ${BUILD_DIR}/defines.h test_tb_top.cpp
 	echo '`undef RV_ASSERT_ON' >> ${BUILD_DIR}/common_defines.vh
 	$(VERILATOR)  --cc -CFLAGS ${CFLAGS} $(defines) \
 	  $(includes) -I${RV_ROOT}/testbench -f ${RV_ROOT}/testbench/flist \
-	  -Wno-WIDTH -Wno-PINMISSING -Wno-UNOPTFLAT ${TBFILES} --top-module tb_top \
+	  -Wno-WIDTH -Wno-LATCH -Wno-TIMESCALEMOD -Wno-LITENDIAN -Wno-UNSIGNED -Wno-PINMISSING -Wno-UNOPTFLAT -Wno-CASEINCOMPLETE -Wno-CMPCONST ${TBFILES} --top-module tb_top \
 	  -exe test_tb_top.cpp --autoflush $(VERILATOR_DEBUG)
 	cp ${RV_ROOT}/testbench/test_tb_top.cpp obj_dir/
 	$(MAKE) -j -e -C obj_dir/ -f Vtb_top.mk $(VERILATOR_MAKE_FLAGS)

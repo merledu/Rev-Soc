@@ -307,11 +307,14 @@ import el2_pkg::*;
    input  logic  scan_mode     ,                      // Flop scan mode control
    output logic [31:0] dec_i0_wdata_r,
    input  logic fpu_valid,        //valid from fpu
+   input logic fp_move_en,
    input  logic [31:0] fpu_result,
    input  logic       fp_load_o,
    input  logic [31:0] dccm_rd_data_lo,
    input  logic int_reg_write,
-   input  logic [4:0] frd
+   input  logic [4:0] frd,
+   input  logic           fp_move_xs     ,
+   input  logic  [31:0]       move_data_xs    
 );
 
 

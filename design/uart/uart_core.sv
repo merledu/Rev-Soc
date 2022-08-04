@@ -155,8 +155,8 @@ always @(posedge clk_i or negedge rst_ni) begin
 			intr_rx <= 0;
 			r_tx_byte_done <= 0;
 			reg_rdata <= 0;
-			fifo_tx_clear = 0;
-			fifo_rx_clear = 0;
+			fifo_tx_clear <= 0;
+			fifo_rx_clear <= 0;
 	end
 	else begin
 		if(reg_we) begin														//When pwrite is set to 1 
@@ -273,7 +273,7 @@ always @(posedge clk_i or negedge rst_ni) begin
 	end
 
 	if (rx_timeout == 1'b1 || intr_rx_full == 1'b1) begin
-		intr_rx = 1'b1;
+		intr_rx <= 1'b1;
 	end
 
 	if (reg_addr == ADDR_TX_DATA && reg_we) begin

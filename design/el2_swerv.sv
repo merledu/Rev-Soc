@@ -387,12 +387,19 @@ import el2_pkg::*;
    output logic [31:0]           dec_i0_wdata_r ,
    input  logic [31:0]           fpu_result     ,
    input  logic                  fpu_valid      ,
+   input logic                   fp_move_en     ,
    input  logic                  fp_load_o      ,
    input logic                   fp_store_en    ,
    input logic    [31:0]         output_to_store,
    output logic  [31:0]          gpr_i0_rs1_d   ,
    input logic                   int_reg_write  ,
-   input logic[4:0]              frd
+   input logic[4:0]              frd            ,
+   output logic                  i0_rs1_bypass_en_d,
+   output logic                  i0_rs2_bypass_en_d,
+   output logic [31:0]           i0_rs1_d       ,  
+   output logic [31:0]           i0_rs2_d       ,
+   input  logic                  fp_move_xs     ,
+   input logic  [31:0]           move_data_xs      
 );
 
 

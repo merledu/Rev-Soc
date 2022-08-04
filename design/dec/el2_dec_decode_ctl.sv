@@ -202,7 +202,10 @@ import el2_pkg::*;
    input logic [31:0]   dccm_rd_data_lo, // DCCM read data low bank
    input logic [31:0] gpr_i0_rs1_d,
    input logic        int_reg_write,  
-   input logic [4:0]  frd
+   input logic [4:0]  frd,
+   input logic fp_move_en,
+   input  logic                  fp_move_xs     ,
+   input logic  [31:0]           move_data_xs    
 
    );
 
@@ -1374,7 +1377,7 @@ end : cam_array
    
    
    //assign dec_i0_wdata_r[31:0]      =  (fpu_valid )? fpu_result[31:0]  :  i0_result_corr_r[31:0];
-   assign dec_i0_wdata_r[31:0]      =  (fpu_valid)? ((fp_load_o)? dccm_rd_data_lo[31:0] : fpu_result[31:0] ) : i0_result_corr_r[31:0];
+   assign dec_i0_wdata_r[31:0]      =  fp_move_xs? move_data_xs : ((fpu_valid)? ((fp_load_o)? dccm_rd_data_lo[31:0] : fpu_result[31:0] ) : i0_result_corr_r[31:0]);
    
    
    // divide stuff
