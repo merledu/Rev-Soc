@@ -17,7 +17,7 @@
 CONF_PARAMS = -set build_axi4
 GCC=$(GCC_PREFIX)-gcc
 TEST_CFLAGS = -g -O3 -funroll-all-loops
-ABI = -mabi=ilp32 -march=rv32imac
+ABI = -mabi=ilp32 -march=rv32imafc
 RV_ROOT?=
 
 # Check for RV_ROOT
@@ -218,8 +218,8 @@ else
 	LINK = $(TEST_DIR)/$(TEST).ld
 endif
 
-LINK_FLAGS=-march=rv32imac -mabi=ilp32 -nostartfiles -T$(LINK) 
-GCCFLAGS=-mabi=ilp32 -march=rv32imac
+LINK_FLAGS=-march=rv32imafc -mabi=ilp32 -nostartfiles -T$(LINK) 
+GCCFLAGS=-mabi=ilp32 -march=rv32imafc
 GCC=$(GCC_PREFIX)-gcc
 
 program.hex: irun-build build $(TEST).exe $(LINK) 

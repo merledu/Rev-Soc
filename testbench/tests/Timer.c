@@ -1,4 +1,9 @@
 #include "timer.h"
+#include "gpio.h"
+#include "GPIO.c"
+#include "pwm.h"
+#include "PWM.c"
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -6,10 +11,17 @@
 void delay(int a)
 {
 
-int *time_cmp_l, *time_cmp_u, *ctrl, *prescale, *ie; // Pointer declaration
+int *time_cmp_l, *time_cmp_u, *ctrl, *prescale, *ie, *time_l, *time_u; // Pointer declaration
 // Disabling timer by writing zero to the control register
 ctrl = (int*)(TIMER_BASE_ADDRESS + CTRL);
 *ctrl = 0;
+
+time_l = (int*)(TIMER_BASE_ADDRESS + TIMER_L);
+*time_l = 0;
+
+time_u = (int*)(TIMER_BASE_ADDRESS + TIMER_U);
+*time_u = 0;
+
 // Setting prescale to zero and step to 1
 prescale = (int*)(TIMER_BASE_ADDRESS + CFG);
 *prescale = 0x20001;
@@ -25,118 +37,139 @@ time_cmp_u = (int*)(TIMER_BASE_ADDRESS + CMP_U);
 // Setting interrupt enable by writing 1
 ie = (int*)(TIMER_BASE_ADDRESS + INTR_EN);
 *ie = 1;
+
 // Setting control enable by writing 1 to ctrl register
 ctrl = (int*)(TIMER_BASE_ADDRESS + CTRL);
 *ctrl = 1;
-
+ int x=0,y=1,z=2,*e=0;
+  e = (int*)(TIMER_BASE_ADDRESS+INTR);
+ 
+  while(*e==0){ 
+    x=y+z;
+    y++;
+  }
 
 }
-      // CSR regs addresses
-    __asm__(".equ mie, 0x304");
-    __asm__(".equ meicpct, 0xbca");
-    __asm__(".equ meicidpl, 0xbcb");
-    __asm__(".equ meicurpl, 0xbcc");
-    __asm__(".equ meivt, 0xbc8");
-    __asm__(".equ meipt, 0xbc9");
-    __asm__(".equ meihap, 0xfc8");  
-    
-    // Interrupt handlers
-    
-    __asm__("Timer_handler:");
-    __asm__("ori x18, x24, 0x00000400");
-    __asm__("li x21, 0x20002000");
-    __asm__("li x22, 0x0");
-    __asm__("sw x22, 0(x21)");
-    __asm__("nop");
-    __asm__("nop");
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");      
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");  
-    __asm__("nop");          
-    __asm__("mret");
-    
-    __asm__("intr_handler:");
-    __asm__("csrwi meicpct, 1");
-    __asm__("csrr x18, meihap");
-    __asm__("lw x28, 0x0(x18)");
-    __asm__("jalr t0,x28, 0x0");
-    __asm__("mret");   
+
 
 int main(){
-    __asm__("la t0, intr_handler");
-    __asm__("csrw mtvec, t0	");
-    __asm__("lui t0, 0x200    # write RV_DCCM_OFFSET");
-    __asm__("csrw meivt, t0   # base addr of vector intr");
-    
-    __asm__("la t1, Timer_handler");
-    __asm__("sw t1, 0x8(t0)");
-    
-    // set priority for first irq
-    __asm__("li x18, (0x300000 + 0x0000 + 4)");
-    __asm__("ori x9, x0, 7");
-    __asm__("sw x9, 0(x18)");    
-    // set priority for second irq	
-    __asm__("li x18, (0x300000 + 0x0000 + 8)");
-    __asm__("ori x9, x0, 8");
-    __asm__("sw x9, 0(x18)");    
-     
-    // priority threshold
-    __asm__("ori x18, x0, 3");
-    __asm__("csrw meipt, x18");
-    
-    // enable first irq 
-    __asm__("li x18, (0x300000 + 0x2000 + 4)");
-    __asm__("ori x9, x0, 1");
-    __asm__("sw x9, 0(x18)");    
-   // enable second irq
-    __asm__("li x18, (0x300000 + 0x2000 + 8)");
-    __asm__("ori x9, x0, 1");
-    __asm__("sw x9, 0(x18)");    
-     
-    __asm__("ori x18, x0, 8");
-    __asm__("csrw 0x300, x18");
-    
-    // enable_ext_int
-    __asm__("ori x18, x0, 1");
-    __asm__("slli x18, x18, 11");	
-    __asm__("csrw mie, x18");
- 
 
+
+  int a=1,b=2,c=300,d=0,*e,f=10;
+
+// while (f<1){
+
+//   digitalWrite(1);
+//   delay(1000);
+//   d=0;
+
+ 
+//   d = *e;
+//    while (d != 1){// for(int i=0; i<100; i++){
+//     c = a+b;
+//     a++;
+//     b++;
+//     d = *e;
+//   }
+
+// delay(1001);
+// digitalWrite(0);
+//   d = 0;
+//    while (d != 1){// for(int i=0; i<100; i++){
+//     c = a+b;
+//     a++;
+//     b++;
+//     d = *e;
+//   }
+
+// }
+int i=0;
+while (f!=0){
+if(i<100)
+i=i+20;
+else 
+i=0;
+digitalWrite(0);
+delay(200);
+digitalWrite(1);
+delay(200);
+digitalWrite(3);
+delay(200);
+digitalWrite(0);
+delay(200);
+digitalWrite(2);
+delay(200);
+pwm(i,100);
+digitalWrite(3);
+delay(200);
+}
+
+
+
+
+
+
+
+
+// // GPIO BLINK without interrupt
+//   while(e!=0){
+//   d = 2;
+//   digitalWrite(1);
+//   while(d<200000){
+//     a = b+c;
+//     b++;
+//     c++;
+//     d++;
+//   }
+//   d = 2;
+//   digitalWrite(0);
   
-  int a=1,b=2,c=300,d=0;
-  delay(1);
-   while (d<1000){// for(int i=0; i<100; i++){
-    c = a+b;
-    a++;
-    b++;
-    d++;
-  }
+//   while(d<200000){
+//     a = b+c;
+//     b++;
+//     c++;
+//     d++;
+//   }
+//   }
+
   return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ void delayi(int z){
+    int a=0,b=2,c=4;
+    for(int i=0;i<15*z;i=i+2){
+    a=b+c;
+  }
+ }

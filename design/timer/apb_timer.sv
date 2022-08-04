@@ -33,7 +33,7 @@ module apb_timer
   output logic               [31:0] PRDATA,
   output logic                      PREADY,
   output logic                      PSLVERR,
-  output logic                 irq_o //  cmp interrupt
+  output reg                 irq_o //  cmp interrupt
   );
 
     // Wires to connect wicth the peripheral
@@ -44,8 +44,8 @@ module apb_timer
     logic               [31:0] PRDATA_p;
     logic                      PREADY_p;
     logic                      PSLVERR_p;
-
-
+    logic interrupt;
+    
     rv_timer #(
       .AW(APB_ADDR_WIDTH),
       .DW(APB_DATA_WIDTH)
@@ -57,11 +57,36 @@ module apb_timer
       .reg_addr(PADDR_p),
       .reg_wdata(PWDATA_p),
       .reg_be(4'b1111),
-      .reg_rdata(PRDATA),
+      .reg_rdata(PRDATA_p),
       .reg_error(PSLVERR_p),
-      .intr_timer_expired_0_0_o(irq_o)
+//      .intr_timer_expired_0_0_o()//irq_o)
+      .intr_timer_expired_0_0_o(interrupt)
     );
     assign PREADY =1'b1;
+   assign irq_o = interrupt;
+   assign PRDATA = (PADDR_p == 32'h200 )? {31'd0,interrupt} : PADDR_p;
+   
+//   logic [3:0] count;
+//   always @(posedge HCLK or negedge HRESETn) begin
+//       if(HRESETn == 1'd0) begin
+//         irq_o <= 1'd0;
+//         count <=0;
+//         end
+//       else if( PWRITE == 1'b1) begin
+//         count <= count+1;
+//         end
+//       else begin
+//        if(count == 4'd8)
+//         irq_o <= 1'd1;
+//         else
+//         irq_o <= irq_o;
+//         end
+//       end
+       
+//        always @(posedge HCLK) begin
+//          if(PWDATA == 32'd32)
+//             irq_o <= 1'd1;
+//             end
    
     always_comb begin
       if(PSEL == 1'b1 && PENABLE == 1'b1 )begin
@@ -70,9 +95,9 @@ module apb_timer
         PSLVERR   = PSLVERR_p;
       end
       else begin
-        PADDR_p   = 0 ;
-        PWDATA_p  = 0 ;
-        PSLVERR   = 0 ;
+        PADDR_p   = 0;
+        PWDATA_p  = 0;
+        PSLVERR   = 0;
       end
     end    
   endmodule

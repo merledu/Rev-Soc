@@ -6,6 +6,7 @@
 #define CMP_L               0x10c
 #define CMP_U               0x110
 #define INTR_EN             0x114
+#define INTR                0x200
 
 void delay(int a);
 

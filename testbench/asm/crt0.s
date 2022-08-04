@@ -45,126 +45,141 @@ or a dedicated flop array in the core.*/
 #define RV_PIC_MEIPT_OFFSET 0x3004
 
 
-# # Disable external interrupt:
-# .macro disable_ext_int
-# # # Clear MIE[miep]
-# disable_ext_int_\@:
-# li a0, (1<<11)
-# csrrc zero, mie, a0
-# .endm
+# Disable external interrupt:
+.macro disable_ext_int
+# # Clear MIE[miep]
+disable_ext_int_\@:
+li a0, (1<<11)
+csrrc zero, mie, a0
+.endm
 
-# # Enable external interrupt:
-# .macro enable_ext_int
-# enable_ext_int_\@:
-# # # Set MIE[miep]
-# li a0, (1<<11)
-# csrrs zero, mie, a0
-# .endm
+# Enable external interrupt:
+.macro enable_ext_int
+enable_ext_int_\@:
+# # Set MIE[miep]
+li a0, (1<<11)
+csrrs zero, mie, a0
+.endm
 
-# # Initialize external interrupt priority order:
-# .macro init_priorityorder priord
-# init_priorityorder_\@:
-# li tp, (0xF00C0000+ 0x3000)
-# li t0, \priord
-# sw t0, 0(tp)
-# .endm
+# Initialize external interrupt priority order:
+.macro init_priorityorder priord
+init_priorityorder_\@:
+li tp, (0xF00C0000+ 0x3000)
+li t0, \priord
+sw t0, 0(tp)
+.endm
 
-# # Initialize external interrupt nesting priority thresholds:
-# .macro init_nstthresholds threshold
-# init_nstthresholds_\@:
-# li t0, \threshold
-# li tp, (0xF00C0000 + 0xBCB)
-# sw t0, 0(tp)
-# li tp, (0xF00C0000 + 0xBCC)
-# sw t0, 0(tp)
-# .endm
+# Initialize external interrupt nesting priority thresholds:
+.macro init_nstthresholds threshold
+init_nstthresholds_\@:
+li t0, \threshold
+li tp, (0xF00C0000 + 0xBCB)
+sw t0, 0(tp)
+li tp, (0xF00C0000 + 0xBCC)
+sw t0, 0(tp)
+.endm
 
-# # Set external interrupt priority threshold:
-# .macro set_threshold threshold
-# set_threshold_\@:
-# li tp, (0xF00C0000 + 0x3004)
-# li t0, \threshold
-# sw t0, 0(tp)
-# .endm
+# Set external interrupt priority threshold:
+.macro set_threshold threshold
+set_threshold_\@:
+li tp, (0xF00C0000 + 0x3004)
+li t0, \threshold
+sw t0, 0(tp)
+.endm
 
-# # Enable interrupt for source id:
-# .macro enable_interrupt id
-# enable_interrupt_\@:
-# li tp, (0xF00C0000 + 0x2000 + (\id <<2))
-# li t0, 1
-# sw t0, 0(tp)
-# .endm
-# # Set priority of source id:
-# .macro set_priority id, priority
-# set_priority_\@:
-# li tp, (0xF00C0000 + 0x0 + (\id <<2))
-# li t0, \priority
-# sw t0, 0(tp)
-# .endm
+# Enable interrupt for source id:
+.macro enable_interrupt id
+enable_interrupt_\@:
+li tp, (0xF00C0000 + 0x2000 + (\id <<2))
+li t0, 1
+sw t0, 0(tp)
+.endm
+# Set priority of source id:
+.macro set_priority id, priority
+set_priority_\@:
+li tp, (0xF00C0000 + 0x0 + (\id <<2))
+li t0, \priority
+sw t0, 0(tp)
+.endm
 
-# # Initialize gateway of source id:
-# .macro init_gateway id, polarity, type
-# init_gateway_\@:
-# li tp, (0xF00C0000 + 0x4000 + (\id <<2))
-# li t0, ((\type<<1) | \polarity)
-# sw t0, 0(tp)
-# .endm
+# Initialize gateway of source id:
+.macro init_gateway id, polarity, type
+init_gateway_\@:
+li tp, (0xF00C0000 + 0x4000 + (\id <<2))
+li t0, ((\type<<1) | \polarity)
+sw t0, 0(tp)
+.endm
 
-# # Clear gateway of source id:
-# .macro clear_gateway id
-# clear_gateway_\@:
-# li tp, (0xF00C0000 + 0x5000 + (\id <<2))
-# sw zero, 0(tp)
-# .endm
+# Clear gateway of source id:
+.macro clear_gateway id
+clear_gateway_\@:
+li tp, (0xF00C0000 + 0x5000 + (\id <<2))
+sw zero, 0(tp)
+.endm
 
-# .macro init_vector_table_rt
-# init_vector_table_rt_\@:
-# csrr tp, 0xBC8
-# la t0, eint_handler
-# slli t0,t0,0xA
-# # li t0, (0x70000000<<10) 
-# andi t1, tp, 0x3ff # #Keep the 10 ls bits
-# or t0, t0, t1 # #Concatenate
-# csrw 0xBC8, t0
-# .endm
+.macro init_vector_table_rt
+init_vector_table_rt_\@:
+csrr tp, 0xBC8
+la t0, vector_base
+slli t0,t0,0xA
+# li t0, (0x70000000<<10) 
+andi t1, tp, 0x3ff # #Keep the 10 ls bits
+or t0, t0, t1 # #Concatenate
+csrw 0xBC8, t0
+.endm
 
-# # .macro init_handler_rt
-# # init_handler_rt_\@:
-# # li a0, 0x2 # id=2
-# # la a1, eint_handler
-# # #a0=source
-# # #a1=handler_address
-# # slli tp, a0, 2
-# # li t0, 0x70000000
-# # add tp, tp, t0
-# # sw a1, 0(tp)
-# # .endm
+.macro init_handler_rt
+init_handler_rt_\@:
+li a0, 0x2 # id=2
+la a1, eint_handler
+#a0=source
+#a1=handler_address
+slli tp, a0, 2
+li t0, 0x70000000
+add tp, tp, t0
+sw a1, 0(tp)
+.endm
 
-# .macro init_trap_vector_rt
-# init_trap_vector_rt_\@:
-# la a0, trap_vector 
-# #a0=trap_address
+.macro init_trap_vector_rt
+init_trap_vector_rt_\@:
+la a0, trap_vector 
+#a0=trap_address
 
-# slli t0, a0, 2 #Shift the address [31..2]
-# andi t0, a0, 0xFFFFFFFC #Base[31..2] maps with mtvec[31..2]
-# addi t0, t0, 1 #+1 for the vectored mode
-# csrw mtvec, t0 #move
-# .endm
+slli t0, a0, 2 #Shift the address [31..2]
+andi t0, a0, 0xFFFFFFFC #Base[31..2] maps with mtvec[31..2]
+# addi t0, t0, 1 //+1 for the vectored mode
+csrw mtvec, t0 #move
+.endm
 
-# # Code to jump to the interrupt handler from the RISC-V trap vector:
-# trap_vector:
-# # Interrupt trap starts here when MTVEC[mode]=1
-# csrwi 0xBCA, 1 # Capture winning claim id and priority
-# csrr t0, 0xFC8 # Load pointer index
-# lw t1, 0(t0)
-# # # Load vector address
-# jr t1
-# # # Go there
 
-# # Code to handle the interrupt:
-# eint_handler:
-# disable_ext_int
-# mret
+# Code to jump to the interrupt handler from the RISC-V trap vector:
+trap_vector:
+# Interrupt trap starts here when MTVEC[mode]=1
+csrwi 0xbca, 1 # Capture winning claim id and priority
+csrr t0, 0xfc8 # Load pointer index
+lw t1, 0(t0)
+# Load vector address
+jr t1
+# Go there
+
+# Code to handle the interrupt:
+eint_handler:
+li t0,20002000
+li t1,0
+sw t1,0(t0)
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+mret
 
 .section .text.init
 .global _start
@@ -174,32 +189,37 @@ _start:
         csrw 0x7c0, t0
         li t1,0xd0580000
         la sp, STACK
-# zero step
+# # zero step
 # disable_ext_int
-# init_trap_vector_rt
-# init_vector_table
+# # init_trap_vector_rt
+# # init_vector_table
 # init_handler_rt
+
 # # Step 1 configure priority order
 # # Macro flow to initialize priority order:
 # # To RISC-V standard order:
 # init_priorityorder 0
 
-# # step 2 set the polarity id and type of interrupt and clear the ip bit of gateway
+# # # step 2 set the polarity id and type of interrupt and clear the ip bit of gateway
 
 # init_gateway 2, 1, 0
+# init_gateway 3, 1, 0
 # clear_gateway 2
+# clear_gateway 3
 
-# # step 3 set base address of vector table
-# init_vector_table_rt
-# # step 4 set priority level
+# # # step 3 set base address of vector table or trap vector
+# init_trap_vector_rt
+# # # step 4 set priority level
 # set_priority 2, 7
-# # step 5 set priority thershold
+# set_priority 3, 7
+# # # step 5 set priority thershold
 # set_threshold 1
-# # step 6 set nesting priority thershold
-# init_nstthresholds 0
-# # step 7 enable interrupt for particula interrupt source
+# # # step 6 set nesting priority thershold
+# # init_nstthresholds 0
+# # # step 7 enable interrupt for particula interrupt source
 # enable_interrupt 2
-# # last step
+# enable_interrupt 3
+# # # last step
 # enable_ext_int 
 
 # # Set priority to standard RISC-V order
