@@ -83,27 +83,29 @@ int main(){
 //   }
 
 // }
-int i=0;
-while (f!=0){
-if(i<100)
-i=i+20;
-else 
-i=0;
-digitalWrite(0);
-delay(200);
-digitalWrite(1);
-delay(200);
-digitalWrite(3);
-delay(200);
-digitalWrite(0);
-delay(200);
-digitalWrite(2);
-delay(200);
-pwm(i,100);
-digitalWrite(3);
-delay(200);
-}
+int i=0,j=0;
+// GPIO TIMER AND PWM with interrupt
+// while (f!=0){
+// if(i<100)
+// i=i+20;
+// else 
+// i=0;
+// digitalWrite(0);
+// delay(200);
+// digitalWrite(1);
+// delay(200);
+// digitalWrite(3);
+// delay(200);
+// digitalWrite(0);
+// delay(200);
+// digitalWrite(2);
+// delay(200);
+// pwm(i,100);
+// digitalWrite(3);
+// delay(200);
+// }
 
+// GPIO with interrupts
 
 
 

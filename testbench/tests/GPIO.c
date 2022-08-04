@@ -3,31 +3,47 @@
 #include <stdint.h>
 
 
-void digitalWrite(int bits)
+void digitalWrite(int bits,int direction)
 {
 
-int *mode_reg, *dir_reg, *out_reg, *trig_type_reg, *trig_lv0_reg, *trig_lv1_reg, *irq_reg;
+int *mode_reg, *dir_reg, *out_reg, *trig_type_reg, *trig_lv0_reg, *trig_lv1_reg, *irq_reg, *trig_stat; 
 mode_reg = (int*)(GPIO_BASE + MODE_REG);
 *mode_reg = 0;
 
 dir_reg = (int*)(GPIO_BASE + DIR_REG);
-*dir_reg = bits;
+*dir_reg = direction;
 
 out_reg = (int*)(GPIO_BASE + OUT_REG);   
 *out_reg = bits;
 
 trig_type_reg = (int*)(GPIO_BASE + TRIG_TYPE_REG);   
-*trig_type_reg = 1;
+*trig_type_reg = 0;
 
 trig_lv0_reg = (int*)(GPIO_BASE + TRIG_LV0_REG);   
 *trig_lv0_reg = 0;
 
 trig_lv1_reg = (int*)(GPIO_BASE + TRIG_LV1_REG);   
-*trig_lv1_reg = 0;
+*trig_lv1_reg = 1;
+
+trig_stat = (int*)(GPIO_BASE + TRIG_STATUS_REG);   
+*trig_stat = 1;
+
 
 irq_reg = (int*)(GPIO_BASE + IRQ_EN_REG);   
-*irq_reg = 0;
+*irq_reg = 1;
+
+
 }
+int GpioWFI(){
+  int *intr,*input,a=2,b=3,c=4,d=0;
+  intr = (int*)(GPIO_BASE+0x200);
+  input = (int*)(GPIO_BASE+TRIG_STATUS_REG);
+  while (d!=1){
+    a = b+c;
+    d = *intr;
+  }
+  return *input;
+  }
 
 // int main(){
 //   int a=1,b=2,c=200,d=2,e=1;
