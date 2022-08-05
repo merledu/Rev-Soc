@@ -47,12 +47,12 @@ package fpnew_pkg;
     // add new formats here
   } fp_format_e;
 
-//   typedef enum integer { 
-//   RV32FNone     = 0,
-//   RV32FSingle   = 1,
-//   RV64FDouble   = 2
-//   // RV32FQuad     = 3
-// } rvfloat_e;
+  typedef enum integer { 
+  RV32FNone     = 0,
+  RV32FSingle   = 1,
+  RV64FDouble   = 2
+  // RV32FQuad     = 3
+} rvfloat_e;
 
   // Encodings for supported FP formats
   localparam fp_encoding_t [0:NUM_FP_FORMATS-1] FP_ENCODINGS  = '{
@@ -68,16 +68,16 @@ package fpnew_pkg;
 // Opcodes //
 /////////////
 
-// typedef enum logic [6:0] {
-//   // Floating Point
-//   OPCODE_LOAD_FP  = 7'h07,
-//   OPCODE_STORE_FP = 7'h27,
-//   OPCODE_MADD_FP  = 7'h43,
-//   OPCODE_MSUB_FP  = 7'h47,
-//   OPCODE_NMSUB_FP = 7'h4b,
-//   OPCODE_NMADD_FP = 7'h4f,
-//   OPCODE_OP_FP    = 7'h53
-// } opcode_e;
+typedef enum logic [6:0] {
+  // Floating Point
+  OPCODE_LOAD_FP  = 7'h07,
+  OPCODE_STORE_FP = 7'h27,
+  OPCODE_MADD_FP  = 7'h43,
+  OPCODE_MSUB_FP  = 7'h47,
+  OPCODE_NMSUB_FP = 7'h4b,
+  OPCODE_NMADD_FP = 7'h4f,
+  OPCODE_OP_FP    = 7'h53
+} opcode_e;
 
 
   typedef logic [0:NUM_FP_FORMATS-1]       fmt_logic_t;    // Logic indexed by FP format (for masks)

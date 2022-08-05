@@ -77,7 +77,7 @@ module fp_decoder
     fp_dst_fmt_o          = FP32;
     opcode                = opcode_e'(instr[6:0]);
     fp_regwrite_o         = 0;
-    fp_move_en            = 1'b1;
+    // fp_move_en            = 1'b1;
     fp_store_en           = 1'b0;
     regread_en            = 1'b0;
     fp_alu_op_mod_o       = 1'b0;
@@ -170,6 +170,8 @@ module fp_decoder
         unique case (instr[31:25]) 
           7'b0000000: begin // FADD.S
             fp_alu_operator_o     = ADD;
+            fp_rf_raddr_b_o= fp_rf_raddr_a_o;
+            fp_rf_raddr_c_o= fp_rf_raddr_b_o;
             fpu_valid             = 1'b1;
             fp_regwrite_o         = 1'b1;
           end
@@ -270,6 +272,20 @@ module fp_decoder
       illegal_insn = 1'b1;
     end
     endcase
+  end
+  int count;
+  always @(posedge clk_i) begin
+    if(opcode == 7'h53 && (instr[31:25] == 7'b1111000 || instr[31:25] == 7'b1110000)) begin
+        count <= 0;
+        fp_move_en <= 1;
+      end 
+      if(fp_move_en) begin
+        count <= count + 1;
+      end
+    if(count == 2) begin
+      fp_move_en <= 0;
+    end
+
   end
   assign illegal_insn_o = illegal_insn ;
   endmodule 
