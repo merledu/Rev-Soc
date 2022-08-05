@@ -1,8 +1,8 @@
 #include "timer.h"
-#include "gpio.h"
-#include "GPIO.c"
-#include "pwm.h"
-#include "PWM.c"
+// #include "gpio.h"
+// #include "GPIO.c"
+// #include "pwm.h"
+// #include "PWM.c"
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -52,16 +52,16 @@ ctrl = (int*)(TIMER_BASE_ADDRESS + CTRL);
 }
 
 
-int main(){
+// int main(){
 
-   float a = 4.2,b=4.0,c = 1.0, d;
-   if(a > b)
-   c = c+1;
-   else 
-   c = 0;
+//    float a = 4.2,b=4.0,c = 1.0, d;
+//    if(a > b)
+//    c = c+1;
+//    else 
+//    c = 0;
 
-   if (c==2.0)
-   digitalWrite(1,1);
+//    if (c==2.0)
+//    digitalWrite(1,1);
 
 
   // int a=1,b=2,c=300,d=0,*e,f=10;
@@ -92,7 +92,7 @@ int main(){
 //   }
 
 // }
-int i=0,j=0;
+// int i=0,j=0;
 // GPIO TIMER AND PWM with interrupt
 // while (f!=0){
 // if(i<100)
@@ -143,8 +143,8 @@ int i=0,j=0;
 //   }
 //   }
 
-  return 0;
-}
+//   return 0;
+// }
 
 
 

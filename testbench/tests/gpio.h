@@ -8,3 +8,4 @@
 #define TRIG_LV1_REG         0x18
 #define TRIG_STATUS_REG      0x1c
 #define IRQ_EN_REG           0x20 
+#define INTR                 0x200
