@@ -20,8 +20,18 @@
 #include <stdbool.h>
 #include <stdint.h>
 #define STACK 0x70041
-int main() {
-   float a = 4.0,b=2.0,c = 3.0, d;
-   d = (a * b) + c ;
-   return 0;
+
+int main(){
+  __asm__ __volatile__(
+  "srai x11, x26, 27;"
+  );
+//   int a=3,b=6,c=10,d=0;
+//   int *test_finish;                     // declaratin of test termination pointer
+//  // int *stack;                         // declaration of stack initialize pointer
+//  // stack = (int *)(0xD0580000);        // setting address of mailbox to finish test
+//  // *test_finish = 0xFF;                // writing data 0xFF
+//   d = a+b+c;
+//   // test_finish = (int *)(0xD0580000); // setting address of mailbox to finish test
+  // *test_finish = 0xFF;               //writing data 0xFF
+  return 0;
 }

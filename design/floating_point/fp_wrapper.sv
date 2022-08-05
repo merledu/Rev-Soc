@@ -125,9 +125,4 @@ module fp_wrapper
   assign foperand[0] = foperand_a;
   assign foperand[1] = foperand_b;
   assign foperand[2] = foperand_c;
-  // always_comb begin
-  //   if (fp_move_xs)begin 
-  //     result_o = move_data_xs;
-  //   end
-  // end
   endmodule
