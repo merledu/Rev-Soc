@@ -55,7 +55,6 @@ $RV_ROOT/design/floating_point/fpnew_pkg.sv
 $RV_ROOT/design/floating_point/fp_pkg.sv
 $RV_ROOT/design/floating_point/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv
 $RV_ROOT/design/floating_point/fp_wrapper.sv
-$RV_ROOT/design/floating_point/fp_move.sv
 $RV_ROOT/design/floating_point/fp_register.sv
 $RV_ROOT/design/floating_point/fp_decoder.sv
 $RV_ROOT/design/floating_point/common_cells/src/rr_arb_tree.sv

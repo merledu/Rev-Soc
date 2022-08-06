@@ -80,7 +80,6 @@ $RV_ROOT/design/lib/el2_lib.sv
 -y $RV_ROOT/design/lib
 -v $RV_ROOT/testbench/axi_lsu_dma_bridge.sv
 $RV_ROOT/design/floating_point/fp_wrapper.sv
-$RV_ROOT/design/floating_point/fp_move.sv
 $RV_ROOT/design/floating_point/fp_register.sv
 $RV_ROOT/design/floating_point/fp_decoder.sv
 $RV_ROOT/design/floating_point/common_cells/src/rr_arb_tree.sv

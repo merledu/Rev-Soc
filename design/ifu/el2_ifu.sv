@@ -200,6 +200,8 @@ import el2_pkg::*;
    output logic                                iccm_buf_correct_ecc,
    output logic                                iccm_correction_state,
 
+   input logic              out_valid_o       ,
+
    input logic scan_mode
    );
 
