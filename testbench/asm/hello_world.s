@@ -28,14 +28,13 @@
 .global _start
 _start:
 
-    li x1,0x40866666
-    fmv.s.x f1,x1
-    li x2,0x4089999a
-    fmv.s.x f2,x2
-    fadd.s f3,f1,f2
-    li x3,0x41080000
-    fmv.s.x f4,x3
-    feq.s x4,f3,f4
+    li t1,3
+    li t2,7
+    li t3,2
+    FCVT.S.W f1,t1
+    FCVT.S.W f2,t2
+    FCVT.S.W f3,t3
+    flt.s t5,f1,f4
 
 // Write 0xff to STDOUT for TB to termiate test.
 _finish:

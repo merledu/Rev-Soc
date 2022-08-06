@@ -399,6 +399,7 @@ import el2_pkg::*;
    output logic [31:0]           i0_rs1_d       ,  
    output logic [31:0]           i0_rs2_d       ,
    input  logic                  fp_move_xs     ,
+   input logic              out_valid_o       ,
    input logic  [31:0]           move_data_xs      
 );
 
