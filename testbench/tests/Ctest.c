@@ -19,9 +19,20 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <stdbool.h>
 #include <stdint.h>
+#include "timer.h"
+#include "Timer.c"
+#include "gpio.h"
+#include "GPIO.c"
+
 #define STACK 0x70041
 int main() {
-   float a = 4.0,b=2.0,c = 3.0, d;
-   d = (a * b) + c ;
+   float a = 4.2,b=4.3, d = 8.5;
+   float c;
+   c = a + b;
+   if(c == d)
+   digitalWrite(1);
+   else
+   digitalWrite(0);
+   // delay(200);
    return 0;
 }

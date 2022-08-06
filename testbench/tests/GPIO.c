@@ -29,13 +29,13 @@ irq_reg = (int*)(GPIO_BASE + IRQ_EN_REG);
 *irq_reg = 0;
 }
 
-int main(){
-  int a=1,b=2,c=200;
-  digitalWrite(1);
-  for(int i=0; i<1000; i++){
-    c = a+b;
-    a++;
-    b++;
-  }
-  return 0;
-}
+// int main(){
+//   int a=1,b=2,c=200;
+//   digitalWrite(1);
+//   for(int i=0; i<1000; i++){
+//     c = a+b;
+//     a++;
+//     b++;
+//   }
+//   return 0;
+// }
