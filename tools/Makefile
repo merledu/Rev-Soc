@@ -1,3 +1,4 @@
+  
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 Western Digital Corporation or its affiliates.
 #
@@ -15,10 +16,9 @@
 #
 
 CONF_PARAMS = -set build_axi4
-GCC=$(GCC_PREFIX)-gcc
+
 TEST_CFLAGS = -g -O3 -funroll-all-loops
 ABI = -mabi=ilp32 -march=rv32imafc
-RV_ROOT?=
 
 # Check for RV_ROOT
 ifeq (,$(wildcard ${RV_ROOT}/configs/swerv.config))
@@ -41,19 +41,20 @@ BUILD_DIR = snapshots/${snapshot}
 TBDIR = ${RV_ROOT}/testbench
 
 # Define test name
-TEST ?= hello_world
+TEST = hello_world
 TEST_DIR = ${TBDIR}/asm
 HEX_DIR = ${TBDIR}/hex
-CTEST_DIR =${TBDIR}/tests
 
 # Determine test directory
-
+ifneq (,$(wildcard $(TBDIR)/tests/$(TEST)))
+  TEST_DIR = $(TBDIR)/tests/$(TEST)
+endif
 
 OFILES = $(TEST).o
 
 ifdef debug
  DEBUG_PLUS = +dumpon
- IRUN_DEBUG = -access +rwc
+ IRUN_DEBUG = -access +rc
  IRUN_DEBUG_RUN = -input ${RV_ROOT}/testbench/input.tcl
  VCS_DEBUG = -debug_access
  VERILATOR_DEBUG = --trace
@@ -62,11 +63,6 @@ endif
 
 ifdef gui
 IRUN_DEBUG_1 = -gui 
-else
-IRUN_DEBUG_1 ?=
-endif
-
-ifdef Ctest
 endif
 
 # provide specific link file
@@ -109,13 +105,7 @@ all: clean verilator
 clean:
 	rm -rf *.log *.s *.hex *.dis *.tbl irun* vcs* simv* *.map snapshots swerv* \
 	verilator* *.exe obj* *.o ucli.key vc_hdrs.h csrc *.csv work\
-	dataset.asdb  library.cfg vsimsa.cfg  riviera-build wave.asdb *.elf \
-	*.history *.key *.shm .bpad .simvision ./build-Linux/*.log *.txt .reinvoke.sim
-	clear
-	echo "Cleaning"
-	sleep 0.5
-	clear
-	
+	dataset.asdb  library.cfg vsimsa.cfg  riviera-build wave.asdb
 
 
 
@@ -129,7 +119,7 @@ verilator-build: ${TBFILES} ${BUILD_DIR}/defines.h test_tb_top.cpp
 	echo '`undef RV_ASSERT_ON' >> ${BUILD_DIR}/common_defines.vh
 	$(VERILATOR)  --cc -CFLAGS ${CFLAGS} $(defines) \
 	  $(includes) -I${RV_ROOT}/testbench -f ${RV_ROOT}/testbench/flist \
-	  -Wno-WIDTH -Wno-UNOPTFLAT ${TBFILES} --top-module tb_top \
+	  -Wno-WIDTH -Wno-LATCH -Wno-TIMESCALEMOD -Wno-LITENDIAN -Wno-UNSIGNED -Wno-PINMISSING -Wno-UNOPTFLAT -Wno-CASEINCOMPLETE -Wno-CMPCONST ${TBFILES} --top-module tb_top \
 	  -exe test_tb_top.cpp --autoflush $(VERILATOR_DEBUG)
 	cp ${RV_ROOT}/testbench/test_tb_top.cpp obj_dir/
 	$(MAKE) -j -e -C obj_dir/ -f Vtb_top.mk $(VERILATOR_MAKE_FLAGS)
@@ -188,7 +178,7 @@ riviera: program.hex riviera-build
 
 
 ############ TEST build ###############################
-
+    
 ifeq ($(shell which $(GCC_PREFIX)-gcc 2> /dev/null),)
 program.hex: ${BUILD_DIR}/defines.h
 	@echo " !!! No $(GCC_PREFIX)-gcc in path, using canned hex files !!"
@@ -199,8 +189,6 @@ program.hex:
 	@echo Building $(TEST) via $(TEST_DIR)/$(TEST).makefile
 	$(MAKE) -f $(TEST_DIR)/$(TEST).makefile
 else
-
-ifeq (,$(wildcard $(CTEST_DIR)/$(TEST).c))
 program.hex: $(OFILES) $(LINK)
 	@echo Building $(TEST)
 	$(GCC_PREFIX)-gcc $(ABI) -Wl,-Map=$(TEST).map -lgcc -T$(LINK) -o $(TEST).exe $(OFILES) -nostartfiles  $(TEST_LIBS)
@@ -208,51 +196,21 @@ program.hex: $(OFILES) $(LINK)
 	$(GCC_PREFIX)-objdump -S  $(TEST).exe > $(TEST).dis
 	@echo Completed building $(TEST)
 
+
 %.o : %.s ${BUILD_DIR}/defines.h
 	$(GCC_PREFIX)-cpp -I${BUILD_DIR}  $<  > $*.cpp.s
 	$(GCC_PREFIX)-as ${ABI} $*.cpp.s -o $@
 
+
 %.o : %.c ${BUILD_DIR}/defines.h
 	$(GCC_PREFIX)-gcc ${includes} ${TEST_CFLAGS} -DCOMPILER_FLAGS="\"${TEST_CFLAGS}\"" ${ABI} -nostdlib -c $< -o $@
 
-else
-
-ifeq (,$(wildcard $(TEST_DIR)/$(TEST).ld))
-	LINK = $(BUILD_DIR)/link.ld
-else
-	LINK = $(TEST_DIR)/$(TEST).ld
+endif
 endif
 
-LINK_FLAGS=-march=rv32imafc -mabi=ilp32 -nostartfiles -T$(LINK) 
-GCCFLAGS=-mabi=ilp32 -march=rv32imafc
-GCC=$(GCC_PREFIX)-gcc
-
-program.hex: irun-build build $(TEST).exe $(LINK) 
-	@echo Building $(TEST)
-	$(GCC_PREFIX)-gcc $(TEST_DIR)/crt0.s $(LINK_FLAGS) -Wl,-Map=$(TEST).map -lgcc -o $(TEST).exe $(TEST).o 
-	$(GCC_PREFIX)-objcopy -O verilog  $(TEST).exe program.hex 
-	$(GCC_PREFIX)-objdump -S  $(TEST).exe > $(TEST).dis
-	@echo Completed building $(TEST)
-
-build:
-	$(GCC) $(GCCFLAGS) -c $(CTEST_DIR)/$(TEST).c -o $(TEST).o -lgcc
-	$(GCC) $(TEST_DIR)/crt0.s $(LINK_FLAGS)   $(TEST).o -o $(TEST).exe  -lgcc 
-
-whisperlog: irun
-	$(RV_ROOT)/build-Linux/whisper --logfile $(RV_ROOT)/build-Linux/$(TEST)_whisper.log $(TEST).exe --configfile $(BUILD_DIR)/whisper.json
-
-
-endif
-cmp: whisperlog
-	python3 $(RV_ROOT)/build-Linux/comparison.py ./build-Linux/$(TEST)_whisper.log exec.log
-
-endif
-
-endif
 
 help:
 	@echo Make sure the environment variable RV_ROOT is set.
 	@echo Possible targets: verilator vcs irun vlog riviera help clean all verilator-build irun-build vcs-build riviera-build program.hex
 
 .PHONY: help clean verilator vcs irun vlog riviera irun-build irun
-
