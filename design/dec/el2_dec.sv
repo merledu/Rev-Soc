@@ -310,6 +310,7 @@ import el2_pkg::*;
    input logic fp_move_en,
    input  logic [31:0] fpu_result,
    input  logic       fp_load_o,
+   input logic fp_load_en,
    input  logic [31:0] dccm_rd_data_lo,
    input  logic int_reg_write,
    input  logic [4:0] frd,

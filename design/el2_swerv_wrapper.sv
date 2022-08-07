@@ -1128,12 +1128,14 @@ import el2_pkg::*;
   logic              fpu_valid         ;
   logic              fp_move_en        ;
   logic              fp_load_o         ;
+  logic              fp_load_en        ;
   logic              fp_store_en       ;
   logic [31:0]       output_to_store   ;
   logic              int_reg_write     ;
   logic [4:0]        frd               ;
   logic              fp_move_xs        ;
   logic  [31:0]      move_data_xs      ;
+  logic  [31:0] addr_out ;
 
 fp_wrapper fpwrapper(
    .clk_i(clk)                      ,
@@ -1157,7 +1159,9 @@ fp_wrapper fpwrapper(
    .frd(frd)                        ,
    .fp_move_en(fp_move_en)          ,
    .fp_move_xs(fp_move_xs)          ,
-   .move_data_xs(move_data_xs)
+   .move_data_xs(move_data_xs)      ,
+   .addr_out(addr_out)              ,
+   .dccm_rd_data_lo(dccm_rd_data_lo)
    );
 
 `ifdef RV_ASSERT_ON

@@ -106,6 +106,7 @@ import el2_pkg::*;
    input logic                             fp_store_en,
    input logic  [31:0]                     fpu_result,
    input logic  [31:0]                     output_to_store,
+   input [31:0] addr_out,
 
    // PIC ports
    output logic                            picm_wren,    // PIC memory write enable

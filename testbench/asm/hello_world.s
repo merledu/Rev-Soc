@@ -28,13 +28,24 @@
 .global _start
 _start:
 
-    li t1,3
-    li t2,7
-    li t3,2
-    FCVT.S.W f1,t1
-    FCVT.S.W f2,t2
-    FCVT.S.W f3,t3
-    flt.s t5,f1,f4
+   loop:
+    lb x5, 0(x4)
+    sb x5, 0(x3)
+    addi x4, x4, 1
+    li x6, 0xdeadbeef
+    li x7, 0xf004f000
+    fmv.s.x f6,x6
+    fmv.s.x f7,x7
+    li x8,8
+    li x9,14
+    extract_data:
+    addi x9,x9,-1
+    fsw f6, 0(x7)
+    addi x7,x7,4
+    bne x8,x9, extract_data
+    li x10, 0xf00400ff
+    fsw f6,0(x10)
+    bnez x5, loop
 
 // Write 0xff to STDOUT for TB to termiate test.
 _finish:

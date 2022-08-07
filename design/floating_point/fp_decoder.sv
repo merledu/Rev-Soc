@@ -28,7 +28,10 @@ module fp_decoder
     output logic                  cvt_en,
     output logic                  int_reg_write,
     output logic                  fp_move_xs,
-    output logic                  fp_move_sx
+    output logic                  fp_move_sx,
+    output logic    [11:0]        offset,
+    output logic fp_load_en,
+    output logic [4:0] frd_load
 );
   
   logic        fp_invalid_rm;
@@ -77,7 +80,6 @@ module fp_decoder
     fp_dst_fmt_o          = FP32;
     opcode                = opcode_e'(instr[6:0]);
     fp_regwrite_o         = 0;
-    // fp_move_en            = 1'b1;
     fp_store_en           = 1'b0;
     regread_en            = 1'b0;
     fp_alu_op_mod_o       = 1'b0;
@@ -87,7 +89,7 @@ module fp_decoder
     int_reg_write         = 1'b0;
     fp_move_xs            = 1'b0;
     fp_move_sx            = 1'b0;
-
+    
     unique case (opcode)
       OPCODE_STORE_FP: begin
         unique case(instr[14:12])
@@ -97,6 +99,7 @@ module fp_decoder
             fp_store_en  = 1'b1;
             regread_en = 1'b1;
             fpu_valid  = 1'b1;
+            offset = { instr[31:25],instr[11:7]};
           end
           default: illegal_insn = 1'b1;
         endcase
@@ -107,8 +110,8 @@ module fp_decoder
             illegal_insn = (RVF == RV32FNone) ? 1'b1 : 1'b0;
             fp_src_fmt_o = FP32; 
             fp_load_o = 1'b1;
-            fp_regwrite_o = 1'b1;
             fpu_valid  = 1'b1;
+            offset = instr[31:20];
           end
           default: illegal_insn = 1'b1;
         endcase
@@ -274,8 +277,9 @@ module fp_decoder
     endcase
   end
   int count;
+
   always @(posedge clk_i) begin
-    if(opcode == 7'h53 && (instr[31:25] == 7'b1111000 || instr[31:25] == 7'b1110000)) begin
+    if(opcode == 7'h53 && (instr[31:25] == 7'b1111000 || instr[31:25] == 7'b1110000 || instr[31:25] == 7'b1010000)) begin
         count <= 0;
         fp_move_en <= 1;
       end 
@@ -285,7 +289,14 @@ module fp_decoder
     if(count == 2) begin
       fp_move_en <= 0;
     end
-
+    if (opcode == 7'h7) begin
+      fp_load_en <= fp_load_o;
+      frd_load [4:0] <=  fp_rf_waddr_o[4:0];
+    end
+    else begin
+      fp_load_en <= 0;
+      frd_load [4:0] <= 5'b0;
+    end
   end
   assign illegal_insn_o = illegal_insn ;
   endmodule 

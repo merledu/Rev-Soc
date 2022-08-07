@@ -26,7 +26,10 @@ module fp_wrapper
     output  [4:0]                 frd             ,
     output                        fp_move_en      ,
     output                        fp_move_xs      ,
-    output     [31:0]             move_data_xs    
+    output     [31:0]             move_data_xs    ,
+    output [31:0] addr_out,
+    output fp_load_en,
+    input [31:0] dccm_rd_data_lo
   );
     localparam int unsigned NUM_FP_FORMATS = 5; 
     localparam int unsigned FP_FORMAT_BITS = $clog2(NUM_FP_FORMATS);
@@ -51,6 +54,8 @@ module fp_wrapper
     logic                              regread_en       ;
     logic                              cvt_en           ;
     logic                              fp_move_sx       ;
+    logic           [11:0]             offset           ;
+    logic [4:0] frd_load;
 
 
   fp_decoder fpdecoder(           //all complete
@@ -77,7 +82,10 @@ module fp_wrapper
     .cvt_en(cvt_en)                       ,
     .int_reg_write(int_reg_write)         ,
     .fp_move_xs(fp_move_xs)               ,
-    .fp_move_sx(fp_move_sx)
+    .fp_move_sx(fp_move_sx)               ,
+    .offset(offset)                       ,
+    .fp_load_en(fp_load_en)               ,
+    .frd_load(frd_load)
   );
   
   fp_register fpregister(         //all complete
@@ -98,7 +106,14 @@ module fp_wrapper
     .fp_move_sx(fp_move_sx)               ,
     .cvt_en(cvt_en)                       ,
     .move_data_xs(move_data_xs)           ,
-    .fp_move_xs(fp_move_xs)    
+    .fp_move_xs(fp_move_xs)               ,
+    .offset(offset)                       ,
+    .addr_out(addr_out)                   ,
+    .fp_load_o(fp_load_o)                 ,
+    .fp_store_en(fp_store_en)             ,
+    .fp_load_en(fp_load_en)               ,
+    .frd_load(frd_load)                   ,
+    .dccm_rd_data_lo(dccm_rd_data_lo)
   );
   fpnew_top fpnewtop(         //all complete
     .clk_i(clk_i)                     ,
