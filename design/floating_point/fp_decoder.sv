@@ -66,8 +66,8 @@ module fp_decoder
   end
   // fp source registers
   assign fp_rf_raddr_a_o = instr_rs1;
-  assign fp_rf_raddr_b_o = instr_rs2;
-  assign fp_rf_raddr_c_o = instr_rs3;
+  // assign fp_rf_raddr_b_o = instr_rs2;
+  // assign fp_rf_raddr_c_o = instr_rs3;
   // fp destination register
   assign fp_rf_waddr_o   = instr_rd;
   assign fp_rounding_mode_o = roundmode_e'(instr[14:12]);
@@ -89,6 +89,8 @@ module fp_decoder
     int_reg_write         = 1'b0;
     fp_move_xs            = 1'b0;
     fp_move_sx            = 1'b0;
+    fp_rf_raddr_b_o = instr_rs2;
+    fp_rf_raddr_c_o = instr_rs3;
     
     unique case (opcode)
       OPCODE_STORE_FP: begin
@@ -173,8 +175,8 @@ module fp_decoder
         unique case (instr[31:25]) 
           7'b0000000: begin // FADD.S
             fp_alu_operator_o     = ADD;
-            fp_rf_raddr_b_o= fp_rf_raddr_a_o;
-            fp_rf_raddr_c_o= fp_rf_raddr_b_o;
+            fp_rf_raddr_b_o = fp_rf_raddr_a_o;
+            fp_rf_raddr_c_o = fp_rf_raddr_b_o;
             fpu_valid             = 1'b1;
             fp_regwrite_o         = 1'b1;
           end

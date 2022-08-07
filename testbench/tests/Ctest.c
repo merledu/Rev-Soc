@@ -23,34 +23,29 @@
 #include "Timer.c"
 #include "gpio.h"
 #include "GPIO.c"
-
-#define STACK 0x70041
-<<<<<<< HEAD
 int main() {
-   float a = 4.2,b=4.3, d = 8.5;
-   float c;
-   c = a + b;
-   if(c == d)
-   digitalWrite(1);
-   else
-   digitalWrite(0);
-   // delay(200);
+  //  int x = 1;
+  // //  float a = 4.2, b=4.3, d = 8.5;
+  // //  float c;
+  // //  while(x!=0){
+  // //  c = a + b;
+  // //  if(c == d)
+  //   x = 100;
+  // else 
+  //   x = 0;
+  //  digitalWrite(1);
+  //  else
+  //  digitalWrite(0);
+  //  delay(1);
+  //  }
+
+  int a = 1, b=2 , c=3;
+   
+   a = b + c;
+   if (b<c)
+   b++;
+   else 
+   c++;
+   b = b+c;
    return 0;
 }
-=======
-
-int main(){
-  __asm__ __volatile__(
-  "srai x11, x26, 27;"
-  );
-//   int a=3,b=6,c=10,d=0;
-//   int *test_finish;                     // declaratin of test termination pointer
-//  // int *stack;                         // declaration of stack initialize pointer
-//  // stack = (int *)(0xD0580000);        // setting address of mailbox to finish test
-//  // *test_finish = 0xFF;                // writing data 0xFF
-//   d = a+b+c;
-//   // test_finish = (int *)(0xD0580000); // setting address of mailbox to finish test
-  // *test_finish = 0xFF;               //writing data 0xFF
-  return 0;
-}
->>>>>>> 658614d02da91c617f1ed2010adbcd782505d021
