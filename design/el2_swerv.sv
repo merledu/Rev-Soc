@@ -389,6 +389,7 @@ import el2_pkg::*;
    input  logic                  fpu_valid      ,
    input logic                   fp_move_en     ,
    input  logic                  fp_load_o      ,
+   input logic fp_load_en,
    input logic                   fp_store_en    ,
    input logic    [31:0]         output_to_store,
    output logic  [31:0]          gpr_i0_rs1_d   ,
@@ -400,7 +401,8 @@ import el2_pkg::*;
    output logic [31:0]           i0_rs2_d       ,
    input  logic                  fp_move_xs     ,
    input logic              out_valid_o       ,
-   input logic  [31:0]           move_data_xs      
+   input logic  [31:0]           move_data_xs     ,
+   input [31:0] addr_out 
 );
 
 

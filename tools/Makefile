@@ -119,7 +119,7 @@ verilator-build: ${TBFILES} ${BUILD_DIR}/defines.h test_tb_top.cpp
 	echo '`undef RV_ASSERT_ON' >> ${BUILD_DIR}/common_defines.vh
 	$(VERILATOR)  --cc -CFLAGS ${CFLAGS} $(defines) \
 	  $(includes) -I${RV_ROOT}/testbench -f ${RV_ROOT}/testbench/flist \
-	  -Wno-WIDTH -Wno-LATCH -Wno-TIMESCALEMOD -Wno-LITENDIAN -Wno-UNSIGNED -Wno-PINMISSING -Wno-UNOPTFLAT -Wno-CASEINCOMPLETE -Wno-CMPCONST ${TBFILES} --top-module tb_top \
+	  -Wno-WIDTH -Wno-LATCH -Wno-TIMESCALEMOD -Wno-SELRANGE -Wno-LITENDIAN -Wno-UNSIGNED -Wno-PINMISSING -Wno-UNOPTFLAT -Wno-CASEINCOMPLETE -Wno-CMPCONST ${TBFILES} --top-module tb_top \
 	  -exe test_tb_top.cpp --autoflush $(VERILATOR_DEBUG)
 	cp ${RV_ROOT}/testbench/test_tb_top.cpp obj_dir/
 	$(MAKE) -j -e -C obj_dir/ -f Vtb_top.mk $(VERILATOR_MAKE_FLAGS)
