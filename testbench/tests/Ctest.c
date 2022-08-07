@@ -19,7 +19,25 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <stdbool.h>
 #include <stdint.h>
+#include "timer.h"
+#include "Timer.c"
+#include "gpio.h"
+#include "GPIO.c"
+
 #define STACK 0x70041
+<<<<<<< HEAD
+int main() {
+   float a = 4.2,b=4.3, d = 8.5;
+   float c;
+   c = a + b;
+   if(c == d)
+   digitalWrite(1);
+   else
+   digitalWrite(0);
+   // delay(200);
+   return 0;
+}
+=======
 
 int main(){
   __asm__ __volatile__(
@@ -35,3 +53,4 @@ int main(){
   // *test_finish = 0xFF;               //writing data 0xFF
   return 0;
 }
+>>>>>>> 658614d02da91c617f1ed2010adbcd782505d021

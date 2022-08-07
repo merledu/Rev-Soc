@@ -31,13 +31,13 @@ ctrl = (int*)(TIMER_BASE_ADDRESS + CTRL);
 
 }
 
-int main(){
-  int a=1,b=2,c=300;
-  delay(10);
-  for(int i=0; i<1000; i++){
-    c = a+b;
-    a++;
-    b++;
-  }
-  return 0;
-}
+// int main(){
+//   int a=1,b=2,c=300;
+//   delay(10);
+//   for(int i=0; i<1000; i++){
+//     c = a+b;
+//     a++;
+//     b++;
+//   }
+//   return 0;
+// }
