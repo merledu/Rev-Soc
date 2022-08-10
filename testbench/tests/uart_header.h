@@ -7,3 +7,5 @@
 #define ADDR_RX_FIFO_CLR    0x14
 #define ADDR_TX_FIFO_LEVEL  0x18
 #define ADDR_RD_EN_TXFIFO   0x1c
+
+// void uartTx(int baud, int clkfreq, char *str);

@@ -55,20 +55,20 @@ trig_lv0_reg = (int*)(GPIO_BASE + TRIG_LV0_REG);
 trig_lv1_reg = (int*)(GPIO_BASE + TRIG_LV1_REG);   
 *trig_lv1_reg = 1;
 
-trig_stat = (int*)(GPIO_BASE + TRIG_STATUS_REG);   
-*trig_stat = 1;
-
-irq_reg = (int*)(GPIO_BASE + IRQ_EN_REG);   
-*irq_reg = 1;
 }
 
-// int Gpiointerrupt(){
-//   int *reg, d=20;
-//   reg = (int*)(GPIO_BASE + INTR);
-//   d = *reg;
-//   return d;
-//   }
-
+int Gpiointerrupt(){
+  int *reg;
+  int *mode;
+  int d=0,e;
+  while(d==0){
+  mode = (int*)(GPIO_BASE + MODE_REG);
+  e = *mode;
+    reg = (int*)(GPIO_BASE + INTR);
+  d = *reg;
+  }
+  return d;
+  }
 // int main(){
 //   int a=1,b=2,c=200,d=2,e=1;
 

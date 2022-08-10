@@ -23,6 +23,12 @@ void uart_send_char(char val ){
 	//mem_write32(UART_BASE_ADDRESS, UART_CNTRL_REGISTER_OFFSET, a | 1); 
 }
 
+void mem_write32(uint32_t base, uint32_t offset,
+                                uint32_t value) {
+  ((volatile uint32_t *)base)[offset / sizeof(uint32_t)] = value;
+}
+
+
 void uart_send_str(char *str){
 	//transmitting string
 	while(*str != '\0'){

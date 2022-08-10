@@ -162,11 +162,19 @@ lw t1, 0(t0)
 jr t1
 # Go there
 
-# Code to handle the interrupt:
-eint_handler:
+# Code to handle the timer interrupt:
+eint_handler1:
 li t0,20002000
 li t1,0
 sw t1,0(t0)
+mret
+
+# Code to handle the GPIO interrupt:
+eint_handler2:
+li t0,20004000
+li t1,0
+lw t1,0x1c(t0)
+sw t1,0x200(t0)
 mret
 
 .section .text.init

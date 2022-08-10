@@ -29,8 +29,8 @@
 #include "GPIO.c"
 #include "pwm.h"
 #include "PWM.c"
-// #include "uart_header.h"
-// #include "uart.c"
+#include "uart_header.h"
+#include "uart.c"
 /******************************************************************///////
 /*SDK Enviorinment ReV-SoC (System On Chip)************************///////
 /*BY Micro Electronics Lab (MERL) UIT *****************************///////
@@ -96,48 +96,87 @@
 // }
 
 // // PWM WAVE 
+// int main(){
+//   int f = 10, i = 0; // Variable declaration for infinite LOOP
+// //////////////////////////////////////////////////////////////////////////  
+//   while (f!=0){      // Infinite LOOP
+//     if(i<100)        // duty cycle reset condition
+//       i=i+20;        // Variable Duty cycle increments by 20 per iteration
+//     else 
+//       i=0;
+//     digitalWrite(0); // All GPIOs Set to Zero LEDs OFF
+//     delay(200);      // 200ms Delay from timer
+//     digitalWrite(1); // GPIO 1 Set to HIGH LED ON
+//     delay(200);
+//     digitalWrite(2); // GPIO 1 and 2 set High 
+//     delay(200);
+//     digitalWrite(3); // GPIO 1,2 and 3 set High 
+//     delay(200);
+//     digitalWrite(0); // All GPIOs Set to Zero LEDs OFF
+//     delay(200);
+//     digitalWrite(2); 
+//     delay(200);
+//     pwm(i,100);
+//     digitalWrite(3);
+//     delay(200); // This LED chasing combination LOOPs
+//   }
+//   return 0;
+// }
+
+
+
+
+//  //// GPIO interrupt based Decision of LED
 int main(){
-  int f = 10, i = 0; // Variable declaration for infinite LOOP
-//////////////////////////////////////////////////////////////////////////  
+  int f = 6,b=0;
   while (f!=0){      // Infinite LOOP
-    if(i<100)        // duty cycle reset condition
-      i=i+20;        // Variable Duty cycle increments by 20 per iteration
-    else 
-      i=0;
-    digitalWrite(0); // All GPIOs Set to Zero LEDs OFF
-    delay(200);      // 200ms Delay from timer
-    digitalWrite(1); // GPIO 1 Set to HIGH LED ON
-    delay(200);
-    digitalWrite(2); // GPIO 1 and 2 set High 
-    delay(200);
-    digitalWrite(3); // GPIO 1,2 and 3 set High 
-    delay(200);
-    digitalWrite(0); // All GPIOs Set to Zero LEDs OFF
-    delay(200);
-    digitalWrite(2); 
-    delay(200);
-    pwm(i,100);
-    digitalWrite(3);
-    delay(200); // This LED chasing combination LOOPs
+  b = Gpiointerrupt();
+  digitalWrite(b);
+  delay(1);
   }
   return 0;
 }
 
-// GPIO interrupt based Decision of LED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // UART SEND STRING
 // int main(){
-//   int c=10;
-//   int *reg, d=20;
-//     reg = (int*)(GPIO_BASE + INTR);
+//   int f = 6,b=0,c=2;
+//   char str = "ReV-SoC";
+//   uartTx(115200,2500000,str);
 //   while(c!=1){
-//     d = *reg;
-//     if (d == 1){
-//       digitalWrite(1);
-//     }
-//     else {
-//       digitalWrite(2);
-//     }
-    
-//   }
+//   c++;}
 
 //   return 0;
 // }
+
