@@ -186,12 +186,12 @@
 
 // // Uart test
 
-int main(){
+// int main(){
 
-  uartTx(115200, 2500000, 0x52, 0x20, 0x52, 0x20, 0x52, 0x20, 0x52);
-  // delay(1000);
-  return 0;
-}
+//   uartTx(115200, 2500000, 0x52, 0x20, 0x52, 0x20, 0x52, 0x20, 0x52);
+//   // delay(1000);
+//   return 0;
+// }
 
 
 
