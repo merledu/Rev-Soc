@@ -128,10 +128,22 @@ or t0, t0, t1 # #Concatenate
 csrw 0xBC8, t0
 .endm
 
-.macro init_handler_rt
+.macro init_handler_rt_1
 init_handler_rt_\@:
 li a0, 0x2 # id=2
-la a1, eint_handler
+la a1, eint_handler1
+#a0=source
+#a1=handler_address
+slli tp, a0, 2
+li t0, 0x70000000
+add tp, tp, t0
+sw a1, 0(tp)
+.endm
+
+.macro init_handler_rt_2
+init_handler_rt_\@:
+li a0, 0x2 # id=2
+la a1, eint_handler2
 #a0=source
 #a1=handler_address
 slli tp, a0, 2
@@ -172,7 +184,6 @@ mret
 # Code to handle the GPIO interrupt:
 eint_handler2:
 li t0,20004000
-li t1,0
 lw t1,0x1c(t0)
 sw t1,0x200(t0)
 mret
@@ -189,7 +200,8 @@ _start:
 disable_ext_int
 # init_trap_vector_rt
 # init_vector_table
-init_handler_rt
+init_handler_rt_1
+init_handler_rt_2
 
 # Step 1 configure priority order
 # Macro flow to initialize priority order:

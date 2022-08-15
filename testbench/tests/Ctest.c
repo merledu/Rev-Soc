@@ -24,28 +24,28 @@
 #include "gpio.h"
 #include "GPIO.c"
 int main() {
-  //  int x = 1;
-  // //  float a = 4.2, b=4.3, d = 8.5;
-  // //  float c;
-  // //  while(x!=0){
-  // //  c = a + b;
-  // //  if(c == d)
-  //   x = 100;
-  // else 
-  //   x = 0;
-  //  digitalWrite(1);
-  //  else
-  //  digitalWrite(0);
-  //  delay(1);
-  //  }
+   int x = 1;
+   float a = 4.2, b = 4.3, d = 8.5;
+   float c;
+   while(x!=0){
+   c = a + b;
+   if(c == d)
+    x = 100;
+  else 
+    x = 0;
+   digitalWrite(1);
+   else
+   digitalWrite(0);
+   delay(1);
+   }
 
-  int a = 1, b=2 , c=3;
+//   int a = 1, b=2 , c=3;
    
-   a = b + c;
-   if (b<c)
-   b++;
-   else 
-   c++;
-   b = b+c;
-   return 0;
-}
+//    a = b + c;
+//    if (b<c)
+//    b++;
+//    else 
+//    c++;
+//    b = b+c;
+//    return 0;
+// }

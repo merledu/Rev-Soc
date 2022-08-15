@@ -17,12 +17,12 @@ void uart_send_str(char *str){
 		uart_send_char(*str++);
 	}
 }
-void uartTx(int baud, int clkfreq, char *str){
+void uartTx(int baud, int clkfreq,int byte1,int byte2,int byte3,int byte4,int byte5,int byte6,int byte7){
 int clk_per_bit,bit_per_clk=1,clk_clk=3;
 int *baud_reg, *ctrl_reg, *tx_level, *data_reg, *data_reg2, *data_reg3, *data_reg4,*data_reg5,*data_reg6,*data_reg7, *tx_en, *rx_en; // Pointer declaration
 // Disabling timer by writing zero to the control register
 
-clk_per_bit = (clkfreq/baud)+1;
+clk_per_bit = (clkfreq/baud);
 ctrl_reg = (int*)(UART_BASE + ADDR_RD_EN_TXFIFO);
 *ctrl_reg = 0;
 
@@ -34,27 +34,28 @@ baud_reg = (int*)(UART_BASE + ADDR_BAUD);
 tx_level = (int*)(UART_BASE + ADDR_TX_FIFO_LEVEL);
 *tx_level = 7;
 
-// // Setting timer Upper reg to zero
-// data_reg = (int*)(UART_BASE + ADDR_TX_DATA);
-// *data_reg = byte1;
-// bit_per_clk = clk_per_bit;
-// data_reg2 = (int*)(UART_BASE + ADDR_TX_DATA);
-// *data_reg2 = byte2;
-// bit_per_clk = clk_clk+clk_per_bit;
-// data_reg3 = (int*)(UART_BASE + ADDR_TX_DATA);
-// *data_reg3 = byte3;
-// bit_per_clk = clk_clk+clk_per_bit+bit_per_clk;
-// data_reg4 = (int*)(UART_BASE + ADDR_TX_DATA);
-// *data_reg4 = byte4;
-// data_reg5 = (int*)(UART_BASE + ADDR_TX_DATA);
-// *data_reg5 = byte5;
-// bit_per_clk = clk_clk+clk_per_bit;
-// data_reg6 = (int*)(UART_BASE + ADDR_TX_DATA);
-// *data_reg6 = byte6;
-// bit_per_clk = clk_clk+clk_per_bit+bit_per_clk;
-// data_reg7 = (int*)(UART_BASE + ADDR_TX_DATA);
-// *data_reg7 = byte7;
-uart_send_str(str);
+// Setting timer Upper reg to zero
+data_reg = (int*)(UART_BASE + ADDR_TX_DATA);
+*data_reg = byte1;
+bit_per_clk = clk_per_bit;
+data_reg2 = (int*)(UART_BASE + ADDR_TX_DATA);
+*data_reg2 = byte2;
+bit_per_clk = clk_clk+clk_per_bit;
+data_reg3 = (int*)(UART_BASE + ADDR_TX_DATA);
+*data_reg3 = byte3;
+bit_per_clk = clk_clk+clk_per_bit+bit_per_clk;
+data_reg4 = (int*)(UART_BASE + ADDR_TX_DATA);
+*data_reg4 = byte4;
+data_reg5 = (int*)(UART_BASE + ADDR_TX_DATA);
+*data_reg5 = byte5;
+bit_per_clk = clk_clk+clk_per_bit;
+data_reg6 = (int*)(UART_BASE + ADDR_TX_DATA);
+*data_reg6 = byte6;
+bit_per_clk = clk_clk+clk_per_bit+bit_per_clk;
+data_reg7 = (int*)(UART_BASE + ADDR_TX_DATA);
+*data_reg7 = byte7;
+
+// uart_send_str(str);
 
 // Setting interrupt enable by writing 1
 tx_en = (int*)(UART_BASE + ADDR_RD_EN_TXFIFO);
